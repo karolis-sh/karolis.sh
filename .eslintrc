@@ -1,0 +1,18 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": [
+    "babel",
+    "react"
+  ],
+  "rules": {
+    "object-curly-spacing": [0],
+    "import/prefer-default-export": [0],
+    "jsx-quotes": ["error", "prefer-single"],
+    "jsx-a11y/html-has-lang": [0],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/react-in-jsx-scope": [0],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "max-len": ["error", 120]
+  }
+}
