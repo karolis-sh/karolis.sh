@@ -12,17 +12,20 @@
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3"
+    "eslint-plugin-react": "^6.10.3",
+    "husky": "^0.13.3"
   },
   "dependencies": {
     "next": "^2.0.0",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "styled-components": "^1.4.4"
   },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "prepush": "npm run lint",
     "lint": "eslint ."
   }
 }

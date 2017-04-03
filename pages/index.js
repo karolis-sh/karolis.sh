@@ -1,12 +1,24 @@
-import Head from 'next/head';
+import styled from 'styled-components';
+
+import {Header, Footer} from '../components';
+
+
+const Wrapper = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Content = styled.div`
+  flex: 1;
+`;
+
 
 export default () =>
-  <html>
-    <Head>
-      <title>My page title</title>
-      <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-    </Head>
-    <body>
-      Sup!
-    </body>
-  </html>;
+  <Wrapper>
+    <Header />
+    <Content>
+      y0
+    </Content>
+    <Footer />
+  </Wrapper>;
