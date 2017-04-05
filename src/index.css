@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 18px;
+  height: 100%;
+}
+
+html, #root {
+  height: 100%;
+}

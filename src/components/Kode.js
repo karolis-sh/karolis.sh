@@ -1,20 +1,14 @@
+import React from 'react';
 import styled from 'styled-components';
 
 
-const Container = styled.div`
-  margin: 1rem;
-  display: flex;
-  align-items: center;
-`;
-
-
-const Kode = styled.div`
-  margin-top: 1rem;
-  font-size: 20px;
+const Wrapper = styled.div`
+  margin: 1rem 0;
   font-family: 'Varela Round', sans-serif;
   flex: 1;
   position: relative;
   letter-spacing: 5px;
+  font-size: 20px;
 
   &:before {
     content: 'K';
@@ -29,16 +23,16 @@ const Kode = styled.div`
     bottom: .18em;
     height: .9em;
     border-radius: 3px;
-    background: rgba(0, 0, 0, .2);
+    background: #f7df1e;
     width: .82em;
+    opacity: 0.5;
   }
 `;
 
 
-const Header = () =>
-  <Container>
-    <Kode>CODE</Kode>
-    <div>CV</div>
-  </Container>;
+const Kode = () =>
+  <Wrapper>
+   CODE
+  </Wrapper>;
 
-export default Header;
+export default Kode;
