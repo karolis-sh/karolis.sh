@@ -28,6 +28,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "ci:test": "cross-env CI=true npm t",
-    "lint": "eslint ."
+    "lint": "eslint src"
   }
 }
