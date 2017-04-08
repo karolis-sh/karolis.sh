@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   color: white;
+  padding: 1rem;
 `;
 
 
