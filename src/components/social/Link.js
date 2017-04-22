@@ -6,7 +6,11 @@ import Isvg from 'react-inlinesvg';
 import * as icons from './icons';
 
 
-const Container = styled.a`
+const Container = styled.div`
+  display: table;
+`;
+
+const Content = styled.a`
   display: flex;
   text-decoration:none;
   color: white;
@@ -22,9 +26,11 @@ const Svg = styled(Isvg)`
 
 
 const Link = ({link, icon, text, ...props}) =>
-  <Container href={link} target='_blank' {...props}>
-    <Svg src={icons[icon]} alt={`${icon}_icon`} />
-    {text}
+  <Container>
+    <Content href={link} target='_blank' {...props}>
+      <Svg src={icons[icon]} alt={`${icon}_icon`} />
+      {text}
+    </Content>
   </Container>;
 
 Link.propTypes = {

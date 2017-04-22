@@ -7,8 +7,9 @@
   "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
-    "prepush": "run-p ci:test lint",
+    "prepush": "npm run validate",
     "build": "react-scripts build",
+    "validate": "run-p ci:test lint",
     "test": "react-scripts test --env=jsdom",
     "ci:test": "cross-env CI=true npm t",
     "lint": "eslint src"

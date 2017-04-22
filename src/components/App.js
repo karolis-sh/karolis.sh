@@ -33,42 +33,51 @@ const Content = styled.div`
     margin-top: 3rem;
   }
 
-  @media(min-width: 600px) {
-    width: 70%;
-    margin-left: 10%;
+  > div {
+    @media(min-width: 600px) {
+      width: 70%;
+      margin-left: 10%;
 
-    & .-social {
-      margin-top: 6rem;
+      & .-social {
+        margin-top: 4.5rem;
+      }
+    }
+
+    @media(min-width: 1200px) {
+      width: 50%;
+      margin-left: 15%;
+
+      & .-social {
+        margin-top: 6rem;
+      }
     }
   }
 
-  @media(min-width: 1200px) {
-    width: 50%;
-    margin-left: 15%;
-  }
 `;
 
 
 const App = () =>
   <Wrapper>
     <Content>
-      <Kode className='-logo' />
-      <h3>
-        Karolis Šarapnickis - Senior Software Developer
-      </h3>
-      <p className='-text'>
-        {`
-          I build high quality web/mobile/desktop apps using JavaScript technologies.
-          I have experience working with the whole stack but I'm more front-end oriented developer.
-        `}
-      </p>
-      <p>
-        {`
-          Key technologies I'm experienced with:
-        `}
-      </p>
-      <Skills />
-      <Social className='-social' />
+      <div>
+        <Kode className='-logo' />
+        <h3>
+          Karolis Šarapnickis - Senior Software Developer
+        </h3>
+        <p className='-text'>
+          {`
+            I build high quality web/mobile/desktop apps using JavaScript technologies.
+            I have experience working with the whole stack but I'm more front-end oriented developer.
+          `}
+        </p>
+        <p>
+          {`
+            Key technologies I'm experienced with:
+          `}
+        </p>
+        <Skills />
+        <Social className='-social' />
+      </div>
     </Content>
   </Wrapper>;
 

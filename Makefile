@@ -13,8 +13,8 @@ install:
 	make update
 	make setup.aws
 
-deploy:
-	make update
+deploy: update
+	npm run validate
 	npm run build
 	$(_aws) s3 rm s3://kode.lt/ --recursive --region eu-central-1
 	$(_aws) s3 cp ./build/ s3://kode.lt/ --recursive --region eu-central-1

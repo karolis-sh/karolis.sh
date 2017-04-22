@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   letter-spacing: 5px;
   font-size: 20px;
   margin-top: 1.1em;
+  margin-left: .1em;
 
   &:before {
     content: 'K';
@@ -33,7 +34,7 @@ const Wrapper = styled.div`
 const Kode = props =>
   <div {...props}>
     <Wrapper>
-      CODE
+      C<span style={{marginLeft: '.15em'}}>ODE</span>
     </Wrapper>
   </div>;
 

@@ -5,6 +5,9 @@ import Link from './Link';
 
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+
   > *:not(:last-child) {
     margin-bottom: .5rem;
   }
