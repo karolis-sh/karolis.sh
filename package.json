@@ -1,10 +1,26 @@
 {
   "name": "kode.lt",
   "version": "0.0.1",
-  "description": "Portfolio website",
+  "description": "Personal links website",
   "repository": "git@github.com:buz-zard/kode.lt.git",
   "author": "Karolis <pastas.k@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "react-scripts start",
+    "prepush": "run-p ci:test lint",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "ci:test": "cross-env CI=true npm t",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-inlinesvg": "^0.5.5",
+    "react-router": "^4.1.1",
+    "styled-components": "^1.4.5"
+  },
   "devDependencies": {
     "cross-env": "^4.0.0",
     "eslint": "^3.19.0",
@@ -16,18 +32,5 @@
     "husky": "^0.13.3",
     "npm-run-all": "^4.0.2",
     "react-scripts": "0.9.5"
-  },
-  "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "styled-components": "^1.4.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "prepush": "run-p ci:test lint",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "ci:test": "cross-env CI=true npm t",
-    "lint": "eslint src"
   }
 }

@@ -16,6 +16,7 @@ install:
 deploy:
 	make update
 	npm run build
+	$(_aws) s3 rm s3://kode.lt/ --recursive --region eu-central-1
 	$(_aws) s3 cp ./build/ s3://kode.lt/ --recursive --region eu-central-1
 	$(_aws) configure set preview.cloudfront true
 	$(_aws) cloudfront create-invalidation --distribution-id ERWVMIVW1VDHQ --paths /

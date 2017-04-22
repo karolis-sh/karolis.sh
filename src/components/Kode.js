@@ -3,36 +3,38 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.div`
-  margin: 1rem 0;
   font-family: 'Varela Round', sans-serif;
-  flex: 1;
   position: relative;
   letter-spacing: 5px;
   font-size: 20px;
+  margin-top: 1.1em;
 
   &:before {
     content: 'K';
     position: absolute;
-    top: -.85em;
+    top: -1.1em;
   }
 
   &:after {
-    content: '';
+    content: 'C';
     position: absolute;
-    left: -.04em;
-    bottom: .18em;
-    height: .9em;
     border-radius: 3px;
     background: #f7df1e;
-    width: .82em;
-    opacity: 0.5;
+    color: black
+    height: 1em;
+    left: -.1em;
+    padding-left: .1em;
+    padding-bottom: .1em;
+    width: .9em;
   }
 `;
 
 
-const Kode = () =>
-  <Wrapper>
-   CODE
-  </Wrapper>;
+const Kode = props =>
+  <div {...props}>
+    <Wrapper>
+      CODE
+    </Wrapper>
+  </div>;
 
 export default Kode;
