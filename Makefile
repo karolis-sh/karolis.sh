@@ -17,7 +17,8 @@ deploy: update
 	npm run validate
 	npm run build
 	$(_aws) s3 rm s3://kode.lt/ --recursive --region eu-central-1
-	$(_aws) s3 cp ./build/ s3://kode.lt/ --recursive --region eu-central-1
+	$(_aws) s3 cp ./build/ s3://kode.lt/ --exclude ./build/static --cache-control 'public, max-age=86400' --recursive --region eu-central-1
+	$(_aws) s3 cp ./build/static/ s3://kode.lt/static/ --cache-control 'public, max-age=31536000' --recursive --region eu-central-1
 	$(_aws) configure set preview.cloudfront true
 	$(_aws) cloudfront create-invalidation --distribution-id ERWVMIVW1VDHQ --paths /
 
