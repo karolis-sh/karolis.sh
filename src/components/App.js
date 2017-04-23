@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Kode from './Kode';
+import Resume from './Resume';
 import Social from './social';
 import Skills from './skills';
 
@@ -20,10 +21,6 @@ const Content = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   padding: 1rem;
-
-  & .-logo {
-    margin-bottom: 2rem;
-  }
 
   & .-text {
     margin: 1.5rem 0;
@@ -52,7 +49,13 @@ const Content = styled.div`
       }
     }
   }
+`;
 
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2rem;
 `;
 
 
@@ -60,14 +63,17 @@ const App = () =>
   <Wrapper>
     <Content>
       <div>
-        <Kode className='-logo' />
+        <Header>
+          <Kode />
+          <Resume />
+        </Header>
         <h3>
           Karolis Šarapnickis - Senior Software Developer
         </h3>
         <p className='-text'>
           {`
             I build high quality web/mobile/desktop apps using JavaScript technologies.
-            I have experience working with the whole stack but I'm more front-end oriented developer.
+            I have experience working with the whole stack but I'm more of a Front-end oriented Software Developer.
           `}
         </p>
         <p>
