@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactGA from 'react-ga';
 
 
 const Container = styled.a`
@@ -13,7 +14,14 @@ const Container = styled.a`
 
 
 const Resume = () =>
-  <Container href={`${process.env.PUBLIC_URL}Karolis_Résumé.pdf`} download>
+  <Container
+    href={`${process.env.PUBLIC_URL}Karolis_Résumé.pdf`} download onClick={() => {
+      ReactGA.event({
+        category: 'Resume',
+        action: 'Download',
+      });
+    }}
+  >
     CV
   </Container>;
 

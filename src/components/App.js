@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactGA from 'react-ga';
 
 import Kode from './Kode';
 import Resume from './Resume';
@@ -59,32 +60,42 @@ const Header = styled.div`
 `;
 
 
-const App = () =>
-  <Wrapper>
-    <Content>
-      <div>
-        <Header>
-          <Kode />
-          <Resume />
-        </Header>
-        <h3>
-          Karolis Šarapnickis - Senior Software Developer
-        </h3>
-        <p className='-text'>
-          {`
-            I build high quality web/mobile/desktop apps using JavaScript technologies.
-            I have experience working with the whole stack but I'm more of a Front-end oriented Software Developer.
-          `}
-        </p>
-        <p>
-          {`
-            Key technologies I'm experienced with:
-          `}
-        </p>
-        <Skills />
-        <Social className='-social' />
-      </div>
-    </Content>
-  </Wrapper>;
+class App extends React.Component {
+
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname);
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <Content>
+          <div>
+            <Header>
+              <Kode />
+              <Resume />
+            </Header>
+            <h3>
+              Karolis Šarapnickis - Senior Software Developer
+            </h3>
+            <p className='-text'>
+              {`
+                I build high quality web/mobile/desktop apps using JavaScript technologies.
+                I have experience working with the whole stack but I'm more of a Front-end oriented Software Developer.
+              `}
+            </p>
+            <p>
+              {`
+                Key technologies I'm experienced with:
+              `}
+            </p>
+            <Skills />
+            <Social className='-social' />
+          </div>
+        </Content>
+      </Wrapper>
+    );
+  }
+}
 
 export default App;

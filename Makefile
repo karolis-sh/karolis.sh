@@ -14,13 +14,17 @@ install:
 	make setup.aws
 
 deploy: update
-	npm run validate
+	npm run ci:test
 	npm run build
-	$(_aws) s3 rm s3://kode.lt/ --recursive --region eu-central-1
-	$(_aws) s3 cp ./build/ s3://kode.lt/ --exclude ./build/static --cache-control 'public, max-age=86400' --recursive --region eu-central-1
-	$(_aws) s3 cp ./build/static/ s3://kode.lt/static/ --cache-control 'public, max-age=31536000' --recursive --region eu-central-1
+	$(_aws) s3 rm s3://kode.lt --recursive --region eu-central-1
+	$(_aws) s3 cp ./build s3://kode.lt --recursive --region eu-central-1 --acl public-read \
+		--cache-control "public, max-age=86400" --exclude "static/*" --exclude "img/*"
+	$(_aws) s3 cp ./build/img s3://kode.lt/img --recursive --region eu-central-1 --acl public-read \
+		--cache-control "public, max-age=604800"
+	$(_aws) s3 cp ./build/static s3://kode.lt/static --recursive --region eu-central-1 --acl public-read \
+		--cache-control "public, max-age=31536000"
 	$(_aws) configure set preview.cloudfront true
-	$(_aws) cloudfront create-invalidation --distribution-id ERWVMIVW1VDHQ --paths /
+	$(_aws) cloudfront create-invalidation --distribution-id ERWVMIVW1VDHQ --paths "/*"
 
 
 # ################################################################
