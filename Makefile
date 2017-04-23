@@ -18,7 +18,9 @@ deploy: update
 	npm run build
 	$(_aws) s3 rm s3://kode.lt --recursive --region eu-central-1
 	$(_aws) s3 cp ./build s3://kode.lt --recursive --region eu-central-1 --acl public-read \
-		--cache-control "public, max-age=86400" --exclude "static/*" --exclude "img/*"
+		--cache-control "public, max-age=86400" --exclude "index.html" --exclude "static/*" --exclude "img/*"
+	$(_aws) s3 cp ./build/index.html s3://kode.lt/index.html --region eu-central-1 --acl public-read \
+		--cache-control "private, no-cache, no-store, must-revalidate"
 	$(_aws) s3 cp ./build/img s3://kode.lt/img --recursive --region eu-central-1 --acl public-read \
 		--cache-control "public, max-age=604800"
 	$(_aws) s3 cp ./build/static s3://kode.lt/static --recursive --region eu-central-1 --acl public-read \
