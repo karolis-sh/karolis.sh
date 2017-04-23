@@ -13,16 +13,18 @@ const Container = styled.a`
 `;
 
 
-const Resume = () =>
-  <Container
-    href={`${process.env.PUBLIC_URL}Karolis_Résumé.pdf`} download onClick={() => {
-      ReactGA.event({
-        category: 'Resume',
-        action: 'Download',
-      });
-    }}
-  >
-    CV
-  </Container>;
+const Resume = props =>
+  <div {...props}>
+    <Container
+      href={`${process.env.PUBLIC_URL}Karolis_Résumé.pdf`} download onClick={() => {
+        ReactGA.event({
+          category: 'Resume',
+          action: 'Download',
+        });
+      }}
+    >
+      CV
+    </Container>
+  </div>;
 
 export default Resume;

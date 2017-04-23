@@ -18,12 +18,12 @@ const Container = styled.div`
 const Badges = () =>
   <Container>
     <Badge>JavaScript</Badge>
-    <Badge>Node</Badge>
     <Badge>React</Badge>
     <Badge>React-Native</Badge>
     <Badge>Electron</Badge>
     <Badge>HTML</Badge>
     <Badge>CSS</Badge>
+    <Badge>Node</Badge>
   </Container>;
 
 export default Badges;

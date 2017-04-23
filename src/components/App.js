@@ -55,8 +55,11 @@ const Content = styled.div`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
   margin-bottom: 2rem;
+
+  & .-resume {
+    margin-top: 1rem;
+  }
 `;
 
 
@@ -73,7 +76,7 @@ class App extends React.Component {
           <div>
             <Header>
               <Kode />
-              <Resume />
+              <Resume className='-resume' />
             </Header>
             <h3>
               Karolis Šarapnickis - Senior Software Developer

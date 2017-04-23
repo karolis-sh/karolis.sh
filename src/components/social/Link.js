@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Isvg from 'react-inlinesvg';
+import ReactGA from 'react-ga';
 
 import * as icons from './icons';
 
@@ -27,7 +28,14 @@ const Svg = styled(Isvg)`
 
 const Link = ({link, icon, text, ...props}) =>
   <Container>
-    <Content href={link} target='_blank' {...props}>
+    <Content href={link} target='_blank'
+      onClick={() => {
+        ReactGA.event({
+          category: 'SocialLink',
+          action: `Click${icon[0].toUpperCase()}${icon.slice(1)}`,
+        });
+      }} {...props}
+    >
       <Svg src={icons[icon]} alt={`${icon}_icon`} />
       {text}
     </Content>
