@@ -62,6 +62,10 @@ const Header = styled.div`
   }
 `;
 
+const Heading = styled.h1`
+  font-size: 25px;
+`;
+
 
 class App extends React.Component {
 
@@ -78,9 +82,9 @@ class App extends React.Component {
               <Kode />
               <Resume className='-resume' />
             </Header>
-            <h3>
+            <Heading>
               Karolis Šarapnickis - Senior Software Developer
-            </h3>
+            </Heading>
             <p className='-text'>
               {`
                 I build high quality web/mobile/desktop apps using JavaScript technologies.

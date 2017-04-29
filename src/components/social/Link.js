@@ -28,15 +28,18 @@ const Svg = styled(Isvg)`
 
 const Link = ({link, icon, text, ...props}) =>
   <Container>
-    <Content href={link} target='_blank'
+    <Content
+      href={link}
+      target='_blank'
       onClick={() => {
         ReactGA.event({
           category: 'SocialLink',
           action: `Click${icon[0].toUpperCase()}${icon.slice(1)}`,
         });
-      }} {...props}
+      }}
+      {...props}
     >
-      <Svg src={icons[icon]} alt={`${icon}_icon`} />
+      <Svg src={icons[icon]} alt={`${icon}-link`} title={`Link to ${icon}`} />
       {text}
     </Content>
   </Container>;

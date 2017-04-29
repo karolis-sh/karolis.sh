@@ -8,13 +8,13 @@ const Container = styled.span`
   color: black;
   border-radius: 1em;
   font-size: 14px;
-  padding: .125em .5em;
+  padding: .125em .6em .16em .5em;
 `;
 
 
 const Badge = ({children}) =>
   <Container>
-    {children}
+    #{children}
   </Container>;
 
 Badge.propTypes = {

@@ -26,7 +26,9 @@ const Links = props =>
     <Link icon='linkedin' text='/karolissarapnickis' link='https://www.linkedin.com/in/karolissarapnickis' />
     <Link icon='facebook' text='/karolis.sarapnickis' link='https://www.facebook.com/karolis.sarapnickis' />
     <Link icon='twitter' text='/smuklininkas' link='https://twitter.com/smuklininkas' />
-    <Link icon='stackoverflow' text='/Karolis-Šarapnickis'
+    <Link
+      icon='stackoverflow'
+      text='/Karolis-Šarapnickis'
       link='http://stackoverflow.com/users/2256839/Karolis-Šarapnickis'
     />
   </Container>;

@@ -28,13 +28,17 @@ const Wrapper = styled.div`
     padding-bottom: .1em;
     width: .9em;
   }
+
+  > span {
+    margin-left: .15em;
+  }
 `;
 
 
 const Kode = props =>
   <div {...props}>
     <Wrapper>
-      C<span style={{marginLeft: '.15em'}}>ODE</span>
+      C<span>ODE</span>
     </Wrapper>
   </div>;
 

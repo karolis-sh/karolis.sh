@@ -16,7 +16,9 @@ const Container = styled.a`
 const Resume = props =>
   <div {...props}>
     <Container
-      href={`${process.env.PUBLIC_URL}Karolis_Résumé.pdf`} download onClick={() => {
+      href={`${process.env.PUBLIC_URL}Karolis_CV.pdf`}
+      download
+      onClick={() => {
         ReactGA.event({
           category: 'Resume',
           action: 'Download',
