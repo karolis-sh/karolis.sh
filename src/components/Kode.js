@@ -35,11 +35,12 @@ const Wrapper = styled.div`
 `;
 
 
-const Kode = props =>
+const Kode = props => (
   <div {...props}>
     <Wrapper>
       C<span>ODE</span>
     </Wrapper>
-  </div>;
+  </div>
+);
 
 export default Kode;

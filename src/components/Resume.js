@@ -13,7 +13,7 @@ const Container = styled.a`
 `;
 
 
-const Resume = props =>
+const Resume = props => (
   <div {...props}>
     <Container
       href={`${process.env.PUBLIC_URL}Karolis_CV.pdf`}
@@ -27,6 +27,7 @@ const Resume = props =>
     >
       CV
     </Container>
-  </div>;
+  </div>
+);
 
 export default Resume;

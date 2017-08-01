@@ -26,7 +26,7 @@ const Svg = styled(Isvg)`
 `;
 
 
-const Link = ({link, icon, text, ...props}) =>
+const Link = ({link, icon, text, ...props}) => (
   <Container>
     <Content
       href={link}
@@ -42,7 +42,8 @@ const Link = ({link, icon, text, ...props}) =>
       <Svg src={icons[icon]} alt={`${icon}-link`} title={`Link to ${icon}`} />
       {text}
     </Content>
-  </Container>;
+  </Container>
+);
 
 Link.propTypes = {
   link: PropTypes.string,

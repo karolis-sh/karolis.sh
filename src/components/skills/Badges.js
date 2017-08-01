@@ -15,7 +15,7 @@ const Container = styled.p`
 `;
 
 
-const Badges = () =>
+const Badges = () => (
   <Container>
     <Badge>JavaScript</Badge>
     <Badge>React</Badge>
@@ -25,6 +25,7 @@ const Badges = () =>
     <Badge>React-Native</Badge>
     <Badge>Electron</Badge>
     <Badge>Node</Badge>
-  </Container>;
+  </Container>
+);
 
 export default Badges;

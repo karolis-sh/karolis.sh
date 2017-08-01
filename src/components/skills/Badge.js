@@ -12,10 +12,11 @@ const Container = styled.span`
 `;
 
 
-const Badge = ({children}) =>
+const Badge = ({children}) => (
   <Container>
     #{children}
-  </Container>;
+  </Container>
+);
 
 Badge.propTypes = {
   children: PropTypes.node.isRequired,

@@ -19,7 +19,7 @@ const Reverse = styled.span`
 `;
 
 
-const Links = props =>
+const Links = props => (
   <Container className='wat' {...props}>
     <Link icon='gmail' text={<Reverse>moc.liamg@k.satsap</Reverse>} />
     <Link icon='github' text='/buz-zard/_archive' link='https://github.com/buz-zard/_archive' />
@@ -31,6 +31,7 @@ const Links = props =>
       text='/Karolis-Šarapnickis'
       link='http://stackoverflow.com/users/2256839/Karolis-Šarapnickis'
     />
-  </Container>;
+  </Container>
+);
 
 export default Links;

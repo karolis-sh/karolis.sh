@@ -68,7 +68,6 @@ const Heading = styled.h1`
 
 
 class App extends React.Component {
-
   componentDidMount() {
     ReactGA.pageview(window.location.pathname);
   }
