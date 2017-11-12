@@ -1,22 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
+import styled from 'react-emotion';
 
 const Container = styled.span`
   background-color: white;
   color: black;
   border-radius: 1em;
   font-size: 14px;
-  padding: .125em .6em .16em .5em;
+  padding: 0.125em 0.6em 0.16em 0.5em;
 `;
 
-
-const Badge = ({children}) => (
-  <Container>
-    #{children}
-  </Container>
-);
+const Badge = ({ children }) => <Container>#{children}</Container>;
 
 Badge.propTypes = {
   children: PropTypes.node.isRequired,

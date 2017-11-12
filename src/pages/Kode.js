@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
+import styled from 'react-emotion';
 
 const Wrapper = styled.div`
   font-family: 'Varela Round', sans-serif;
@@ -33,7 +32,6 @@ const Wrapper = styled.div`
     margin-left: .15em;
   }
 `;
-
 
 const Kode = props => (
   <div {...props}>

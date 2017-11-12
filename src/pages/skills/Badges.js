@@ -1,19 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 
 import Badge from './Badge';
-
 
 const Container = styled.p`
   display: flex;
   flex-wrap: wrap;
-  margin: -.25rem;
-  
+  margin: -0.25rem;
+
   > * {
-    margin: .25rem;
+    margin: 0.25rem;
   }
 `;
-
 
 const Badges = () => (
   <Container>
@@ -22,8 +20,8 @@ const Badges = () => (
     <Badge>Redux</Badge>
     <Badge>HTML</Badge>
     <Badge>CSS</Badge>
-    <Badge>React-Native</Badge>
     <Badge>Electron</Badge>
+    <Badge>React-Native</Badge>
     <Badge>Node</Badge>
   </Container>
 );
