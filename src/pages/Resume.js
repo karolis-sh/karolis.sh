@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'react-emotion';
-import ReactGA from 'react-ga';
 
 const Container = styled.a`
   font-size: 20px;
@@ -17,10 +16,11 @@ const Resume = props => (
       href='/Karolis_CV.pdf'
       download
       onClick={() => {
-        ReactGA.event({
-          category: 'Resume',
-          action: 'Download',
-        });
+        console.log(window.ga);
+        // ReactGA.event({
+        //   category: 'Resume',
+        //   action: 'Download',
+        // });
       }}
     >
       CV

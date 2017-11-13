@@ -45,7 +45,6 @@ const Body = ({ children }) => (
       <meta property='og:image:height' content='1280' />
 
       <meta name='google-site-verification' content='bh9kyOfmJfPsonP1Rf_UiKiAvzlnw6Jao5CUEs28NdA' />
-      <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' />
     </Helmet>
     {children()}
   </div>

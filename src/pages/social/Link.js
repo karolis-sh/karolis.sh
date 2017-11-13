@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import Isvg from 'react-inlinesvg';
-import ReactGA from 'react-ga';
 
 import * as icons from './icons';
 
@@ -30,10 +29,11 @@ const Link = ({
       href={url}
       target='_blank'
       onClick={() => {
-        ReactGA.event({
-          category: 'SocialLink',
-          action: `Click${icon[0].toUpperCase()}${icon.slice(1)}`,
-        });
+        console.log(window.ga);
+        // ReactGA.event({
+        //   category: 'SocialLink',
+        //   action: `Click${icon[0].toUpperCase()}${icon.slice(1)}`,
+        // });
       }}
       {...props}
     >
