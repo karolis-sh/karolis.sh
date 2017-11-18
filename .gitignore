@@ -1,5 +1,10 @@
+# dependencies
 node_modules
-.cache/
 
+# build
+.cache/
 public/
+
+# other
 yarn-error.log
+.vscode

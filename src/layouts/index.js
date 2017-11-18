@@ -7,6 +7,7 @@ import './index.css';
 const Body = ({ children }) => (
   <div>
     <Helmet>
+      <html lang='en' />
       <meta charSet='utf-8' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta httpEquiv='Cache-control' content='public' />

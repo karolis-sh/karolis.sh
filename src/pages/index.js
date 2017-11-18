@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'react-emotion';
-import jpg from './milky-way-bw.jpg';
-import Kode from './Kode';
-import Resume from './Resume';
-import Social from './social';
-import Skills from './skills';
+import jpg from '../components/milky-way-bw.jpg';
+import Kode from '../components/Kode';
+import Resume from '../components/Resume';
+import Social from '../components/social';
+import Skills from '../components/skills';
 
 const Wrapper = styled.div`
   height: 100%;

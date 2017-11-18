@@ -9,6 +9,7 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
+    "serve-build": "serve public",
     "prepush": "yarn validate",
     "validate": "run-p lint",
     "lint": "eslint src"
@@ -34,6 +35,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
     "husky": "^0.14.3",
-    "npm-run-all": "^4.1.2"
+    "npm-run-all": "^4.1.2",
+    "serve": "^6.4.1"
   }
 }

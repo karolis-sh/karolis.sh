@@ -27,6 +27,7 @@ const Link = ({
   <Container>
     <Content
       href={url}
+      rel='noopener'
       target='_blank'
       onClick={() => {
         console.log(window.ga);

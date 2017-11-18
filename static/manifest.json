@@ -1,5 +1,11 @@
 {
-  "name": "App",
+  "name": "kode.lt",
+  "short_name": "kode.lt",
+  "background_color": "#000",
+  "theme_color": "#f7df1e",
+  "display": "standalone",
+  "lang": "en-US",
+  "start_url": ".",
   "icons": [
     {
       "src": "/android-icon-36x36.png",
