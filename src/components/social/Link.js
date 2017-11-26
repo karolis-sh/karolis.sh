@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import Isvg from 'react-inlinesvg';
 
+import { callGA } from '../../utils';
 import * as icons from './icons';
 
-const Container = styled.div`display: table;`;
+const Container = styled.div`
+  display: table;
+`;
 
 const Content = styled.a`
   display: flex;
@@ -30,11 +33,7 @@ const Link = ({
       rel='noopener'
       target='_blank'
       onClick={() => {
-        console.log(window.ga);
-        // ReactGA.event({
-        //   category: 'SocialLink',
-        //   action: `Click${icon[0].toUpperCase()}${icon.slice(1)}`,
-        // });
+        callGA('send', 'event', 'SocialLink', `Click${icon[0].toUpperCase()}${icon.slice(1)}`);
       }}
       {...props}
     >
