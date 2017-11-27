@@ -9,7 +9,7 @@ _aws := $(_python) $(_venv)/bin/aws
 # ################################################################
 
 install:
-	virtualenv -p python3 $(_venv)
+	python3 -m venv $(_venv)
 	make update
 	make setup.aws
 
