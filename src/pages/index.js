@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
-import jpg from '../components/milky-way-bw.jpg';
+import backgroundImage from '../style/img/milky-way-bw.jpg';
 import Kode from '../components/Kode';
 import Resume from '../components/Resume';
 import Social from '../components/social';
@@ -8,7 +8,7 @@ import Skills from '../components/skills';
 
 const Wrapper = styled.div`
   height: 100%;
-  background: url(${`${jpg}`}) no-repeat center center fixed;
+  background: url(${`${backgroundImage}`}) no-repeat center center fixed;
   background-size: cover;
   display: flex;
   align-items: center;
