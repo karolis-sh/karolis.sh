@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'react-emotion';
+
 import backgroundImage from '../style/img/milky-way-bw.jpg';
-import Kode from '../components/Kode';
-import Resume from '../components/Resume';
-import Social from '../components/social';
-import Skills from '../components/skills';
+import { Kode, Resume, Social, Skills } from '../components';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -60,27 +58,31 @@ const Header = styled.div`
   }
 `;
 
-const Heading = styled.h1`font-size: 25px;`;
+const Heading = styled.h1`
+  font-size: 25px;
+`;
 
-const IndexPage = () => (
-  <Wrapper>
-    <Content>
-      <div>
-        <Header>
-          <Kode />
-          <Resume className='-resume' />
-        </Header>
-        <Heading>Karolis Šarapnickis - Senior Software Developer</Heading>
-        <p className='-text'>
-          I build high quality web/mobile/desktop apps using JavaScript technologies. I have experience working with the
-          whole stack but I am more of a Front-end oriented Software Developer.
-        </p>
-        <p>Key technologies I am experienced with:</p>
-        <Skills />
-        <Social className='-social' />
-      </div>
-    </Content>
-  </Wrapper>
-);
+function Page() {
+  return (
+    <Wrapper>
+      <Content>
+        <div>
+          <Header>
+            <Kode />
+            <Resume className='-resume' />
+          </Header>
+          <Heading>Karolis Šarapnickis - Senior Software Developer</Heading>
+          <p className='-text'>
+            I build high quality web/mobile/desktop apps using JavaScript technologies. I have experience working with
+            the whole stack but I am more of a Front-end oriented Software Developer.
+          </p>
+          <p>Key technologies I am experienced with:</p>
+          <Skills />
+          <Social className='-social' />
+        </div>
+      </Content>
+    </Wrapper>
+  );
+}
 
-export default IndexPage;
+export default Page;

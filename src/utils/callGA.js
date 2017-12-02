@@ -6,4 +6,4 @@ const callGA = (...args) => {
   }
 };
 
-export { callGA };
+export default callGA;

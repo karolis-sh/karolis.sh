@@ -10,7 +10,9 @@ const Container = styled.span`
   padding: 0.125em 0.6em 0.16em 0.5em;
 `;
 
-const Badge = ({ children }) => <Container>#{children}</Container>;
+function Badge({ children }) {
+  return <Container>#{children}</Container>;
+}
 
 Badge.propTypes = {
   children: PropTypes.node.isRequired,

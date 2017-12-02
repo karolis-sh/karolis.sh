@@ -13,17 +13,19 @@ const Container = styled.p`
   }
 `;
 
-const Badges = () => (
-  <Container>
-    <Badge>JavaScript</Badge>
-    <Badge>React</Badge>
-    <Badge>Redux</Badge>
-    <Badge>HTML</Badge>
-    <Badge>CSS</Badge>
-    <Badge>Electron</Badge>
-    <Badge>React-Native</Badge>
-    <Badge>Node</Badge>
-  </Container>
-);
+function Badges() {
+  return (
+    <Container>
+      <Badge>JavaScript</Badge>
+      <Badge>React</Badge>
+      <Badge>Redux</Badge>
+      <Badge>HTML</Badge>
+      <Badge>CSS</Badge>
+      <Badge>Electron</Badge>
+      <Badge>React-Native</Badge>
+      <Badge>Node</Badge>
+    </Container>
+  );
+}
 
 export default Badges;

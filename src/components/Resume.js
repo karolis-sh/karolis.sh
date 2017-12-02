@@ -12,18 +12,20 @@ const Container = styled.a`
   color: white;
 `;
 
-const Resume = props => (
-  <div {...props}>
-    <Container
-      href='/Karolis_CV.pdf'
-      download
-      onClick={() => {
-        callGA('send', 'event', 'Resume', 'Download');
-      }}
-    >
-      CV
-    </Container>
-  </div>
-);
+function Resume(props) {
+  return (
+    <div {...props}>
+      <Container
+        href='/Karolis_CV.pdf'
+        download
+        onClick={() => {
+          callGA('send', 'event', 'Resume', 'Download');
+        }}
+      >
+        CV
+      </Container>
+    </div>
+  );
+}
 
 export default Resume;

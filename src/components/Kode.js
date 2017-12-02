@@ -33,12 +33,14 @@ const Wrapper = styled.div`
   }
 `;
 
-const Kode = props => (
-  <div {...props}>
-    <Wrapper>
-      C<span>ODE</span>
-    </Wrapper>
-  </div>
-);
+function Kode(props) {
+  return (
+    <div {...props}>
+      <Wrapper>
+        C<span>ODE</span>
+      </Wrapper>
+    </div>
+  );
+}
 
 export default Kode;

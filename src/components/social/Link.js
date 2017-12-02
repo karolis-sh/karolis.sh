@@ -24,24 +24,26 @@ const Svg = styled(Isvg)`
   fill: white;
 `;
 
-const Link = ({
+function Link({
   url, icon, text, ...props
-}) => (
-  <Container>
-    <Content
-      href={url}
-      rel='noopener'
-      target='_blank'
-      onClick={() => {
-        callGA('send', 'event', 'SocialLink', `Click${icon[0].toUpperCase()}${icon.slice(1)}`);
-      }}
-      {...props}
-    >
-      <Svg src={icons[icon]} alt={`${icon}-link`} title={`Link to ${icon}`} />
-      {text}
-    </Content>
-  </Container>
-);
+}) {
+  return (
+    <Container>
+      <Content
+        href={url}
+        rel='noopener'
+        target='_blank'
+        onClick={() => {
+          callGA('send', 'event', 'SocialLink', `Click${icon[0].toUpperCase()}${icon.slice(1)}`);
+        }}
+        {...props}
+      >
+        <Svg src={icons[icon]} alt={`${icon}-link`} title={`Link to ${icon}`} />
+        {text}
+      </Content>
+    </Container>
+  );
+}
 
 Link.propTypes = {
   url: PropTypes.string,
