@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 
+import { CV_FILE } from '../constants';
 import { callGA } from '../utils';
 
 const Container = styled.a`
@@ -16,7 +17,7 @@ function Resume(props) {
   return (
     <div {...props}>
       <Container
-        href='/Karolis_CV.pdf'
+        href={`/${CV_FILE}`}
         download
         onClick={() => {
           callGA('send', 'event', 'Resume', 'Download');

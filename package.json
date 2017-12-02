@@ -1,15 +1,14 @@
 {
   "name": "kode.lt",
   "version": "1.0.0",
-  "description": "Personal links website",
+  "description": "Personal website",
   "repository": "git@github.com:buz-zard/kode.lt.git",
   "author": "Karolis <pastas.k@gmail.com>",
   "license": "MIT",
-  "main": "n/a",
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
-    "serve-build": "serve public",
+    "test-build": "yarn build && serve public",
     "prepush": "yarn validate",
     "validate": "run-p lint",
     "lint": "eslint src"
