@@ -1,8 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { injectGlobal } from 'react-emotion';
 
-import './index.css';
+// eslint-disable-next-line no-unused-expressions
+injectGlobal`
+  body {
+    margin: 0;
+    font-family: "Varela Round", sans-serif;
+    font-size: 18px;
+  }
+
+  [data-reactroot] {
+    height: 100vh;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+`;
 
 const Body = ({ children }) => (
   <div>
