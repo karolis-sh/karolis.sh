@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import '../style';
-import backgroundImage from '../style/img/milky-way-bw.jpg';
+import imgSmall from '../style/img/milky-way-small.jpg';
 
 function Body({ children }) {
   return (
@@ -41,11 +41,11 @@ function Body({ children }) {
         <meta property='og:url' content='https://kode.lt/' />
         <meta property='og:title' content='Karolis Šarapnickis' />
         <meta property='og:description' content='My personal page - who I am, my resume and social links.' />
-        <meta property='og:image' content={`https://kode.lt${backgroundImage}`} />
-        <meta property='og:image:url' content={`https://kode.lt${backgroundImage}`} />
+        <meta property='og:image' content={`https://kode.lt${imgSmall}`} />
+        <meta property='og:image:url' content={`https://kode.lt${imgSmall}`} />
         <meta property='og:image:type' content='image/jpeg' />
-        <meta property='og:image:width' content='1920' />
-        <meta property='og:image:height' content='1280' />
+        <meta property='og:image:width' content='600' />
+        <meta property='og:image:height' content='400' />
 
         <meta name='google-site-verification' content='bh9kyOfmJfPsonP1Rf_UiKiAvzlnw6Jao5CUEs28NdA' />
       </Helmet>

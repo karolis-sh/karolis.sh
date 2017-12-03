@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-import backgroundImage from '../style/img/milky-way-bw.jpg';
+import imgHigh from '../style/img/milky-way-high.jpg';
 import { Kode, Resume, Social, Skills } from '../components';
 import data from '../data';
 
 const SpaceBackground = styled.div`
-  height: 100%;
-  background: url(${`${backgroundImage}`}) no-repeat center center fixed;
+  background: url(${`${imgHigh}`}) no-repeat center center fixed;
   background-color: black;
   background-size: cover;
+  height: 100%;
   display: flex;
   align-items: center;
 `;
