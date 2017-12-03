@@ -8,6 +8,7 @@ import data from '../data';
 const SpaceBackground = styled.div`
   height: 100%;
   background: url(${`${backgroundImage}`}) no-repeat center center fixed;
+  background-color: black;
   background-size: cover;
   display: flex;
   align-items: center;
