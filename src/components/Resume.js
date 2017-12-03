@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
-import { CV_FILE } from '../constants';
 import { callGA } from '../utils';
 
 const Container = styled.a`
@@ -13,11 +13,11 @@ const Container = styled.a`
   color: white;
 `;
 
-function Resume(props) {
+function Resume({ file, ...props }) {
   return (
     <div {...props}>
       <Container
-        href={`/${CV_FILE}`}
+        href={file}
         download
         onClick={() => {
           callGA('send', 'event', 'Resume', 'Download');
@@ -28,5 +28,9 @@ function Resume(props) {
     </div>
   );
 }
+
+Resume.propTypes = {
+  file: PropTypes.string.isRequired,
+};
 
 export default Resume;

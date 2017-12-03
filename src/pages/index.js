@@ -3,8 +3,9 @@ import styled from 'react-emotion';
 
 import backgroundImage from '../style/img/milky-way-bw.jpg';
 import { Kode, Resume, Social, Skills } from '../components';
+import data from '../data';
 
-const Wrapper = styled.div`
+const SpaceBackground = styled.div`
   height: 100%;
   background: url(${`${backgroundImage}`}) no-repeat center center fixed;
   background-size: cover;
@@ -12,39 +13,23 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Content = styled.div`
+const Container = styled.div`
   color: white;
   max-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 1rem;
+`;
 
-  & .-text {
-    margin: 1.5rem 0;
+const Wrapper = styled.div`
+  @media (min-width: 600px) {
+    width: 70%;
+    margin-left: 8%;
   }
 
-  & .-social {
-    margin-top: 3rem;
-  }
-
-  > div {
-    @media (min-width: 600px) {
-      width: 70%;
-      margin-left: 10%;
-
-      & .-social {
-        margin-top: 4.5rem;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      width: 50%;
-      margin-left: 15%;
-
-      & .-social {
-        margin-top: 6rem;
-      }
-    }
+  @media (min-width: 1200px) {
+    width: 50%;
+    margin-left: 16%;
   }
 `;
 
@@ -53,7 +38,7 @@ const Header = styled.div`
   justify-content: space-between;
   margin-bottom: 2rem;
 
-  & .-resume {
+  > *:last-child {
     margin-top: 1rem;
   }
 `;
@@ -62,26 +47,40 @@ const Heading = styled.h1`
   font-size: 25px;
 `;
 
+const IntroText = styled.p`
+  margin: 1.5rem 0;
+`;
+
+const SocialWrapper = styled.div`
+  margin-top: 3rem;
+
+  @media (min-width: 600px) {
+    margin-top: 4.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: 6rem;
+  }
+`;
+
 function Page() {
   return (
-    <Wrapper>
-      <Content>
-        <div>
+    <SpaceBackground>
+      <Container>
+        <Wrapper>
           <Header>
             <Kode />
-            <Resume className='-resume' />
+            <Resume file={`/${data.cvFile}`} />
           </Header>
-          <Heading>Karolis Šarapnickis - Senior Software Developer</Heading>
-          <p className='-text'>
-            I build high quality web/mobile/desktop apps using JavaScript technologies. I have experience working with
-            the whole stack but I am more of a Front-end oriented Software Developer.
-          </p>
-          <p>Key technologies I am experienced with:</p>
-          <Skills />
-          <Social className='-social' />
-        </div>
-      </Content>
-    </Wrapper>
+          <Heading>{data.title}</Heading>
+          <IntroText>{data.introText}</IntroText>
+          <Skills title={data.skillsTitle} items={data.skills} />
+          <SocialWrapper>
+            <Social links={data.socialLinks} />
+          </SocialWrapper>
+        </Wrapper>
+      </Container>
+    </SpaceBackground>
   );
 }
 
