@@ -18,7 +18,7 @@ minify () {
     -interlace none \
     -strip \
     -colorspace Gray \
-    -quality 33 \
+    -quality 40 \
     -thumbnail $WIDTH \
     $TO
   echo "Minified \033[0;32m$TO\033[0m"
