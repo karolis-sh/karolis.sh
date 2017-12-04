@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
+import styled from 'react-emotion';
 
 const Wrapper = styled.div`
   font-family: 'Varela Round', sans-serif;
@@ -34,13 +33,14 @@ const Wrapper = styled.div`
   }
 `;
 
-
-const Kode = props => (
-  <div {...props}>
-    <Wrapper>
-      C<span>ODE</span>
-    </Wrapper>
-  </div>
-);
+function Kode(props) {
+  return (
+    <div {...props}>
+      <Wrapper>
+        C<span>ODE</span>
+      </Wrapper>
+    </div>
+  );
+}
 
 export default Kode;

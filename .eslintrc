@@ -1,18 +1,18 @@
 {
-  "parser": "babel-eslint",
-  "extends": "airbnb",
-  "plugins": [
-    "babel",
-    "react"
-  ],
   "env": {
     "browser": true,
-    "jest": true
+    "es6": true
+  },
+  "extends": "airbnb",
+  "plugins": ["react"],
+  "settings": {
+    "import/core-modules": ["react", "prop-types", "react-helmet"]
   },
   "rules": {
     "object-curly-spacing": [0],
     "import/prefer-default-export": [0],
     "jsx-quotes": ["error", "prefer-single"],
+    "jsx-a11y/anchor-is-valid": [0],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-first-prop-new-line": 0,
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
