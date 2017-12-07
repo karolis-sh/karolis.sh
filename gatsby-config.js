@@ -22,7 +22,7 @@ module.exports = {
         name: 'kode.lt',
         short_name: 'kode.lt',
         background_color: '#000',
-        theme_color: '#f7df1e',
+        theme_color: '#000',
         display: 'standalone',
         lang: 'en-US',
         start_url: '.',
