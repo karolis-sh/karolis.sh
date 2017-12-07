@@ -6,6 +6,9 @@ node_modules
 /public/
 /deployment/
 
+# testing
+cdp.pid
+
 # other
 yarn-error.log
 .vscode
