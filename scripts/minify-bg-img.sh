@@ -4,6 +4,7 @@ minify () {
   FROM=$1
   TO=$2
   WIDTH=$3
+  QUALITY=$4
   cp $FROM $TO
   mogrify \
     -filter Triangle \
@@ -18,13 +19,13 @@ minify () {
     -interlace none \
     -strip \
     -colorspace Gray \
-    -quality 40 \
+    -quality $QUALITY \
     -thumbnail $WIDTH \
     $TO
   echo "Minified \033[0;32m$TO\033[0m"
 }
 
-minify resources/milky-way.jpg src/style/img/milky-way-small.jpg 600
-minify resources/milky-way.jpg src/style/img/milky-way-medium.jpg 1200
-minify resources/milky-way.jpg src/style/img/milky-way-high.jpg 1920
+minify resources/milky-way.jpg src/style/img/milky-way-small.jpg 600 40
+minify resources/milky-way.jpg src/style/img/milky-way-medium.jpg 1200 50
+minify resources/milky-way.jpg src/style/img/milky-way-high.jpg 1920 60
 echo "Minifying complete!\n"
