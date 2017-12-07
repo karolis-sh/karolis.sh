@@ -9,3 +9,4 @@ node_modules
 # other
 yarn-error.log
 .vscode
+*.*~
