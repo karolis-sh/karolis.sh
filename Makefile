@@ -9,6 +9,8 @@ _bucket_region := --region eu-central-1
 _bucket_acl := --acl public-read
 _no_cache := --cache-control "private, no-cache, no-store, must-revalidate"
 _one_day_cache := --cache-control "public, max-age=86400"
+_one_week_cache := --cache-control "public, max-age=604800"
+_one_month_cache := --cache-control "public, max-age=2628000"
 _one_year_cache := --cache-control "public, max-age=31536000"
 
 _test_bucket := s3://test.kode.lt
@@ -44,9 +46,12 @@ _deploy: update build
 	$(_s3) rm $(_bucket) --recursive $(_bucket_region)
 	$(_s3) cp $(_build_dir)/index.html $(_bucket)/index.html \
 		$(_bucket_region) $(_bucket_acl) $(_no_cache)
+	$(_s3) cp $(_build_dir)/manifest.json $(_bucket)/manifest.json \
+		$(_bucket_region) $(_bucket_acl) $(_no_cache)
 	$(_s3) cp $(_build_dir) $(_bucket) \
 		--include "*" \
 		--exclude "index.html" \
+		--exclude "manifest.json" \
 		--exclude "static/*" \
 		--exclude "*.js" --exclude "*.js.map" \
 		--recursive $(_bucket_region) $(_bucket_acl) $(_one_day_cache)
@@ -60,7 +65,7 @@ _deploy: update build
 	$(_aws) cloudfront create-invalidation --distribution-id $(_cloudfront) --paths "/*"
 	@echo ==============================================
 	@echo
-	@echo -e Deployed to '\033[0;32m'$(_url)'\033[0m' 
+	@echo -e Deployed to '\033[0;32m'$(_url)'\033[0m'
 	@echo
 	@echo ==============================================
 
