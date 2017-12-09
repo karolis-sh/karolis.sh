@@ -7,32 +7,50 @@
     }
   },
   "formatters": ["stylish"],
-  "ignoredUrls": [],
+  "ignoredUrls": [
+    {
+      "domain": "fonts.googleapis.com",
+      "rules": ["*"]
+    },
+    {
+      "domain": "fonts.gstatic.com",
+      "rules": ["*"]
+    },
+    {
+      "domain": "www.google-analytics.com",
+      "rules": ["*"]
+    }
+  ],
   "rules": {
     "amp-validator": "off",
     "apple-touch-icons": "error",
     "axe": "error",
     "content-type": "error",
     "disown-opener": "error",
-    "highest-available-document-mode": "error",
+    "highest-available-document-mode": [
+      "warning",
+      {
+        "requireMetaTag": true
+      }
+    ],
     "html-checker": "error",
     "image-optimization-cloudinary": "off",
     "manifest-app-name": "error",
     "manifest-exists": "error",
-    "manifest-file-extension": "error",
+    "manifest-file-extension": "warning",
     "manifest-is-valid": "error",
     "meta-charset-utf-8": "error",
     "meta-viewport": "error",
-    "no-disallowed-headers": "error",
+    "no-disallowed-headers": "warning",
     "no-friendly-error-pages": "error",
     "no-html-only-headers": "error",
     "no-http-redirects": "error",
     "no-protocol-relative-urls": "error",
     "no-vulnerable-javascript-libraries": "error",
     "ssllabs": "off",
-    "strict-transport-security": "error",
+    "strict-transport-security": "warning",
     "validate-set-cookie-header": "error",
-    "x-content-type-options": "error"
+    "x-content-type-options": "warning"
   },
   "rulesTimeout": 120000
 }
