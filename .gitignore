@@ -8,6 +8,7 @@ node_modules
 
 # testing
 cdp.pid
+*.report.html
 
 # other
 yarn-error.log

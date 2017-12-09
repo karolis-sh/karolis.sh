@@ -16,8 +16,14 @@
     "prepush": "yarn qa",
     "qa": "run-p lint",
     "lint": "eslint src",
-    "lint-web-test": "sonarwhal $npm_package_config_test_url",
-    "lint-web-prod": "sonarwhal $npm_package_config_prod_url"
+    "test-siteqa": "run-s test-siteqa:*",
+    "test-siteqa:lighthouse":
+      "lighthouse $npm_package_config_test_url --output-path=./test.lightouse.report.html && google-chrome test.lightouse.report.html",
+    "test-siteqa:sonarwhal": "sonarwhal $npm_package_config_test_url",
+    "prod-siteqa": "run-s prod-siteqa:*",
+    "prod-siteqa:lighthouse":
+      "lighthouse $npm_package_config_prod_url --output-path=./prod.lightouse.report.html && google-chrome prod.lightouse.report.html",
+    "prod-siteqa:sonarwhal": "sonarwhal $npm_package_config_prod_url"
   },
   "dependencies": {
     "babel-plugin-emotion": "^8.0.9",
@@ -42,6 +48,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
     "husky": "^0.14.3",
+    "lighthouse": "^2.6.0",
     "npm-run-all": "^4.1.2",
     "serve": "^6.4.1",
     "sonarwhal": "^0.17.0"
