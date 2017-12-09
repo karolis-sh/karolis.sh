@@ -31,7 +31,7 @@ function Link({
     <Container>
       <Content
         href={url}
-        rel='noopener'
+        rel='noopener noreferrer'
         target='_blank'
         onClick={() => {
           callGA('send', 'event', 'SocialLink', `Click${icon[0].toUpperCase()}${icon.slice(1)}`);

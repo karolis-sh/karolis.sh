@@ -45,8 +45,10 @@ deploy.prod:
 _deploy: update build
 	$(_s3) rm $(_bucket) --recursive $(_bucket_region)
 	$(_s3) cp $(_build_dir)/index.html $(_bucket)/index.html \
+		--content-type 'text/html; charset=utf-8' \
 		$(_bucket_region) $(_bucket_acl) $(_no_cache)
 	$(_s3) cp $(_build_dir)/manifest.json $(_bucket)/manifest.json \
+		--content-type 'application/manifest+json; charset=utf-8' \
 		$(_bucket_region) $(_bucket_acl) $(_no_cache)
 	$(_s3) cp $(_build_dir) $(_bucket) \
 		--include "*" \
@@ -57,7 +59,8 @@ _deploy: update build
 		--recursive $(_bucket_region) $(_bucket_acl) $(_one_day_cache)
 	$(_s3) cp $(_build_dir) $(_bucket) \
 		--exclude "*" \
-		--include "*.js" --include "*.js.map" \
+		--include "*.js" \
+		--content-type 'text/javascript; charset=utf-8' \
 		--recursive $(_bucket_region) $(_bucket_acl) $(_one_year_cache)
 	$(_s3) cp $(_build_dir)/static $(_bucket)/static \
 		--recursive $(_bucket_region) $(_bucket_acl) $(_one_year_cache)
@@ -85,5 +88,5 @@ freeze:
 	$(_pip) freeze > ./deployment/requirements.txt
 
 build:
-	yarn validate
+	yarn qa
 	yarn build
