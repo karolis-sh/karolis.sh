@@ -49,9 +49,9 @@ aws s3 cp $BUILD_DIR $BUCKET \
   --include "*.js" \
   --include "*.js.map" \
   --content-type "text/javascript; charset=utf-8" \
-  --recursive --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$ONE_YEAR_CACHE"
+  --recursive --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$ONE_MONTH_CACHE"
 aws s3 cp $BUILD_DIR/static $BUCKET/static \
-  --recursive --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$ONE_YEAR_CACHE"
+  --recursive --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$ONE_MONTH_CACHE"
 aws s3 cp $BUILD_DIR $BUCKET \
   --include "*" \
   --exclude "index.html" \
