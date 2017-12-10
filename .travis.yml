@@ -7,9 +7,8 @@ cache:
   directories:
     - node_modules
 script: yarn qa
-after_success:
-  - pip install --user awscli
-  - export PATH=$PATH:$HOME/.local/bin
-  - aws iam get-user
-  - eval $(aws ecr get-login --region us-central-1)
-  - make deploy.test
+deploy:
+  provider: script
+  script: deploy.test
+  on:
+    branch: feat/travis-deployments
