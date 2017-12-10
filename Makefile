@@ -1,9 +1,9 @@
-setup-env:
+setup:
 	bash scripts/venv-install.sh
+	bash scripts/venv-update.sh
 	bash scripts/aws-configure.sh
 
-deploy-staging:
-	yarn --freeze-lockfile
-	yarn qa
+deploy-test:
+	yarn
 	bash scripts/venv-update.sh
 	bash scripts/local-deploy.sh test

@@ -9,5 +9,5 @@
 
 ## Deployment
 
-* `make setup-env` - setup local env for local deployments :wrench:
-* `make deploy-staging` - deploy to staging env :rocket:
+* `make setup` - setup local machine for local deployments :wrench:
+* `make deploy-test` - deploy to testing environment :rocket:

@@ -1,6 +1,7 @@
 #!/bin/bash
 . $(dirname "$(readlink -f "$0")")/config.sh
 
+set -e
 cd $ROOT_DIR
 
 # Test if correct deploy terget is provided
@@ -18,10 +19,18 @@ else
 fi
 
 echo -e "Starting deployment vairables:"
-echo -e "${C_BLUE}env        ${C_DEFAULT}- ${C_GREEN}${DEPLOY_TERGET}"
+echo -e "${C_BLUE}env        ${C_DEFAULT}- ${C_GREEN}${1}"
 echo -e "${C_BLUE}bucket     ${C_DEFAULT}- ${C_GREEN}${BUCKET}"
 echo -e "${C_BLUE}cloudfront ${C_DEFAULT}- ${C_GREEN}${CLOUDFRONT_ID}"
 echo -e "${C_BLUE}url        ${C_DEFAULT}- ${C_GREEN}${URL}${C_DEFAULT}"
+
+# Check for AWS credentials
+AWS_USER=$(aws iam get-user)
+if [ "$AWS_USER" == "" ]; then
+  echo -e "${C_RED}No AWS user found${C_DEFAULT}"
+  exit 1
+fi
+echo "AWS_USER = $AWS_USER"
 
 # Build artifacts
 yarn build

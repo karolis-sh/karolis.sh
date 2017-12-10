@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import '../style';
+import data from '../data';
 import imgSmall from '../style/img/milky-way-small.jpg';
 
 function Body({ children }) {
@@ -13,8 +14,8 @@ function Body({ children }) {
         <meta httpEquiv='Cache-control' content='public' />
         <meta httpEquiv='x-ua-compatible' content='ie=edge' />
 
-        <title>Karolis Šarapnickis</title>
-        <meta name='description' content='My personal page - who I am, my resume and social links.' />
+        <title>{data.metaTitle}</title>
+        <meta name='description' content={data.metaDescription} />
         <link rel='alternate' href='https://kode.lt/' hrefLang='en-us' />
 
         <link rel='shortcut icon' href='/favicon.ico' />
@@ -28,8 +29,8 @@ function Body({ children }) {
         <meta name='theme-color' content='#000' />
 
         <meta property='og:url' content='https://kode.lt/' />
-        <meta property='og:title' content='Karolis Šarapnickis' />
-        <meta property='og:description' content='My personal page - who I am, my resume and social links.' />
+        <meta property='og:title' content={data.metaTitle} />
+        <meta property='og:description' content={data.metaDescription} />
         <meta property='og:image' content={`https://kode.lt${imgSmall}`} />
         <meta property='og:image:url' content={`https://kode.lt${imgSmall}`} />
         <meta property='og:image:type' content='image/jpeg' />
