@@ -7,6 +7,7 @@ cache:
 script: yarn qa
 before_deploy:
   - sudo python -m pip install awscli==1.14.7
+  - yarn --freeze-lockfile
 deploy:
   # deploy develop to the staging environment
   - provider: script
