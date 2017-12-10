@@ -33,6 +33,7 @@ fi
 echo "AWS_USER = $AWS_USER"
 
 # Build artifacts
+yarn --freeze-lockfile
 yarn build
 
 # Sync s3
