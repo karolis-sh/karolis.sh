@@ -4,11 +4,17 @@ node_js:
   - "8"
 cache:
   yarn: true
-  directories:
-    - node_modules
 script: yarn qa
+before_deploy:
+  - sudo python -m pip install awscli==1.14.7
 deploy:
-  provider: script
-  script: scripts/deploy.sh test
-  on:
-    branch: feat/travis-deployments
+  # deploy develop to the staging environment
+  - provider: script
+    script: bash scripts/deploy.sh test
+    on:
+      branch: develop
+  # deploy master to production
+  - provider: script
+    script: bash scripts/deploy.sh prod
+    on:
+      branch: master
