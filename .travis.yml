@@ -10,5 +10,6 @@ script: yarn qa
 after_success:
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
+  - iam get-user
   - eval $(aws ecr get-login --region us-central-1)
   - make deploy.test
