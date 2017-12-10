@@ -9,6 +9,5 @@
 
 ## Deployment
 
-* `make install` - install and setup deployment environment :wrench:
-* `make deploy.test` - deploy to AWS `test` env :rocket:
-* `make deploy.prod` - deploy to AWS `prod` env :rocket:
+* `make setup-env` - setup local env for local deployments :wrench:
+* `make deploy-staging` - deploy to staging env :rocket:
