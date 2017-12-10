@@ -1,10 +1,10 @@
 # dependencies
-node_modules
+/node_modules/
+/venv/
 
 # build
 .cache/
 /public/
-/deployment/
 
 # testing
 cdp.pid
