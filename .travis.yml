@@ -9,6 +9,6 @@ cache:
 script: yarn qa
 deploy:
   provider: script
-  script: deploy.test
+  script: make deploy.test
   on:
     branch: feat/travis-deployments
