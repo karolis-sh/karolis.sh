@@ -1,6 +1,7 @@
 #!/bin/bash
 . $(dirname "$(readlink -f "$0")")/config.sh
 
+set -e
 cd $ROOT_DIR
 
 # Test if correct deploy terget is provided
@@ -32,6 +33,7 @@ fi
 echo "AWS_USER = $AWS_USER"
 
 # Build artifacts
+yarn --freeze-lockfile
 yarn build
 
 # Sync s3
