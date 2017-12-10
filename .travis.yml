@@ -10,11 +10,13 @@ before_deploy:
 deploy:
   # deploy develop to the staging environment
   - provider: script
+    skip_cleanup: true
     script: bash scripts/deploy.sh test
     on:
       branch: develop
   # deploy master to production
   - provider: script
+    skip_cleanup: true
     script: bash scripts/deploy.sh prod
     on:
       branch: master

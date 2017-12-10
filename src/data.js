@@ -1,7 +1,7 @@
 export default {
   metaTitle: 'Karolis Šarapnickis',
   metaDescription: 'My personal page - who I am, my resume and social links.',
-  cvFile: 'Karolis_CV_2017-11.pdf',
+  cvFile: 'Karolis_CV_2017-12.pdf',
   title: 'Karolis Šarapnickis - Senior Software Developer',
   introText: `
     I build high quality web/mobile/desktop apps using JavaScript technologies.
