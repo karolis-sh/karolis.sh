@@ -37,7 +37,7 @@
     "gatsby-plugin-google-fonts": "^0.0.3",
     "gatsby-plugin-manifest": "^1.0.9",
     "gatsby-plugin-offline": "^1.0.11",
-    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-react-helmet": "^2.0.3",
     "react-emotion": "^8.0.9",
     "react-inlinesvg": "^0.7.0"
   },
@@ -51,6 +51,6 @@
     "lighthouse": "^2.6.0",
     "npm-run-all": "^4.1.2",
     "serve": "^6.4.1",
-    "sonarwhal": "^0.17.0"
+    "sonarwhal": "^0.21.0"
   }
 }
