@@ -5,7 +5,7 @@
 
 ## Development
 
-* `yarn start` - start development server :construction:
+* `yarn develop` - start development server :construction:
 
 ## Deployment
 

@@ -10,7 +10,7 @@
     "prod_url": "https://kode.lt/"
   },
   "scripts": {
-    "start": "gatsby develop",
+    "develop": "gatsby develop",
     "build": "gatsby build",
     "try-build": "yarn build && serve public",
     "prepush": "yarn qa",
@@ -51,6 +51,6 @@
     "lighthouse": "^2.6.0",
     "npm-run-all": "^4.1.2",
     "serve": "^6.4.1",
-    "sonarwhal": "^0.17.0"
+    "sonarwhal": "^1.6.1"
   }
 }
