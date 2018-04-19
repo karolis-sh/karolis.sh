@@ -41,6 +41,9 @@ aws s3 rm $BUCKET --recursive --region $BUCKET_REGION
 aws s3 cp $BUILD_DIR/index.html $BUCKET/index.html \
   --content-type "text/html; charset=utf-8" \
   --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$NO_CACHE"
+aws s3 cp $BUILD_DIR/sw.js $BUCKET/sw.js \
+  --content-type "text/javascript; charset=utf-8" \
+  --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$NO_CACHE"
 aws s3 cp $BUILD_DIR/manifest.json $BUCKET/manifest.json \
   --content-type "application/manifest+json; charset=utf-8" \
   --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$NO_CACHE"
@@ -48,6 +51,7 @@ aws s3 cp $BUILD_DIR $BUCKET \
   --exclude "*" \
   --include "*.js" \
   --include "*.js.map" \
+  --exclude "sw.js" \
   --content-type "text/javascript; charset=utf-8" \
   --recursive --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$ONE_MONTH_CACHE"
 aws s3 cp $BUILD_DIR/static $BUCKET/static \
