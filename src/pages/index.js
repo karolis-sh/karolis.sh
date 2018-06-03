@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'react-emotion';
 
 import imgHigh from '../style/img/milky-way-high.jpg';
-import { Kode, Resume, Social, Skills } from '../components';
+import { Resume, Social, Skills } from '../components';
 import data from '../data';
 
 const SpaceBackground = styled.div`
@@ -37,15 +37,33 @@ const Wrapper = styled.div`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 2rem;
 
-  > *:last-child {
-    margin-top: 1rem;
+  > *:first-child {
+    font-size: 1.5rem;
+    background: #f7df1e;
+    color: #000;
+    padding: 0.1rem 0.75rem 0.1rem 0;
+    margin-right: 1rem;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+
+    &:before {
+      content: 'x';
+      background: #f7df1e;
+      position: absolute;
+      padding-top: 0.1rem;
+      padding-bottom: 0.1rem;
+      margin-top: -0.1rem;
+      margin-left: -100%;
+      width: 100vw;
+    }
   }
 `;
 
 const Heading = styled.h1`
-  font-size: 25px;
+  font-size: 1.25rem;
 `;
 
 const IntroText = styled.p`
@@ -70,7 +88,7 @@ function Page() {
       <Container>
         <Wrapper>
           <Header>
-            <Kode />
+            <div>Karolis Šarapnickis</div>
             <Resume file={`/${data.cvFile}`} />
           </Header>
           <Heading>{data.title}</Heading>

@@ -1,5 +1,5 @@
 {
-  "name": "kode.lt",
+  "name": "karolis.sh",
   "version": "1.0.0",
   "description": "Personal website",
   "repository": "git@github.com:buz-zard/kode.lt.git",
@@ -7,7 +7,7 @@
   "license": "MIT",
   "config": {
     "test_url": "https://d21ippl8cthwe2.cloudfront.net/",
-    "prod_url": "https://kode.lt/"
+    "prod_url": "https://karolis.sh/"
   },
   "scripts": {
     "develop": "gatsby develop",
