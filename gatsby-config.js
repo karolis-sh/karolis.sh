@@ -11,15 +11,15 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-97822720-1',
+        trackingId: 'UA-120203619-1',
         anonymize: true,
       },
     },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'kode.lt',
-        short_name: 'kode.lt',
+        name: 'karolis.sh',
+        short_name: 'karolis.sh',
         background_color: '#000',
         theme_color: '#000',
         display: 'standalone',

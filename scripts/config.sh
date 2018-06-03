@@ -23,9 +23,9 @@ ONE_WEEK_CACHE="public, max-age=604800"
 ONE_MONTH_CACHE="public, max-age=2628000"
 ONE_YEAR_CACHE="public, max-age=31536000"
 
-TEST_BUCKET=s3://test.kode.lt
-TEST_CLOUDFRONT_ID=E2AP5DCC9LWDEN
+TEST_BUCKET=s3://test.karolis.sh
+TEST_CLOUDFRONT_ID=E2D7S1LJBZP69B
 TEST_URL=https://d21ippl8cthwe2.cloudfront.net/
-PROD_BUCKET=s3://kode.lt
-PROD_CLOUDFRONT_ID=ERWVMIVW1VDHQ
-PROD_URL=https://kode.lt/
+PROD_BUCKET=s3://karolis.sh
+PROD_CLOUDFRONT_ID=E26XV9XZP5F4KB
+PROD_URL=https://karolis.sh/

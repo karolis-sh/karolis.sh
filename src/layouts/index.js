@@ -16,7 +16,7 @@ function Body({ children }) {
 
         <title>{data.metaTitle}</title>
         <meta name='description' content={data.metaDescription} />
-        <link rel='alternate' href='https://kode.lt/' hrefLang='en-us' />
+        <link rel='alternate' href='https://karolis.sh/' hrefLang='en-us' />
 
         <link rel='shortcut icon' href='/favicon.ico' />
         <link rel='apple-touch-icon' href='/apple-icon-180x180.png' />
@@ -28,16 +28,17 @@ function Body({ children }) {
         <meta name='msapplication-TileImage' content='/ms-icon-144x144.png' />
         <meta name='theme-color' content='#000' />
 
-        <meta property='og:url' content='https://kode.lt/' />
+        <meta property='og:url' content='https://karolis.sh/' />
         <meta property='og:title' content={data.metaTitle} />
         <meta property='og:description' content={data.metaDescription} />
-        <meta property='og:image' content={`https://kode.lt${imgSmall}`} />
-        <meta property='og:image:url' content={`https://kode.lt${imgSmall}`} />
+        <meta property='og:image' content={`https://karolis.sh${imgSmall}`} />
+        <meta property='og:image:url' content={`https://karolis.sh${imgSmall}`} />
         <meta property='og:image:type' content='image/jpeg' />
         <meta property='og:image:width' content='600' />
         <meta property='og:image:height' content='400' />
+        {process.env.GATSBY_ENV === 'test' && <meta name='robots' content='noindex' />}
 
-        <meta name='google-site-verification' content='bh9kyOfmJfPsonP1Rf_UiKiAvzlnw6Jao5CUEs28NdA' />
+        <meta name='google-site-verification' content='BVDwAzvOMXmHaSZhaNF4VAAncsb2ylb9I6xYAlIjh7c' />
       </Helmet>
       {children()}
     </div>
