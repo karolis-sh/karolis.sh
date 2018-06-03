@@ -11,10 +11,8 @@ const Container = styled.div`
 `;
 
 const Content = styled.a`
-  display: flex;
   text-decoration: none;
   color: white;
-  align-items: center;
 `;
 
 const Svg = styled(Isvg)`
@@ -41,7 +39,12 @@ function Link({ url, icon, text, ...props }) {
         }}
         {...props}
       >
-        <Svg src={icons[icon]} alt={`${icon}-link`} title={`Link to ${icon}`} />
+        <Svg
+          src={icons[icon]}
+          alt={`${icon}-link`}
+          title={`Link to ${icon}`}
+          cacheGetRequests
+        />
         {text}
       </Content>
     </Container>

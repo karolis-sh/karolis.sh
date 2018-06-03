@@ -8154,9 +8154,9 @@ react-hot-loader@^3.0.0-beta.6:
     redbox-react "^1.3.6"
     source-map "^0.6.1"
 
-react-inlinesvg@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/react-inlinesvg/-/react-inlinesvg-0.7.0.tgz#33f5de4712abeee4568e238b75b32751a33846ae"
+react-inlinesvg@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/react-inlinesvg/-/react-inlinesvg-0.8.1.tgz#d981da38985d2cd0b83628eaf918ca4834f02b5d"
   dependencies:
     httpplease "^0.16.4"
     once "^1.4.0"
