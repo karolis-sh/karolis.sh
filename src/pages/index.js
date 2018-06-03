@@ -46,8 +46,8 @@ const Header = styled.div`
     color: #000;
     padding: 0.1rem 0.75rem 0.1rem 0;
     margin-right: 1rem;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 
     &:before {
       content: 'x';

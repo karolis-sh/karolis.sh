@@ -2,7 +2,7 @@ export default {
   metaTitle: 'karolis.sh',
   metaDescription: 'My personal page - who I am, my resume and social links.',
   cvFile: 'Karolis_CV_2018-06.pdf',
-  title: 'Senior Software Developer',
+  title: 'Software Developer - Team Lead',
   introText: `
     I build high quality web/mobile/desktop apps using JavaScript technologies.
     I have experience working with the whole stack but I am more of a Front-end oriented Software Developer.
