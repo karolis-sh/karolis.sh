@@ -82,6 +82,15 @@ const SocialWrapper = styled.div`
   }
 `;
 
+const TestBadge = styled.div`
+  background: #f7df1e;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.75rem;
+  padding: 0.1rem;
+`;
+
 function Page() {
   return (
     <SpaceBackground>
@@ -99,6 +108,7 @@ function Page() {
           </SocialWrapper>
         </Wrapper>
       </Container>
+      {process.env.GATSBY_ENV === 'test' && <TestBadge>test</TestBadge>}
     </SpaceBackground>
   );
 }

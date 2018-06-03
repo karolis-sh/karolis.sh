@@ -6,7 +6,7 @@
   "author": "Karolis <pastas.k@gmail.com>",
   "license": "MIT",
   "config": {
-    "test_url": "https://d21ippl8cthwe2.cloudfront.net/",
+    "test_url": "https://test.karolis.sh/",
     "prod_url": "https://karolis.sh/"
   },
   "scripts": {

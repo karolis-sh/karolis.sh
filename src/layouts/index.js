@@ -36,6 +36,7 @@ function Body({ children }) {
         <meta property='og:image:type' content='image/jpeg' />
         <meta property='og:image:width' content='600' />
         <meta property='og:image:height' content='400' />
+        {process.env.GATSBY_ENV === 'test' && <meta name='robots' content='noindex' />}
 
         <meta name='google-site-verification' content='BVDwAzvOMXmHaSZhaNF4VAAncsb2ylb9I6xYAlIjh7c' />
       </Helmet>
