@@ -7,7 +7,10 @@
   "license": "MIT",
   "config": {
     "test_url": "https://test.karolis.sh/",
-    "prod_url": "https://karolis.sh/"
+    "prod_url": "https://karolis.sh/",
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "scripts": {
     "develop": "gatsby develop",
@@ -17,12 +20,10 @@
     "qa": "run-p lint",
     "lint": "eslint src",
     "test-siteqa": "run-s test-siteqa:*",
-    "test-siteqa:lighthouse":
-      "lighthouse $npm_package_config_test_url --output-path=./test.lightouse.report.html && google-chrome test.lightouse.report.html",
+    "test-siteqa:lighthouse": "lighthouse $npm_package_config_test_url --output-path=./test.lightouse.report.html && google-chrome test.lightouse.report.html",
     "test-siteqa:sonarwhal": "sonarwhal $npm_package_config_test_url",
     "prod-siteqa": "run-s prod-siteqa:*",
-    "prod-siteqa:lighthouse":
-      "lighthouse $npm_package_config_prod_url --output-path=./prod.lightouse.report.html && google-chrome prod.lightouse.report.html",
+    "prod-siteqa:lighthouse": "lighthouse $npm_package_config_prod_url --output-path=./prod.lightouse.report.html && google-chrome prod.lightouse.report.html",
     "prod-siteqa:sonarwhal": "sonarwhal $npm_package_config_prod_url"
   },
   "dependencies": {
@@ -42,6 +43,7 @@
     "react-inlinesvg": "^0.7.0"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
