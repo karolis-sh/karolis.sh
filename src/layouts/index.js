@@ -11,7 +11,6 @@ function Body({ children }) {
     <div>
       <Helmet>
         <html lang="en" />
-        <meta httpEquiv="Cache-control" content="public" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
 
         <title>{data.metaTitle}</title>

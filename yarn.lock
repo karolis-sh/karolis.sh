@@ -53,6 +53,133 @@
     edge-diagnostics-adapter "^0.6.0"
     node-windows "^0.1.14"
 
+"@sonarwhal/formatter-stylish@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/formatter-stylish/-/formatter-stylish-2.0.3.tgz#2c9ae25df7bfb4306272514f663f421aca4b3571"
+  dependencies:
+    chalk "^2.4.0"
+    lodash.foreach "^4.5.0"
+    lodash.groupby "^4.6.0"
+    lodash.sortby "^4.7.0"
+    log-symbols "^2.2.0"
+    pluralize "^7.0.0"
+    text-table "^0.2.0"
+
+"@sonarwhal/rule-apple-touch-icons@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-apple-touch-icons/-/rule-apple-touch-icons-3.0.2.tgz#1a4b848fee148c4e8c550793d859f1ee1442f153"
+  dependencies:
+    image-size "^0.6.2"
+
+"@sonarwhal/rule-axe@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-axe/-/rule-axe-4.0.2.tgz#d4c7313fa2d39e063018011788e92fdbfe4412c9"
+  dependencies:
+    axe-core "^3.0.2"
+
+"@sonarwhal/rule-content-type@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-content-type/-/rule-content-type-3.0.4.tgz#711d570ca8424395a8d03554c94b09b1227733bc"
+  dependencies:
+    content-type "^1.0.4"
+
+"@sonarwhal/rule-disown-opener@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-disown-opener/-/rule-disown-opener-3.0.4.tgz#71ba11e2994be9a1fde0d5dcef33fe7a286828bd"
+  dependencies:
+    pluralize "^7.0.0"
+
+"@sonarwhal/rule-highest-available-document-mode@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-highest-available-document-mode/-/rule-highest-available-document-mode-3.0.4.tgz#a37f692f1b3221ae8cae4f064e35e1930d0cf327"
+
+"@sonarwhal/rule-html-checker@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-html-checker/-/rule-html-checker-4.0.0.tgz#125f80678da52a59234516f0bb157611238c1dba"
+  dependencies:
+    html-validator "^3.0.0"
+    lodash.uniqby "^4.7.0"
+
+"@sonarwhal/rule-manifest-app-name@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-manifest-app-name/-/rule-manifest-app-name-4.0.2.tgz#1395bdfee451e25c26857513d50a38e40f6aec55"
+  dependencies:
+    punycode "^2.1.0"
+
+"@sonarwhal/rule-manifest-exists@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-manifest-exists/-/rule-manifest-exists-4.0.1.tgz#e5e459558f3392e3d0a698ef37277a5c2835759a"
+
+"@sonarwhal/rule-manifest-file-extension@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-manifest-file-extension/-/rule-manifest-file-extension-4.0.1.tgz#00aa01bbc134e669a2266be059d7d9aac49fe9a5"
+
+"@sonarwhal/rule-manifest-is-valid@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-manifest-is-valid/-/rule-manifest-is-valid-5.0.1.tgz#a4b09a694376baee8812b54d9157bf94f4d7fb99"
+  dependencies:
+    bcp47 "^1.1.2"
+    color-string "^1.5.2"
+
+"@sonarwhal/rule-meta-charset-utf-8@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-meta-charset-utf-8/-/rule-meta-charset-utf-8-3.0.3.tgz#22100b6b5743aca587b2157b17208bef38b03042"
+  dependencies:
+    cheerio "^1.0.0-rc.2"
+
+"@sonarwhal/rule-meta-viewport@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-meta-viewport/-/rule-meta-viewport-3.0.2.tgz#23dcf794750897e0c50a36a11d4fbb420ef1c69a"
+  dependencies:
+    metaviewport-parser "^0.2.0"
+
+"@sonarwhal/rule-no-disallowed-headers@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-no-disallowed-headers/-/rule-no-disallowed-headers-3.0.3.tgz#70f2a2fb4435dcae6c5e8f056c41f0e1004d6d69"
+  dependencies:
+    pluralize "^7.0.0"
+
+"@sonarwhal/rule-no-friendly-error-pages@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-no-friendly-error-pages/-/rule-no-friendly-error-pages-3.0.2.tgz#bdaba8fb66286b31d8c62f0acd35afcf1eddd905"
+
+"@sonarwhal/rule-no-html-only-headers@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-no-html-only-headers/-/rule-no-html-only-headers-3.0.4.tgz#1e540ad6d0e37d49f5dee6b4850effe163849e10"
+  dependencies:
+    pluralize "^7.0.0"
+
+"@sonarwhal/rule-no-http-redirects@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-no-http-redirects/-/rule-no-http-redirects-3.0.2.tgz#32a6121bb1363757fe0d798c79d2f0d531e315dd"
+  dependencies:
+    pluralize "^7.0.0"
+
+"@sonarwhal/rule-no-protocol-relative-urls@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-no-protocol-relative-urls/-/rule-no-protocol-relative-urls-3.0.2.tgz#419dc3954de8a7accd7640dd7c9274984eadf930"
+
+"@sonarwhal/rule-no-vulnerable-javascript-libraries@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-no-vulnerable-javascript-libraries/-/rule-no-vulnerable-javascript-libraries-3.3.0.tgz#e6e1fb9efbe131374d34847ca53a1cbed7ae2629"
+  dependencies:
+    js-library-detector "^4.3.1"
+    lodash.groupby "^4.6.0"
+    pluralize "^7.0.0"
+    semver "^5.5.0"
+
+"@sonarwhal/rule-strict-transport-security@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-strict-transport-security/-/rule-strict-transport-security-3.0.2.tgz#283a12d34fe26082c3ad82ddef030c82a72d6e9f"
+
+"@sonarwhal/rule-validate-set-cookie-header@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-validate-set-cookie-header/-/rule-validate-set-cookie-header-3.0.2.tgz#a99f062668d075ad5052f51f561cd83a2c39d2fe"
+
+"@sonarwhal/rule-x-content-type-options@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@sonarwhal/rule-x-content-type-options/-/rule-x-content-type-options-3.0.3.tgz#a97ff12874c5d6493b88d7460c0903e22c1eb8fe"
+
 "@types/configstore@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/configstore/-/configstore-2.1.1.tgz#cd1e8553633ad3185c3f2f239ecff5d2643e92b6"
@@ -555,6 +682,17 @@ aws4@^1.2.1, aws4@^1.6.0:
 axe-core@3.0.0-beta.2:
   version "3.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.0.0-beta.2.tgz#82a13d371268034352bba2bcb263c5625b3e4a09"
+
+axe-core@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.0.2.tgz#552e5ad753c19540aef94d3f29626539216bfcf5"
+
+axios@0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
+  dependencies:
+    follow-redirects "^1.3.0"
+    is-buffer "^1.1.5"
 
 axobject-query@^0.1.0:
   version "0.1.0"
@@ -1484,6 +1622,10 @@ batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
 
+bcp47@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/bcp47/-/bcp47-1.1.2.tgz#354be3307ffd08433a78f5e1e2095845f89fc7fe"
+
 bcrypt-pbkdf@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.1.tgz#63bc5dcb61331b92bc05fd528953c33462a06f8d"
@@ -1980,7 +2122,7 @@ chalk@2.4.0, chalk@^2.3.1:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chalk@2.4.1, chalk@^2.4.1:
+chalk@2.4.1, chalk@^2.4.0, chalk@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.1.tgz#18c49ab16a037b6eb0152cc83e3471338215b66e"
   dependencies:
@@ -2024,6 +2166,17 @@ cheerio@^0.22.0:
     lodash.reduce "^4.4.0"
     lodash.reject "^4.4.0"
     lodash.some "^4.4.0"
+
+cheerio@^1.0.0-rc.2:
+  version "1.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/cheerio/-/cheerio-1.0.0-rc.2.tgz#4b9f53a81b27e4d5dac31c0ffd0cfa03cc6830db"
+  dependencies:
+    css-select "~1.2.0"
+    dom-serializer "~0.1.0"
+    entities "~1.1.1"
+    htmlparser2 "^3.9.1"
+    lodash "^4.15.0"
+    parse5 "^3.0.1"
 
 chokidar@^1.0.0, chokidar@^1.7.0:
   version "1.7.0"
@@ -4096,6 +4249,12 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.1"
     readable-stream "^2.0.4"
 
+follow-redirects@^1.3.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.0.tgz#234f49cf770b7f35b40e790f636ceba0c3a0ab77"
+  dependencies:
+    debug "^3.1.0"
+
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -4968,6 +5127,13 @@ html-tokenize@^2.0.0:
     readable-stream "~1.0.27-1"
     through2 "~0.4.1"
 
+html-validator@^3.0.0:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/html-validator/-/html-validator-3.0.4.tgz#3f48ad77016a50c00994c8a4f4043e458161bfa8"
+  dependencies:
+    axios "0.18.0"
+    valid-url "1.0.9"
+
 htmlparser2@^3.9.1:
   version "3.9.2"
   resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-3.9.2.tgz#1bdf87acca0f3f9e53fa4fcceb0f4b4cbb00b338"
@@ -5120,6 +5286,10 @@ iltorb@^2.3.0:
     npmlog "^4.1.2"
     prebuild-install "^2.3.0"
     which-pm-runs "^1.0.0"
+
+image-size@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.6.2.tgz#8ee316d4298b028b965091b673d5f1537adee5b4"
 
 image-ssim@^0.2.0:
   version "0.2.0"
@@ -6095,9 +6265,13 @@ lodash.flatten@^4.2.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
 
-lodash.foreach@^4.3.0:
+lodash.foreach@^4.3.0, lodash.foreach@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
+
+lodash.groupby@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.groupby/-/lodash.groupby-4.6.0.tgz#0b08a1dcf68397c397855c3239783832df7403d1"
 
 lodash.isequal@^4.5.0:
   version "4.5.0"
@@ -6186,6 +6360,10 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
+lodash.uniqby@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/lodash.uniqby/-/lodash.uniqby-4.7.0.tgz#d99c07a669e9e6d24e1362dfe266c67616af1302"
+
 lodash@3.10.1:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
@@ -6202,7 +6380,7 @@ lodash@^2.4.1:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-2.4.2.tgz#fadd834b9683073da179b3eae6d9c0d15053f73e"
 
-lodash@^4.17.10, lodash@^4.2.0:
+lodash@^4.15.0, lodash@^4.17.10, lodash@^4.2.0:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -6404,7 +6582,7 @@ merge@^1.1.3, merge@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
 
-metaviewport-parser@0.2.0:
+metaviewport-parser@0.2.0, metaviewport-parser@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/metaviewport-parser/-/metaviewport-parser-0.2.0.tgz#535c3ce1ccf6223a5025fddc6a1c36505f7e7db1"
 
@@ -7283,6 +7461,12 @@ parse-passwd@^1.0.0:
 parse5@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
+
+parse5@^3.0.1:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-3.0.3.tgz#042f792ffdd36851551cf4e9e066b3874ab45b5c"
+  dependencies:
+    "@types/node" "*"
 
 parseqs@0.0.5:
   version "0.0.5"
@@ -10573,6 +10757,10 @@ uws@~0.14.4:
 v8-compile-cache@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-1.1.2.tgz#8d32e4f16974654657e676e0e467a348e89b0dc4"
+
+valid-url@1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/valid-url/-/valid-url-1.0.9.tgz#1c14479b40f1397a75782f115e4086447433a200"
 
 validate-npm-package-license@^3.0.1:
   version "3.0.1"
