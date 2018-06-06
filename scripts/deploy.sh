@@ -33,7 +33,7 @@ fi
 echo "AWS_USER = $AWS_USER"
 
 # Build artifacts
-yarn build
+GATSBY_ENV=$1 yarn build
 
 # Sync s3
 printf "${C_DARK_GRAY}"
@@ -44,7 +44,7 @@ aws s3 cp $BUILD_DIR/index.html $BUCKET/index.html \
 aws s3 cp $BUILD_DIR/sw.js $BUCKET/sw.js \
   --content-type "text/javascript; charset=utf-8" \
   --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$NO_CACHE"
-aws s3 cp $BUILD_DIR/manifest.json $BUCKET/manifest.json \
+aws s3 cp $BUILD_DIR/manifest.webmanifest $BUCKET/manifest.webmanifest \
   --content-type "application/manifest+json; charset=utf-8" \
   --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$NO_CACHE"
 aws s3 cp $BUILD_DIR $BUCKET \
@@ -59,7 +59,7 @@ aws s3 cp $BUILD_DIR/static $BUCKET/static \
 aws s3 cp $BUILD_DIR $BUCKET \
   --include "*" \
   --exclude "index.html" \
-  --exclude "manifest.json" \
+  --exclude "manifest.webmanifest" \
   --exclude "static/*" \
   --exclude "*.js" --exclude "*.js.map" \
   --recursive --region $BUCKET_REGION --acl $BUCKET_ACL --cache-control "$ONE_DAY_CACHE"

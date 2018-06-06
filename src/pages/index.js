@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'react-emotion';
 
 import imgHigh from '../style/img/milky-way-high.jpg';
-import { Kode, Resume, Social, Skills } from '../components';
+import { Resume, Social, Skills } from '../components';
 import data from '../data';
 
 const SpaceBackground = styled.div`
@@ -37,15 +37,33 @@ const Wrapper = styled.div`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 2rem;
 
-  > *:last-child {
-    margin-top: 1rem;
+  > *:first-child {
+    font-size: 1.5rem;
+    background: #f7df1e;
+    color: #000;
+    padding: 0.1rem 0.75rem 0.1rem 0;
+    margin-right: 1rem;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    &:before {
+      content: 'x';
+      background: #f7df1e;
+      position: absolute;
+      padding-top: 0.1rem;
+      padding-bottom: 0.1rem;
+      margin-top: -0.1rem;
+      margin-left: -100%;
+      width: 100vw;
+    }
   }
 `;
 
 const Heading = styled.h1`
-  font-size: 25px;
+  font-size: 1.25rem;
 `;
 
 const IntroText = styled.p`
@@ -64,13 +82,22 @@ const SocialWrapper = styled.div`
   }
 `;
 
+const TestBadge = styled.div`
+  background: #f7df1e;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.75rem;
+  padding: 0.1rem;
+`;
+
 function Page() {
   return (
     <SpaceBackground>
       <Container>
         <Wrapper>
           <Header>
-            <Kode />
+            <div>Karolis Šarapnickis</div>
             <Resume file={`/${data.cvFile}`} />
           </Header>
           <Heading>{data.title}</Heading>
@@ -81,6 +108,7 @@ function Page() {
           </SocialWrapper>
         </Wrapper>
       </Container>
+      {process.env.GATSBY_ENV === 'test' && <TestBadge>test</TestBadge>}
     </SpaceBackground>
   );
 }

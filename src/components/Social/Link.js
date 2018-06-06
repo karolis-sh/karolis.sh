@@ -11,10 +11,8 @@ const Container = styled.div`
 `;
 
 const Content = styled.a`
-  display: flex;
   text-decoration: none;
   color: white;
-  align-items: center;
 `;
 
 const Svg = styled(Isvg)`
@@ -24,21 +22,29 @@ const Svg = styled(Isvg)`
   fill: white;
 `;
 
-function Link({
-  url, icon, text, ...props
-}) {
+function Link({ url, icon, text, ...props }) {
   return (
     <Container>
       <Content
         href={url}
-        rel='noopener noreferrer'
-        target='_blank'
+        rel="noopener noreferrer"
+        target="_blank"
         onClick={() => {
-          callGA('send', 'event', 'SocialLink', `Click${icon[0].toUpperCase()}${icon.slice(1)}`);
+          callGA(
+            'send',
+            'event',
+            'SocialLink',
+            `Click${icon[0].toUpperCase()}${icon.slice(1)}`
+          );
         }}
         {...props}
       >
-        <Svg src={icons[icon]} alt={`${icon}-link`} title={`Link to ${icon}`} />
+        <Svg
+          src={icons[icon]}
+          alt={`${icon}-link`}
+          title={`Link to ${icon}`}
+          cacheGetRequests
+        />
         {text}
       </Content>
     </Container>

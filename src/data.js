@@ -1,14 +1,23 @@
 export default {
-  metaTitle: 'Karolis Šarapnickis',
+  metaTitle: 'karolis.sh',
   metaDescription: 'My personal page - who I am, my resume and social links.',
-  cvFile: 'Karolis_CV_2018-04.pdf',
-  title: 'Karolis Šarapnickis - Senior Software Developer',
+  cvFile: 'Karolis_CV_2018-06.pdf',
+  title: 'Software Developer - Team Lead',
   introText: `
     I build high quality web/mobile/desktop apps using JavaScript technologies.
     I have experience working with the whole stack but I am more of a Front-end oriented Software Developer.
   `,
   skillsTitle: 'Key technologies I am experienced with:',
-  skills: ['JavaScript', 'React', 'Redux', 'HTML', 'CSS', 'Node', 'Electron', 'React-Native'],
+  skills: [
+    'JavaScript',
+    'React',
+    'Redux',
+    'HTML',
+    'CSS',
+    'Node',
+    'Electron',
+    'React-Native',
+  ],
   socialLinks: [
     {
       icon: 'gmail',
@@ -18,7 +27,7 @@ export default {
     {
       icon: 'github',
       text: '/buz-zard/_archive',
-      url: 'https://github.com/buz-zard/_archive',
+      url: 'https://github.com/buz-zard/_archive/blob/master/README.md',
     },
     {
       icon: 'linkedin',

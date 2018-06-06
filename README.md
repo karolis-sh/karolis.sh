@@ -1,4 +1,4 @@
-# :point_right: [kode.lt](https://kode.lt/) &middot; [![travis](https://travis-ci.org/buz-zard/kode.lt.svg?branch=master)](https://travis-ci.org/tanhauhau/awesome-project)
+# :point_right: [karolis.sh](https://karolis.sh/) &middot; [![travis](https://travis-ci.org/buz-zard/kode.lt.svg?branch=master)](https://travis-ci.org/tanhauhau/awesome-project)
 
 > A static personal website built with React and hosted on AWS (S3 +
 > CloudFront).

@@ -1,6 +1,10 @@
 # dependencies
-/node_modules/
-/venv/
+/venv
+
+# npm files
+/node_modules
+package-lock.json
+*.log*
 
 # build
 .cache/
