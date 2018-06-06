@@ -45,12 +45,14 @@ function Social({ links, ...props }) {
 }
 
 Social.propTypes = {
-  links: PropTypes.arrayOf(PropTypes.shape({
-    icon: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    url: PropTypes.string,
-    noScrape: PropTypes.bool,
-  })).isRequired,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      icon: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      url: PropTypes.string,
+      noScrape: PropTypes.bool,
+    })
+  ).isRequired,
 };
 
 export default Social;

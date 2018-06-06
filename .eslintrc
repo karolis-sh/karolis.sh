@@ -3,17 +3,17 @@
     "browser": true,
     "es6": true
   },
-  "extends": "airbnb",
-  "plugins": ["react"],
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["react", "prettier"],
   "settings": {
-    "import/core-modules": ["react", "prop-types", "react-helmet"]
+    "import/core-modules": ["react", "prop-types"]
   },
   "rules": {
+    "prettier/prettier": [2],
     "object-curly-spacing": [0],
     "import/prefer-default-export": [0],
-    "jsx-quotes": ["error", "prefer-single"],
     "jsx-a11y/anchor-is-valid": [0],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "react/jsx-first-prop-new-line": 0,
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "max-len": ["error", 120]
