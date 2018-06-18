@@ -1,14 +1,34 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-import imgHigh from '../style/img/milky-way-high.jpg';
 import { Resume, Social, Skills } from '../components';
 import data from '../data';
 
+const getImageUrl = width =>
+  `http://res.cloudinary.com/buzzard/image/upload/c_scale,e_grayscale,q_auto${
+    width ? `,w_${width}` : ''
+  }/v1529349577/karolis.sh/milky-way.jpg`;
+
 const SpaceBackground = styled.div`
-  background: url(${`${imgHigh}`}) no-repeat center center fixed;
-  background-color: black;
+  background: url(${getImageUrl(1000)});
   background-size: cover;
+
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    background: url(${getImageUrl(1300)});
+    background-size: cover;
+  }
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    background: url(${getImageUrl(1600)});
+    background-size: cover;
+  }
+  @media (min-width: 1200px) {
+    background: url(${getImageUrl()});
+    background-size: cover;
+  }
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
   height: 100%;
   display: flex;
   align-items: center;
