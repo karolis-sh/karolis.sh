@@ -15,7 +15,6 @@
     "jsx-a11y/anchor-is-valid": [0],
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "react/jsx-first-prop-new-line": 0,
-    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "max-len": ["error", 120]
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
   }
 }

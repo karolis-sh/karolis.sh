@@ -18,7 +18,7 @@ function Resume({ file, ...props }) {
     <div {...props}>
       <Container
         href={file}
-        download
+        download="Karolis_CV.pdf"
         onClick={() => {
           callGA('send', 'event', 'Resume', 'Download');
         }}

@@ -12,7 +12,7 @@ injectGlobal`
     font-size: 18px;
   }
 
-  [data-reactroot] {
+  #___gatsby > div {
     height: 100vh;
   }
 
