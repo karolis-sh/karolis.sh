@@ -1,6 +1,10 @@
 const rootDir = 'public';
+const siteUrl = 'https://karolis.sh';
 
 module.exports = {
+  siteMetadata: {
+    siteUrl,
+  },
   plugins: [
     'gatsby-plugin-preact',
     'gatsby-plugin-react-helmet',
@@ -30,6 +34,15 @@ module.exports = {
           `${rootDir}/manifest.webmanifest`,
           `${rootDir}/offline-plugin-app-shell-fallback/index.html`,
         ],
+      },
+    },
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteUrl,
+        sitemap: `${siteUrl}/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/', disallow: ['/*.pdf'] }],
       },
     },
   ],
