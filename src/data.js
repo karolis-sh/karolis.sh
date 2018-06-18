@@ -1,7 +1,7 @@
 export default {
   metaTitle: 'karolis.sh',
   metaDescription: 'My personal page - who I am, my resume and social links.',
-  cvFile: 'Karolis_CV_2018-06.pdf',
+  cvFile: 'Karolis_CV.pdf',
   title: 'Software Developer - Team Lead',
   introText: `
     I build high quality web/mobile/desktop apps using JavaScript technologies.
