@@ -1,13 +1,13 @@
-# :point_right: [karolis.sh](https://karolis.sh/) &middot; [![travis](https://travis-ci.org/buz-zard/kode.lt.svg?branch=master)](https://travis-ci.org/tanhauhau/awesome-project)
+# 👉 [karolis.sh](https://karolis.sh/) · [![Build Status](https://travis-ci.org/buz-zard/karolis.sh.svg?branch=master)](https://travis-ci.org/buz-zard/karolis.sh)
 
 > A static personal website built with React and hosted on AWS (S3 +
 > CloudFront).
 
 ## Development
 
-* `yarn develop` - start development server :construction:
+* `yarn develop` - start development server 🚧
 
 ## Deployment
 
-* `make setup` - setup local machine for local deployments :wrench:
-* `make deploy-test` - deploy to testing environment :rocket:
+* `make setup` - setup local machine for local deployments 🔧
+* `make deploy-test` - deploy to testing environment 🚀
