@@ -8,15 +8,15 @@ script: yarn qa
 before_deploy:
   - sudo python -m pip install awscli==1.14.7
 deploy:
-  # deploy develop to the staging environment
+  # deploy to the staging environment
   - provider: script
     skip_cleanup: true
     script: bash scripts/deploy.sh test
     on:
-      branch: develop
-  # deploy master to production
+      branch: master
+  # deploy to production
   - provider: script
     skip_cleanup: true
     script: bash scripts/deploy.sh prod
     on:
-      branch: master
+      branch: deploy
