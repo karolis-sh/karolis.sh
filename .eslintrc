@@ -1,21 +1,15 @@
 {
+  "extends": ["@k.sh/eslint-config"],
   "env": {
-    "browser": true,
-    "es6": true
+    "browser": true
   },
-  "extends": ["airbnb", "prettier"],
-  "plugins": ["react", "prettier"],
   "settings": {
     "import/core-modules": ["react", "prop-types"]
   },
   "rules": {
-    "prettier/prettier": [2],
-    "object-curly-spacing": [0],
-    "import/prefer-default-export": [0],
-    "jsx-a11y/anchor-is-valid": [0],
-    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
-    "react/jsx-first-prop-new-line": 0,
-    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "react/jsx-one-expression-per-line": [0]
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "url" ]
+    }]
   }
 }
