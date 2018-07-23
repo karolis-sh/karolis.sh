@@ -41,8 +41,8 @@ export default {
     },
     {
       icon: 'twitter',
-      text: '/0karolis',
-      url: 'https://twitter.com/0karolis',
+      text: '/karolis_sh',
+      url: 'https://twitter.com/karolis_sh',
     },
     {
       icon: 'stackoverflow',
