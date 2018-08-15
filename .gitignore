@@ -9,10 +9,6 @@
 .cache
 /public
 
-# testing
-cdp.pid
-*.report.html
-
 # other
 .vscode
 *.*~
