@@ -17,14 +17,14 @@ const Badge = styled.span`
   color: black;
   border-radius: 1em;
   font-size: 14px;
-  padding: 0.125em 0.6em 0.16em 0.5em;
+  padding: 0.15em 0.5em;
 `;
 
 function Skills({ title, items }) {
   return (
     <div>
       <p>{title}</p>
-      <Badges>{items.map(item => <Badge key={item}>#{item}</Badge>)}</Badges>
+      <Badges>{items.map(item => <Badge key={item}>{item}</Badge>)}</Badges>
     </div>
   );
 }
