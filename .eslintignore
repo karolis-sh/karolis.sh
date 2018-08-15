@@ -1,11 +1,5 @@
-*.*
-!*.js
-!*.json
-
 # npm files
 node_modules
-package.json
-package-lock.json
 
 # Build products
 /public

@@ -3,29 +3,30 @@
   "version": "1.0.0",
   "description": "Personal website",
   "repository": "git@github.com:buz-zard/kode.lt.git",
-  "author": "Karolis <pastas.k@gmail.com>",
   "license": "MIT",
-  "config": {
-    "test_url": "https://test.karolis.sh/",
-    "prod_url": "https://karolis.sh/",
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
+  "author": "Karolis <pastas.k@gmail.com>",
   "scripts": {
-    "develop": "gatsby develop",
     "build": "gatsby build",
     "clean": "rimraf public .cache",
-    "try-build": "rm -rf public && yarn build && gatsby serve",
+    "develop": "gatsby develop",
+    "format": "prettier --write '**/*.*' && sort-package-json",
+    "lint": "eslint src",
+    "prod-siteqa": "run-s prod-siteqa:*",
+    "prod-siteqa:lighthouse": "lighthouse $npm_package_config_prod_url --output-path=./prod.lightouse.report.html && open prod.lightouse.report.html",
+    "prod-siteqa:sonarwhal": "sonarwhal $npm_package_config_prod_url",
     "prepush": "yarn qa",
     "qa": "run-p lint",
-    "lint": "eslint src",
     "test-siteqa": "run-s test-siteqa:*",
     "test-siteqa:lighthouse": "lighthouse $npm_package_config_test_url --output-path=./test.lightouse.report.html && open test.lightouse.report.html",
     "test-siteqa:sonarwhal": "sonarwhal $npm_package_config_test_url",
-    "prod-siteqa": "run-s prod-siteqa:*",
-    "prod-siteqa:lighthouse": "lighthouse $npm_package_config_prod_url --output-path=./prod.lightouse.report.html && open prod.lightouse.report.html",
-    "prod-siteqa:sonarwhal": "sonarwhal $npm_package_config_prod_url"
+    "try-build": "rm -rf public && yarn build && gatsby serve"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "prod_url": "https://karolis.sh/",
+    "test_url": "https://test.karolis.sh/"
   },
   "dependencies": {
     "babel-plugin-emotion": "^9.2.5",
@@ -81,6 +82,7 @@
     "npm-run-all": "^4.1.3",
     "prettier": "^1.13.7",
     "rimraf": "^2.6.2",
-    "sonarwhal": "^1.11.2"
+    "sonarwhal": "^1.11.2",
+    "sort-package-json": "^1.15.0"
   }
 }
