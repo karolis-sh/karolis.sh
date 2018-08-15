@@ -3,8 +3,11 @@ language: node_js
 node_js:
   - "10"
 cache:
-  yarn: true
-script: yarn qa
+  directories:
+    - ~/.npm
+install:
+  - npm ci
+script: npm run qa
 before_deploy:
   - sudo python -m pip install awscli==1.14.7
 deploy:

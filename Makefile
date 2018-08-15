@@ -4,6 +4,6 @@ setup:
 	bash scripts/aws-configure.sh
 
 deploy-test:
-	yarn
+	npm ci
 	bash scripts/venv-update.sh
 	bash scripts/local-deploy.sh test

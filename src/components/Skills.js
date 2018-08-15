@@ -24,7 +24,11 @@ function Skills({ title, items }) {
   return (
     <div>
       <p>{title}</p>
-      <Badges>{items.map(item => <Badge key={item}>{item}</Badge>)}</Badges>
+      <Badges>
+        {items.map(item => (
+          <Badge key={item}>{item}</Badge>
+        ))}
+      </Badges>
     </div>
   );
 }

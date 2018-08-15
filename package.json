@@ -7,6 +7,7 @@
   "author": "Karolis <pastas.k@gmail.com>",
   "scripts": {
     "build": "gatsby build",
+    "check-deps": "npm ls >/dev/null",
     "clean": "rimraf public .cache",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.*' && sort-package-json",
@@ -14,12 +15,12 @@
     "prod-siteqa": "run-s prod-siteqa:*",
     "prod-siteqa:lighthouse": "lighthouse $npm_package_config_prod_url --output-path=./prod.lightouse.report.html && open prod.lightouse.report.html",
     "prod-siteqa:sonarwhal": "sonarwhal $npm_package_config_prod_url",
-    "prepush": "yarn qa",
+    "prepush": "npm run qa",
     "qa": "run-p lint",
     "test-siteqa": "run-s test-siteqa:*",
     "test-siteqa:lighthouse": "lighthouse $npm_package_config_test_url --output-path=./test.lightouse.report.html && open test.lightouse.report.html",
     "test-siteqa:sonarwhal": "sonarwhal $npm_package_config_test_url",
-    "try-build": "rm -rf public && yarn build && gatsby serve"
+    "try-build": "rm -rf public && npm run build && gatsby serve"
   },
   "config": {
     "commitizen": {
@@ -46,7 +47,7 @@
     "react-inlinesvg": "^0.8.1"
   },
   "devDependencies": {
-    "@k.sh/eslint-config": "1.1.0",
+    "@k.sh/eslint-config": "^1.2.0",
     "@sonarwhal/formatter-stylish": "^2.0.4",
     "@sonarwhal/rule-apple-touch-icons": "^3.0.2",
     "@sonarwhal/rule-axe": "^4.0.2",
@@ -70,17 +71,17 @@
     "@sonarwhal/rule-validate-set-cookie-header": "^3.0.2",
     "@sonarwhal/rule-x-content-type-options": "^3.0.3",
     "cz-conventional-changelog": "^2.1.0",
-    "eslint": "^5.1.0",
-    "eslint-config-airbnb": "17.0.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.10.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.6.2",
-    "eslint-plugin-react": "^7.9.1",
+    "eslint-plugin-react": "^7.11.1",
     "husky": "^0.14.3",
     "lighthouse": "^3.0.1",
     "npm-run-all": "^4.1.3",
-    "prettier": "^1.13.7",
+    "prettier": "^1.14.2",
     "rimraf": "^2.6.2",
     "sonarwhal": "^1.11.2",
     "sort-package-json": "^1.15.0"

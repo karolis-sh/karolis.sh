@@ -5,7 +5,7 @@
 
 ## Development
 
-* `yarn develop` - start development server 🚧
+* `npm run develop` - start development server 🚧
 
 ## Deployment
 

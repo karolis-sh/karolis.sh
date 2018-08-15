@@ -3,18 +3,16 @@
 
 # npm files
 /node_modules
-package-lock.json
 *.log*
 
 # build
-.cache/
-/public/
+.cache
+/public
 
 # testing
 cdp.pid
 *.report.html
 
 # other
-yarn-error.log
 .vscode
 *.*~
