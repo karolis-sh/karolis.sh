@@ -1,10 +1,8 @@
 {
   "extends": ["@k.sh/eslint-config"],
+  "parser": "babel-eslint",
   "env": {
     "browser": true
-  },
-  "settings": {
-    "import/core-modules": ["react", "prop-types"]
   },
   "rules": {
     "jsx-a11y/anchor-is-valid": [ "error", {

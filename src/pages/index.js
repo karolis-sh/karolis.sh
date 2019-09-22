@@ -107,8 +107,7 @@ class Page extends React.Component {
     if (!document.getElementById('webfontloader')) {
       const wf = document.createElement('script');
       const s = document.scripts[0];
-      wf.src =
-        'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
       wf.async = true;
       wf.id = 'webfontloader';
       wf.onload = () => {
