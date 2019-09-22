@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import Isvg from 'react-inlinesvg';
 
 import { callGA } from '../../utils';
@@ -55,10 +55,6 @@ Link.propTypes = {
   url: PropTypes.string,
   icon: PropTypes.string.isRequired,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
-};
-
-Link.defaultProps = {
-  url: undefined,
 };
 
 export default Link;

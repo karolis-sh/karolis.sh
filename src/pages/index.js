@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { Resume, Social, Skills } from '../components';
 import data from '../data';
@@ -60,7 +60,7 @@ const Header = styled.div`
   align-items: center;
   margin-bottom: 2rem;
 
-  > *:first-child {
+  > *:first-of-type {
     font-size: 1.5rem;
     background: #f7df1e;
     color: #000;
@@ -102,15 +102,6 @@ const SocialWrapper = styled.div`
   }
 `;
 
-const TestBadge = styled.div`
-  background: #f7df1e;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 0.75rem;
-  padding: 0.1rem;
-`;
-
 class Page extends React.Component {
   componentDidMount() {
     if (!document.getElementById('webfontloader')) {
@@ -145,7 +136,6 @@ class Page extends React.Component {
             </SocialWrapper>
           </Wrapper>
         </Container>
-        {process.env.GATSBY_ENV === 'test' && <TestBadge>test</TestBadge>}
       </SpaceBackground>
     );
   }

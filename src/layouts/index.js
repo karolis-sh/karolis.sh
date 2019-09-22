@@ -1,14 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { css } from '@emotion/core';
 
-import '../style';
+import { GlobalStyle } from '../style';
 import data from '../data';
 import imgSmall from '../style/img/milky-way-small.jpg';
 
 function Body({ children }) {
   return (
-    <div>
+    <div
+      css={css`
+        height: 100vh;
+      `}
+    >
       <Helmet>
         <html lang="en" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -67,13 +72,14 @@ function Body({ children }) {
           content="BVDwAzvOMXmHaSZhaNF4VAAncsb2ylb9I6xYAlIjh7c"
         />
       </Helmet>
-      {children()}
+      <GlobalStyle />
+      {children}
     </div>
   );
 }
 
 Body.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Body;

@@ -17,31 +17,32 @@
     "prepush": "npm run qa",
     "qa": "run-p lint",
     "start": "gatsby develop",
-    "try": "rm -rf public && npm run build && gatsby serve",
+    "try": "run-s clean build && gatsby serve",
     "upgrade-interactive": "npm-check --update"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
-    },
-    "prod_url": "https://karolis.sh/"
+    }
   },
   "dependencies": {
-    "babel-plugin-emotion": "^9.2.5",
-    "emotion": "^9.2.5",
-    "emotion-server": "^9.2.5",
-    "gatsby": "^1.9.273",
-    "gatsby-image": "^1.0.54",
-    "gatsby-plugin-emotion": "^1.1.17",
-    "gatsby-plugin-google-analytics": "^1.0.31",
-    "gatsby-plugin-offline": "^1.0.18",
-    "gatsby-plugin-preact": "^1.0.17",
-    "gatsby-plugin-react-helmet": "^2.0.11",
-    "gatsby-plugin-robots-txt": "^1.1.0",
-    "gatsby-plugin-sitemap": "^1.2.25",
+    "@emotion/core": "^10.0.17",
+    "@emotion/styled": "^10.0.17",
+    "gatsby": "^2.15.20",
+    "gatsby-image": "^2.2.20",
+    "gatsby-plugin-advanced-sitemap": "^1.4.4",
+    "gatsby-plugin-emotion": "^4.1.7",
+    "gatsby-plugin-google-analytics": "^2.1.17",
+    "gatsby-plugin-layout": "^1.1.8",
+    "gatsby-plugin-react-helmet": "^3.1.8",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
+    "gatsby-plugin-robots-txt": "^1.5.0",
+    "gatsby-plugin-s3": "^0.3.2",
     "npm-check": "^5.9.0",
-    "react-emotion": "^9.2.5",
-    "react-helmet": "^5.2.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
     "react-inlinesvg": "^0.8.1"
   },
   "devDependencies": {
