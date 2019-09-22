@@ -1,27 +1,30 @@
 {
-  "name": "karolis.sh",
-  "version": "1.0.0",
-  "description": "Personal website",
-  "repository": "git@github.com:buz-zard/kode.lt.git",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:karolis-sh/karolis.sh.git"
+  },
   "license": "MIT",
-  "author": "Karolis <pastas.k@gmail.com>",
+  "author": "Karolis Šarapnickis",
   "scripts": {
     "build": "gatsby build",
     "check-deps": "npm ls >/dev/null",
     "clean": "rimraf public .cache",
-    "develop": "gatsby develop",
-    "format": "prettier --write '**/*.*' && sort-package-json",
+    "format": "run-p format:*",
+    "format:js": "prettier --write '**/*.*'",
+    "format:package-json": "sort-package-json",
     "lint": "eslint src",
     "prepush": "npm run qa",
     "qa": "run-p lint",
-    "try-build": "rm -rf public && npm run build && gatsby serve"
+    "start": "gatsby develop",
+    "try": "rm -rf public && npm run build && gatsby serve",
+    "upgrade-interactive": "npm-check --update"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     },
-    "prod_url": "https://karolis.sh/",
-    "test_url": "https://test.karolis.sh/"
+    "prod_url": "https://karolis.sh/"
   },
   "dependencies": {
     "babel-plugin-emotion": "^9.2.5",
@@ -36,6 +39,7 @@
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-robots-txt": "^1.1.0",
     "gatsby-plugin-sitemap": "^1.2.25",
+    "npm-check": "^5.9.0",
     "react-emotion": "^9.2.5",
     "react-helmet": "^5.2.0",
     "react-inlinesvg": "^0.8.1"

@@ -26,8 +26,8 @@ export default {
     },
     {
       icon: 'github',
-      text: '/buz-zard/_archive',
-      url: 'https://github.com/buz-zard/_archive/blob/master/README.md',
+      text: '/karolis-sh',
+      url: 'https://github.com/karolis-sh',
     },
     {
       icon: 'linkedin',
