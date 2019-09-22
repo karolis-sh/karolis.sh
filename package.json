@@ -55,6 +55,7 @@
     "gatsby-plugin-google-analytics": "^2.1.17",
     "gatsby-plugin-layout": "^1.1.8",
     "gatsby-plugin-preact": "^3.1.11",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.1.8",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-robots-txt": "^1.5.0",

@@ -19,6 +19,13 @@ module.exports = {
     'gatsby-plugin-advanced-sitemap',
     'gatsby-plugin-layout',
     {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [{ family: 'Varela+Round' }],
+        fontDisplay: 'swap',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         policy: [{ userAgent: '*', allow: '/', disallow: ['/*.pdf'] }],
