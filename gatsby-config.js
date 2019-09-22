@@ -5,6 +5,7 @@ module.exports = {
     siteUrl,
   },
   plugins: [
+    'gatsby-plugin-preact',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
     {

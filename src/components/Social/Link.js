@@ -39,12 +39,7 @@ function Link({ url, icon, text, ...props }) {
         }}
         {...props}
       >
-        <Svg
-          src={icons[icon]}
-          alt={`${icon}-link`}
-          title={`Link to ${icon}`}
-          cacheGetRequests
-        />
+        <Svg src={icons[icon]} title={`Link to ${icon}`} />
         {text}
       </Content>
     </Container>
