@@ -5,7 +5,7 @@ import { Resume, Social, Skills } from '../components';
 import data from '../data';
 
 const getImageUrl = width =>
-  `https://res.cloudinary.com/buzzard/image/upload/c_scale,e_grayscale,q_auto${
+  `https://res.cloudinary.com/karolis/image/upload/c_scale,e_grayscale,q_auto${
     width ? `,w_${width}` : ''
   }/v1529349577/karolis.sh/milky-way.jpg`;
 
