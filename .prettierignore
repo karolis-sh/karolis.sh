@@ -1,6 +1,7 @@
 *.*
 !*.js
 !*.json
+!*.md
 
 # npm files
 node_modules
@@ -10,4 +11,3 @@ package-lock.json
 # Build products
 /public
 /.cache
-/venv

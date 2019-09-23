@@ -1,4 +1,3 @@
-const rootDir = 'public';
 const siteUrl = 'https://karolis.sh';
 
 module.exports = {
@@ -16,28 +15,25 @@ module.exports = {
         anonymize: true,
       },
     },
+    'gatsby-plugin-remove-serviceworker',
+    'gatsby-plugin-advanced-sitemap',
+    'gatsby-plugin-layout',
     {
-      resolve: `gatsby-plugin-offline`,
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {
-        staticFileGlobs: [
-          `${rootDir}/**/*.{woff2}`,
-          `${rootDir}/__static-commons-*js`,
-          `${rootDir}/__static-app-*js`,
-          `${rootDir}/index.html`,
-          `${rootDir}/manifest.json`,
-          `${rootDir}/manifest.webmanifest`,
-          `${rootDir}/offline-plugin-app-shell-fallback/index.html`,
-        ],
+        fonts: [{ family: 'Varela+Round' }],
+        fontDisplay: 'swap',
       },
     },
-    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: siteUrl,
-        sitemap: `${siteUrl}/sitemap.xml`,
         policy: [{ userAgent: '*', allow: '/', disallow: ['/*.pdf'] }],
       },
+    },
+    {
+      resolve: 'gatsby-plugin-s3',
+      options: { bucketName: 'karolis.sh' },
     },
   ],
 };

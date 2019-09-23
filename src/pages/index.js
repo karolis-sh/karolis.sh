@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import { Resume, Social, Skills } from '../components';
 import data from '../data';
@@ -60,7 +60,7 @@ const Header = styled.div`
   align-items: center;
   margin-bottom: 2rem;
 
-  > *:first-child {
+  > *:first-of-type {
     font-size: 1.5rem;
     background: #f7df1e;
     color: #000;
@@ -102,53 +102,63 @@ const SocialWrapper = styled.div`
   }
 `;
 
-const TestBadge = styled.div`
-  background: #f7df1e;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 0.75rem;
-  padding: 0.1rem;
-`;
-
-class Page extends React.Component {
-  componentDidMount() {
-    if (!document.getElementById('webfontloader')) {
-      const wf = document.createElement('script');
-      const s = document.scripts[0];
-      wf.src =
-        'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-      wf.async = true;
-      wf.id = 'webfontloader';
-      wf.onload = () => {
-        global.WebFont.load({ google: { families: ['Varela+Round'] } });
-      };
-
-      s.parentNode.insertBefore(wf, s);
-    }
-  }
-
-  render() {
-    return (
-      <SpaceBackground>
-        <Container>
-          <Wrapper>
-            <Header>
-              <div>Karolis Šarapnickis</div>
-              <Resume file={`/${data.cvFile}`} />
-            </Header>
-            <Heading>{data.title}</Heading>
-            <IntroText>{data.introText}</IntroText>
-            <Skills title={data.skillsTitle} items={data.skills} />
-            <SocialWrapper>
-              <Social links={data.socialLinks} />
-            </SocialWrapper>
-          </Wrapper>
-        </Container>
-        {process.env.GATSBY_ENV === 'test' && <TestBadge>test</TestBadge>}
-      </SpaceBackground>
-    );
-  }
+export default function Index() {
+  return (
+    <SpaceBackground>
+      <Container>
+        <Wrapper>
+          <Header>
+            <div>Karolis Šarapnickis</div>
+            <Resume file={`/${data.cvFile}`} />
+          </Header>
+          <Heading>{data.title}</Heading>
+          <IntroText>{data.introText}</IntroText>
+          <Skills title={data.skillsTitle} items={data.skills} />
+          <SocialWrapper>
+            <Social links={data.socialLinks} />
+          </SocialWrapper>
+        </Wrapper>
+      </Container>
+    </SpaceBackground>
+  );
 }
 
-export default Page;
+// class Page extends React.Component {
+//   // componentDidMount() {
+//   //   if (!document.getElementById('webfontloader')) {
+//   //     const wf = document.createElement('script');
+//   //     const s = document.scripts[0];
+//   //     wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+//   //     wf.async = true;
+//   //     wf.id = 'webfontloader';
+//   //     wf.onload = () => {
+//   //       global.WebFont.load({ google: { families: ['Varela+Round'] } });
+//   //     };
+
+//   //     s.parentNode.insertBefore(wf, s);
+//   //   }
+//   // }
+
+//   render() {
+//     return (
+//       <SpaceBackground>
+//         <Container>
+//           <Wrapper>
+//             <Header>
+//               <div>Karolis Šarapnickis</div>
+//               <Resume file={`/${data.cvFile}`} />
+//             </Header>
+//             <Heading>{data.title}</Heading>
+//             <IntroText>{data.introText}</IntroText>
+//             <Skills title={data.skillsTitle} items={data.skills} />
+//             <SocialWrapper>
+//               <Social links={data.socialLinks} />
+//             </SocialWrapper>
+//           </Wrapper>
+//         </Container>
+//       </SpaceBackground>
+//     );
+//   }
+// }
+
+// export default Page;

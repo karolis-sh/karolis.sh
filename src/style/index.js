@@ -1,22 +1,23 @@
-import { injectGlobal } from 'react-emotion';
+import React from 'react';
+import { Global } from '@emotion/core';
 
-// eslint-disable-next-line no-unused-expressions
-injectGlobal`
-  html {
-    background-color: black;
-  }
-
-  body {
-    margin: 0;
-    font-family: "Varela Round", sans-serif;
-    font-size: 18px;
-  }
-
-  #___gatsby > div {
-    height: 100vh;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-`;
+export function GlobalStyle(props) {
+  return (
+    <Global
+      styles={{
+        html: {
+          backgroundColor: 'black',
+        },
+        body: {
+          margin: 0,
+          fontFamily: '"Varela Round", sans-serif',
+          fontSize: '18px',
+        },
+        '*': {
+          boxSizing: 'border-box',
+        },
+      }}
+      {...props}
+    />
+  );
+}

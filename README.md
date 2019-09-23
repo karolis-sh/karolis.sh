@@ -1,13 +1,3 @@
-# 👉 [karolis.sh](https://karolis.sh/) · [![Build Status](https://travis-ci.org/buz-zard/karolis.sh.svg?branch=master)](https://travis-ci.org/buz-zard/karolis.sh)
+# 👉 [karolis.sh](https://karolis.sh/)
 
-> A static personal website built with React and hosted on AWS (S3 +
-> CloudFront).
-
-## Development
-
-* `npm run develop` - start development server 🚧
-
-## Deployment
-
-* `make setup` - setup local machine for local deployments 🔧
-* `make deploy-test` - deploy to testing environment 🚀
+> A static personal website built with React and hosted on AWS (S3 + Cloudflare).
