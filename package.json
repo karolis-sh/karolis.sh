@@ -16,7 +16,7 @@
     "format:package-json": "sort-package-json",
     "lint": "eslint .",
     "qa": "npm run lint",
-    "release:e": "run-s clean build deploy",
+    "release": "run-s clean build deploy",
     "start": "gatsby develop",
     "try": "run-s clean build && gatsby serve",
     "upgrade-interactive": "npm-check --update"
