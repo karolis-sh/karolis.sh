@@ -26,19 +26,9 @@ export default {
       url: 'https://www.linkedin.com/in/karolissarapnickis',
     },
     {
-      icon: 'facebook',
-      text: '/karolis.sarapnickis',
-      url: 'https://www.facebook.com/karolis.sarapnickis',
-    },
-    {
       icon: 'twitter',
       text: '/karolis_sh',
       url: 'https://twitter.com/karolis_sh',
-    },
-    {
-      icon: 'stackoverflow',
-      text: '/Karolis-Šarapnickis',
-      url: 'http://stackoverflow.com/users/2256839/Karolis-Šarapnickis',
     },
   ],
 };
