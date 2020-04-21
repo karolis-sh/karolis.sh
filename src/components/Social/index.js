@@ -21,22 +21,13 @@ const Reverse = styled.span`
 function Social({ links, ...props }) {
   return (
     <Container {...props}>
-      {links.map(item => (
+      {links.map((item) => (
         <Link
           key={item.icon}
           icon={item.icon}
           url={item.url}
           text={
-            item.noScrape ? (
-              <Reverse>
-                {item.text
-                  .split('')
-                  .reverse()
-                  .join('')}
-              </Reverse>
-            ) : (
-              item.text
-            )
+            item.noScrape ? <Reverse>{item.text.split('').reverse().join('')}</Reverse> : item.text
           }
         />
       ))}
