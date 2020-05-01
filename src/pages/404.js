@@ -1,22 +1,20 @@
 import React from 'react';
-import styled from '@emotion/styled';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-`;
-
-const Header = styled.h1`
-  color: white;
-  text-align: center;
-`;
+import Layout from '../components/Layout';
 
 export default function NotFound() {
   return (
-    <Wrapper>
-      <Header>404</Header>
-    </Wrapper>
+    <Layout
+      first={
+        <div className="flex flex-col justify-center h-full pt-10 sm:pt-0 md:mx-8 lg:mx-12">
+          <h1 className="text-center text-5xl">404</h1>
+        </div>
+      }
+      second={
+        <div className="text-center flex flex-col justify-center h-full pb-10 sm:pb-0 md:mx-8 lg:mx-12">
+          PAGE NOT FOUND
+        </div>
+      }
+    />
   );
 }

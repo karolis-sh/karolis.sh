@@ -1,164 +1,91 @@
 import React from 'react';
-import styled from '@emotion/styled';
 
-import { Resume, Social, Skills } from '../components';
-import data from '../data';
-
-const getImageUrl = (width) =>
-  `https://res.cloudinary.com/karolis/image/upload/c_scale,e_grayscale,q_auto${
-    width ? `,w_${width}` : ''
-  }/v1529349577/karolis.sh/milky-way.jpg`;
-
-const SpaceBackground = styled.div`
-  background: url(${getImageUrl(1000)});
-  background-size: cover;
-
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    background: url(${getImageUrl(1300)});
-    background-size: cover;
-  }
-  @media (min-width: 992px) and (max-width: 1199.98px) {
-    background: url(${getImageUrl(1600)});
-    background-size: cover;
-  }
-  @media (min-width: 1200px) {
-    background: url(${getImageUrl()});
-    background-size: cover;
-  }
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: black;
-  height: 100%;
-  display: flex;
-  align-items: center;
-`;
-
-const Container = styled.div`
-  color: white;
-  max-height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 1rem;
-`;
-
-const Wrapper = styled.div`
-  @media (min-width: 600px) {
-    width: 70%;
-    margin-left: 8%;
-  }
-
-  @media (min-width: 1200px) {
-    width: 50%;
-    margin-left: 16%;
-  }
-`;
-
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-
-  > *:first-of-type {
-    font-size: 1.5rem;
-    background: #f7df1e;
-    color: #000;
-    padding: 0.1rem 0.75rem 0.1rem 0;
-    margin-right: 1rem;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-
-    &:before {
-      content: 'x';
-      background: #f7df1e;
-      position: absolute;
-      padding-top: 0.1rem;
-      padding-bottom: 0.1rem;
-      margin-top: -0.1rem;
-      margin-left: -100%;
-      width: 100vw;
-    }
-  }
-`;
-
-const Heading = styled.h1`
-  font-size: 1.25rem;
-`;
-
-const IntroText = styled.p`
-  margin: 1.5rem 0;
-`;
-
-const SocialWrapper = styled.div`
-  margin-top: 3rem;
-
-  @media (min-width: 600px) {
-    margin-top: 4.5rem;
-  }
-
-  @media (min-width: 1200px) {
-    margin-top: 6rem;
-  }
-`;
+import Layout from '../components/Layout';
+import { Github, Twitter } from '../components/Icons';
+import Pronunciation from '../components/Pronunciation';
 
 export default function Index() {
   return (
-    <SpaceBackground>
-      <Container>
-        <Wrapper>
-          <Header>
-            <div>Karolis Šarapnickis</div>
-            <Resume file={`/${data.cvFile}`} />
-          </Header>
-          <Heading>{data.title}</Heading>
-          <IntroText>{data.introText}</IntroText>
-          <Skills title={data.skillsTitle} items={data.skills} />
-          <SocialWrapper>
-            <Social links={data.socialLinks} />
-          </SocialWrapper>
-        </Wrapper>
-      </Container>
-    </SpaceBackground>
+    <Layout
+      first={
+        <div className="flex flex-col justify-center md:mx-8 lg:mx-12" style={{ maxWidth: '25em' }}>
+          <div className="flex flex-col items-center mt-5 md:mt-0 md:flex-row justify-end sm:mb-4">
+            <img
+              src="https://res.cloudinary.com/karolis/image/upload/c_scale,f_auto,q_auto:best,w_180/v1588011994/karolis.sh/profile.jpg"
+              alt="profile"
+              style={{ width: 90, height: 90 }}
+              className="mx-auto rounded-full border border-black bg-gray-500 mb-4 md:mb-0"
+            />
+            <div className="flex flex-col justify-between md:py-3">
+              <div className="flex flex-col items-center leading-snug text-lg mb-3 md:items-end">
+                <div>
+                  <strong>karolis.</strong>
+                  <span>šarapnickis</span>
+                </div>
+                <Pronunciation />
+              </div>
+              <div className="text-center leading-tight text-sm  md:text-right">
+                <h1>
+                  <strong>Senior Software Developer</strong>
+                </h1>
+                <h2 className="text-gray-900 text-xs">Front-end Tech Lead @ Tesonet</h2>
+              </div>
+            </div>
+          </div>
+          <div className="text-sm leading-snug text-justify mt-6 mb-3">
+            <p>
+              I build web related solutions using JavaScript. I care deeply about the work I put
+              out, so exceptional performance, user and developer experience are my primary
+              development principles.
+            </p>
+            <p>
+              I try to keep my eyes on the latest technologies, but currently I am fully focused on
+              the React ecosystem.
+            </p>
+          </div>
+        </div>
+      }
+      second={
+        <div className="flex flex-col justify-center text-sm font-semibold my-5 md:mx-8 lg:mx-12">
+          <div className="flex mx-auto sm:flex-col sm:mx-0">
+            <a
+              className="flex items-center mr-6 sm:mr-0 sm:mb-6"
+              href="https://github.com/karolis-sh"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="GitHub profile"
+            >
+              <Github />
+              <span className="ml-2">@karolis-sh</span>
+            </a>
+            <a
+              className="flex items-center"
+              href="https://twitter.com/karolis_sh"
+              rel="noopener noreferrer"
+              target="_blank"
+              title="Twitter profile"
+            >
+              <Twitter />
+              <span className="ml-2">/karolis_sh</span>
+            </a>
+          </div>
+          <a
+            className="mx-auto my-6 sm:mx-0"
+            href="mailto:pastas.k@gmail.com"
+            title="Personal email"
+          >
+            pastas.k@gmail.com
+          </a>
+          <a
+            className="mx-auto sm:mx-0"
+            href="/Karolis_Résumé.pdf"
+            download="Karolis_Résumé.pdf"
+            title="Résumé"
+          >
+            Résumé
+          </a>
+        </div>
+      }
+    />
   );
 }
-
-// class Page extends React.Component {
-//   // componentDidMount() {
-//   //   if (!document.getElementById('webfontloader')) {
-//   //     const wf = document.createElement('script');
-//   //     const s = document.scripts[0];
-//   //     wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-//   //     wf.async = true;
-//   //     wf.id = 'webfontloader';
-//   //     wf.onload = () => {
-//   //       global.WebFont.load({ google: { families: ['Varela+Round'] } });
-//   //     };
-
-//   //     s.parentNode.insertBefore(wf, s);
-//   //   }
-//   // }
-
-//   render() {
-//     return (
-//       <SpaceBackground>
-//         <Container>
-//           <Wrapper>
-//             <Header>
-//               <div>Karolis Šarapnickis</div>
-//               <Resume file={`/${data.cvFile}`} />
-//             </Header>
-//             <Heading>{data.title}</Heading>
-//             <IntroText>{data.introText}</IntroText>
-//             <Skills title={data.skillsTitle} items={data.skills} />
-//             <SocialWrapper>
-//               <Social links={data.socialLinks} />
-//             </SocialWrapper>
-//           </Wrapper>
-//         </Container>
-//       </SpaceBackground>
-//     );
-//   }
-// }
-
-// export default Page;

@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Layout {
+  min-height: 100vh;
+}
+
+.Layout__first {
+  min-height: 55vh;
+
+  @screen sm {
+    min-height: auto;
+    width: 60%;
+    border-right: 2px solid black;
+  }
+}

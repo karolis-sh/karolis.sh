@@ -1,28 +1,29 @@
-const siteUrl = 'https://karolis.sh';
+const URL = 'https://karolis.sh/';
 
 module.exports = {
   siteMetadata: {
-    siteUrl,
+    siteUrl: URL,
   },
   plugins: [
-    'gatsby-plugin-preact',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-emotion',
+    process.env.NODE_ENV === 'production' && 'gatsby-plugin-preact',
+    'gatsby-plugin-favicon',
+    'gatsby-plugin-postcss',
+
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: 'gatsby-plugin-next-seo',
       options: {
-        trackingId: 'UA-120203619-1',
-        anonymize: true,
-      },
-    },
-    'gatsby-plugin-remove-serviceworker',
-    'gatsby-plugin-advanced-sitemap',
-    'gatsby-plugin-layout',
-    {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-      options: {
-        fonts: [{ family: 'Varela+Round' }],
-        fontDisplay: 'swap',
+        language: 'en',
+        openGraph: {
+          type: 'website',
+          locale: 'en_US',
+          url: URL,
+          title: 'Karolis Šarapnickis',
+          description: 'I build neat things using JavaScript.',
+        },
+        twitter: {
+          handle: '@karolis_sh',
+          cardType: 'summary_large_image',
+        },
       },
     },
     {
@@ -31,9 +32,20 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/', disallow: ['/*.pdf'] }],
       },
     },
+    'gatsby-plugin-advanced-sitemap',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-120203619-1',
+        anonymize: true,
+      },
+    },
+
     {
       resolve: 'gatsby-plugin-s3',
       options: { bucketName: 'karolis.sh' },
     },
-  ],
+    'gatsby-plugin-remove-serviceworker',
+    'gatsby-plugin-no-sourcemaps',
+  ].filter(Boolean),
 };
