@@ -9,14 +9,13 @@
   "author": "Karolis Šarapnickis",
   "scripts": {
     "build": "gatsby build",
-    "check-deps": "npm ls >/dev/null",
     "clean": "rimraf public .cache",
     "deploy": "gatsby-plugin-s3 deploy",
     "format": "run-p format:*",
     "format:js": "prettier --write '**/*.*'",
     "format:package-json": "sort-package-json",
     "lint": "eslint .",
-    "qa": "npm run lint",
+    "qa": "yarn lint",
     "release": "run-s clean build deploy",
     "start": "gatsby develop",
     "try": "run-s clean build && gatsby serve"
