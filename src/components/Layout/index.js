@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
+import App from '../App';
 import './index.css';
 
 export default function Layout({ first, second }) {
   return (
-    <>
-      <GatsbySeo title="Karolis Šarapnickis" description="I build neat things using JavaScript." />
-      <main className="Layout antialiased flex flex-col sm:flex-row">
+    <App>
+      <GatsbySeo />
+      <main className="Layout flex flex-col sm:flex-row">
         <div className="Layout__first bg-teal-500 flex flex-col justify-center items-center sm:items-end px-8 pb-2 sm:pb-0">
           <div className="sm:hidden" style={{ height: 25 }} />
           {first}
@@ -23,7 +24,6 @@ export default function Layout({ first, second }) {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M0 50V48L50 0V2L0 50Z" fill="black" />
             <path d="M0 50L50 2V50H0Z" fill="white" />
           </svg>
         </div>
@@ -32,7 +32,7 @@ export default function Layout({ first, second }) {
           <div style={{ height: 25 }} className="sm:hidden" />
         </div>
       </main>
-    </>
+    </App>
   );
 }
 

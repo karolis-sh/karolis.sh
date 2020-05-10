@@ -1,8 +1,21 @@
-const URL = 'https://karolis.sh/';
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable global-require */
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+const config = require('./config');
 
 module.exports = {
   siteMetadata: {
-    siteUrl: URL,
+    siteUrl: config.siteUrl,
+    title: config.siteTitle,
+    description: config.siteDescription,
+    social: {
+      github: config.githubHandle,
+      twitter: config.twitterHandle,
+      linkedin: config.linkedinHandle,
+    },
   },
   plugins: [
     process.env.NODE_ENV === 'production' && 'gatsby-plugin-preact',
@@ -10,18 +23,58 @@ module.exports = {
     'gatsby-plugin-postcss',
 
     {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/components/BlogLayout'),
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: { className: 'header-link' },
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 720,
+              withWebp: true,
+              linkImagesToOriginal: false,
+              wrapperStyle: 'margin-top: 2.5rem; margin-bottom: 2.5rem',
+            },
+          },
+        ],
+        remarkPlugins: [require('remark-external-links')],
+      },
+    },
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-remove-trailing-slashes',
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages/blog`,
+        name: 'blog',
+      },
+    },
+    'gatsby-remark-images',
+
+    {
       resolve: 'gatsby-plugin-next-seo',
       options: {
         language: 'en',
+        title: config.siteTitle,
+        titleTemplate: config.siteTitleTemplate,
+        description: config.siteDescription,
         openGraph: {
           type: 'website',
           locale: 'en_US',
-          url: URL,
-          title: 'Karolis Šarapnickis',
-          description: 'I build neat things using JavaScript.',
+          url: config.siteUrl,
+          title: config.siteTitle,
+          description: config.siteDescription,
+          site_name: config.siteName,
         },
         twitter: {
-          handle: '@karolis_sh',
+          handle: `@${config.twitterHandle}`,
           cardType: 'summary_large_image',
         },
       },
@@ -36,7 +89,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-120203619-1',
+        trackingId: config.googleAnalyticsID,
         anonymize: true,
       },
     },

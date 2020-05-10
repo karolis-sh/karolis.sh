@@ -718,6 +718,8 @@ module.exports = {
     transitionDuration: false,
     transitionDelay: false,
   },
-  corePlugins: {},
+  corePlugins: {
+    container: false,
+  },
   plugins: [],
 };

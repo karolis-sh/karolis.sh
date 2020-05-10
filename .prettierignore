@@ -2,6 +2,7 @@
 !*.js
 !*.json
 !*.md
+!*.mdx
 !*.css
 
 # npm files
