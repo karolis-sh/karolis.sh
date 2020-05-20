@@ -17,7 +17,15 @@ import './index.css';
 export default function BlogLayout({ children, pageContext: { frontmatter } }) {
   return (
     <App>
-      <GatsbySeo title={frontmatter.title} description={frontmatter.description} />
+      <GatsbySeo
+        title={frontmatter.title}
+        description={frontmatter.description}
+        openGraph={{
+          type: 'article',
+          title: `${frontmatter.title} | k.sh`,
+          description: frontmatter.description,
+        }}
+      />
       <div className="BlogLayout flex flex-col overflow-hidden">
         <header className="py-5 md:py-8 bg-white border-b">
           <Container>
