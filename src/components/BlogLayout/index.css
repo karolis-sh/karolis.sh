@@ -1,0 +1,51 @@
+.BlogLayout {
+  min-height: 100vh;
+}
+
+.mdx {
+  > ul {
+    @apply mb-5;
+  }
+
+  > ol {
+    @apply mb-5;
+  }
+
+  ul > li > ul {
+    @apply ml-4;
+  }
+
+  ol > li > ol {
+    @apply ml-4;
+  }
+
+  .header-link {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300 ease-in;
+
+    &:hover {
+      @apply opacity-50 ease-out;
+    }
+
+    > svg {
+      @apply absolute invisible;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @screen sm {
+        @apply visible;
+        left: -20px;
+        right: 0;
+      }
+
+      & path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  .mdx-code .highlight {
+    background-color: rgba(56, 178, 172, 0.2);
+    border-left-width: 5px;
+    padding: 0 7px;
+  }
+}
