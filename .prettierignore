@@ -1,15 +1,16 @@
-*.*
+*
+!*/
 !*.js
 !*.json
 !*.md
 !*.mdx
 !*.css
+!*.yml
 
 # npm files
 node_modules
 package.json
-package-lock.json
 
-# Build products
+# project
 /public
 /.cache
