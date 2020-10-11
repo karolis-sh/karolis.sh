@@ -1,6 +1,7 @@
 {
   "name": "karolis.sh",
   "private": true,
+  "description": "Source code of karolis.sh",
   "repository": {
     "type": "git",
     "url": "git@github.com:karolis-sh/karolis.sh.git"
