@@ -27,14 +27,14 @@
     }
   },
   "lint-staged": {
+    "**/package.json": [
+      "sort-package-json"
+    ],
     "*.js": [
       "eslint --fix"
     ],
-    "*.{json,md}": [
+    "*.{json,md,mdx,css,yml}": [
       "pretty-quick --staged"
-    ],
-    "package.json": [
-      "sort-package-json"
     ]
   },
   "config": {

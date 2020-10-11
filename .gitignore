@@ -3,10 +3,6 @@
 package-lock.json
 *.log*
 
-# build
-.cache
+# project
+/.cache
 /public
-
-# other
-.vscode
-*.*~
