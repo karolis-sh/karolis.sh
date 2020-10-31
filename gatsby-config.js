@@ -47,7 +47,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-remove-trailing-slashes',
+    'gatsby-plugin-force-trailing-slashes',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',
