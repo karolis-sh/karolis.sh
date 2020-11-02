@@ -91,7 +91,7 @@ export const components = {
   ol: (props) => <ul className="list-decimal list-inside" {...props} />,
   blockquote: (props) => (
     <blockquote
-      className="border-l-4 pl-5 text-gray-600 border-gray-300 font-serif italic"
+      className="border-l-4 pl-5 text-gray-700 border-gray-400 font-serif italic"
       {...props}
     />
   ),

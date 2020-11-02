@@ -29,7 +29,7 @@ export default function BlogLayout({ children, pageContext: { frontmatter } }) {
       <div className="BlogLayout flex flex-col overflow-hidden">
         <header className="py-5 md:py-8 bg-white border-b">
           <Container>
-            <Link to="/" className="inline-block">
+            <Link to="/" className="inline-block" aria-label="To homepage">
               <Logo />
             </Link>
           </Container>
