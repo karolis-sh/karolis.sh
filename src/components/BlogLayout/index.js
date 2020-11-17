@@ -14,7 +14,11 @@ import Logo from '../Logo';
 import { components } from './mdx';
 import './index.css';
 
+const toOGImage = (src) =>
+  `https://res.cloudinary.com/karolis/image/upload/c_fill,f_auto,h_630,q_auto,w_1200/v1/karolis.sh/blog/${src}`;
+
 export default function BlogLayout({ children, pageContext: { frontmatter } }) {
+  const image = toOGImage(frontmatter.banner);
   return (
     <App>
       <GatsbySeo
@@ -24,6 +28,13 @@ export default function BlogLayout({ children, pageContext: { frontmatter } }) {
           type: 'article',
           title: `${frontmatter.title} | k.sh`,
           description: frontmatter.description,
+          images: [
+            {
+              url: image,
+              width: 1200,
+              height: 630,
+            },
+          ],
         }}
       />
       <div className="BlogLayout flex flex-col overflow-hidden">
@@ -87,6 +98,7 @@ BlogLayout.propTypes = {
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
+      banner: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
 };
