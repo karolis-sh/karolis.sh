@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Linkedin as SVG } from './svgs';
+import { SVG } from '~/assets';
 
-export default function Linkedin({ className }) {
+export default function LinkedIn({ className }) {
   return (
     <a
       className={className}
       href="https://www.linkedin.com/in/karolis-šarapnickis/"
       rel="noopener noreferrer"
       target="_blank"
-      title="Linkedin profile"
+      title="LinkedIn profile"
     >
-      <SVG />
+      <SVG.Linkedin />
     </a>
   );
 }
 
-Linkedin.propTypes = {
+LinkedIn.propTypes = {
   className: PropTypes.string,
 };

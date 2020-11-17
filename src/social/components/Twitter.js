@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Twitter as SVG } from './svgs';
+import { SVG } from '~/assets';
 
 export default function Twitter({ className }) {
   return (
@@ -12,7 +12,7 @@ export default function Twitter({ className }) {
       target="_blank"
       title="Twitter profile"
     >
-      <SVG />
+      <SVG.Twitter />
     </a>
   );
 }

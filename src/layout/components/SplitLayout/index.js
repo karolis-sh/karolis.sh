@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
-import App from '../App';
+import App from '~/app';
 import './index.css';
 
-export default function Layout({ first, second }) {
+export default function SplitLayout({ first, second }) {
   return (
     <App>
       <GatsbySeo />
@@ -36,7 +36,7 @@ export default function Layout({ first, second }) {
   );
 }
 
-Layout.propTypes = {
+SplitLayout.propTypes = {
   first: PropTypes.node,
   second: PropTypes.node,
 };

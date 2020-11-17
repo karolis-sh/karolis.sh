@@ -26,7 +26,7 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/components/BlogLayout'),
+          default: require.resolve('./src/layout/components/BlogLayout'),
         },
         gatsbyRemarkPlugins: [
           {

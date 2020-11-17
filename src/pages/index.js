@@ -1,23 +1,19 @@
 import React from 'react';
 
-import Layout from '../components/Layout';
-import Pronunciation from '../components/Pronunciation';
-import Github from '../components/Github';
-import Twitter from '../components/Twitter';
-import Linkedin from '../components/Linkedin';
-import Email from '../components/Email';
+import { GitHub, Twitter, LinkedIn, Email } from '~/social';
+import { SVG, getUrl } from '~/assets';
+import { SplitLayout } from '~/layout';
 
 export default function Index() {
   return (
-    <Layout
+    <SplitLayout
       first={
         <div className="flex flex-col justify-center md:mx-8 lg:mx-12" style={{ maxWidth: '25em' }}>
           <div className="flex flex-col items-center mt-5 md:mt-0 md:flex-row justify-end sm:mb-4">
             <img
               alt="profile"
               className="mx-auto rounded-full mb-4 md:mb-0"
-              width="180"
-              src="https://res.cloudinary.com/karolis/image/upload/c_scale,q_auto,w_180/v1/karolis.sh/profile"
+              src={getUrl('profile.jpg', 'c_scale,f_auto,q_auto,w_180')}
               style={{ width: 90, height: 90 }}
             />
             <div className="flex flex-col justify-between md:py-3">
@@ -26,7 +22,7 @@ export default function Index() {
                   <strong>karolis</strong>
                   <span>.šarapnickis</span>
                 </div>
-                <Pronunciation />
+                <SVG.Pronunciation />
               </div>
               <div className="text-center leading-tight text-sm  md:text-right">
                 <h1>
@@ -52,9 +48,9 @@ export default function Index() {
       second={
         <div className="flex flex-col justify-center text-sm font-semibold my-5 md:mx-8 lg:mx-12">
           <div className="flex mx-auto sm:flex-col sm:mx-0">
-            <Github className="mr-6 sm:mr-0 sm:mb-6" />
+            <GitHub className="mr-6 sm:mr-0 sm:mb-6" />
             <Twitter className="mr-6 sm:mr-0 sm:mb-6" />
-            <Linkedin className="mr-6 sm:mr-0 sm:mb-6" />
+            <LinkedIn className="mr-6 sm:mr-0 sm:mb-6" />
             <Email />
           </div>
         </div>
