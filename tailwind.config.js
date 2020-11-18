@@ -7,8 +7,8 @@ module.exports = {
   // https://github.com/tailwindlabs/tailwindcss/blob/e7d053444a95f82eeb4946fc3550dba62d31c75c/stubs/defaultConfig.stub.js
   theme: {
     screens: {
-      sm: '640px',
-      md: '768px',
+      sm: '480px',
+      md: '839px',
       lg: '1024px',
     },
     colors: {

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Github as SVG } from './svgs';
+import { SVG } from '~/assets';
 
-export default function Github({ className }) {
+export default function GitHub({ className }) {
   return (
     <a
       className={className}
@@ -12,11 +12,11 @@ export default function Github({ className }) {
       target="_blank"
       title="GitHub profile"
     >
-      <SVG />
+      <SVG.Github />
     </a>
   );
 }
 
-Github.propTypes = {
+GitHub.propTypes = {
   className: PropTypes.string,
 };

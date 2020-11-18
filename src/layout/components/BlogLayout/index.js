@@ -4,21 +4,15 @@ import { GatsbySeo } from 'gatsby-plugin-next-seo';
 import { Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 
-import App from '../App';
+import { GitHub, Twitter, LinkedIn, Email } from '~/social';
+import { SVG, getUrl } from '~/assets';
+import App from '~/app';
+import { components } from '~/blog';
 import Container from '../Container';
-import Github from '../Github';
-import Twitter from '../Twitter';
-import Linkedin from '../Linkedin';
-import Email from '../Email';
-import Logo from '../Logo';
-import { components } from './mdx';
 import './index.css';
 
-const toOGImage = (src) =>
-  `https://res.cloudinary.com/karolis/image/upload/c_fill,f_auto,h_630,q_auto,w_1200/v1/karolis.sh/blog/${src}`;
-
 export default function BlogLayout({ children, pageContext: { frontmatter } }) {
-  const image = toOGImage(frontmatter.banner);
+  const image = getUrl(`blog/${frontmatter.banner}`, 'c_fill,f_auto,h_630,q_auto,w_1200');
   return (
     <App>
       <GatsbySeo
@@ -39,9 +33,12 @@ export default function BlogLayout({ children, pageContext: { frontmatter } }) {
       />
       <div className="BlogLayout flex flex-col overflow-hidden">
         <header className="py-5 md:py-8 bg-white border-b">
-          <Container>
+          <Container className="flex items-center justify-between">
             <Link to="/" className="inline-block" aria-label="To homepage">
-              <Logo />
+              <SVG.Logo />
+            </Link>
+            <Link to="/blog/" className="font-bold">
+              /BLOG/
             </Link>
           </Container>
         </header>
@@ -54,12 +51,11 @@ export default function BlogLayout({ children, pageContext: { frontmatter } }) {
               <MDXProvider components={components}>{children}</MDXProvider>
             </div>
             <hr className="my-8" />
-            <div className="flex justify-center !items-center">
+            <div className="flex justify-center">
               <img
                 alt="profile"
                 className="rounded-full mr-4 md:mr-6"
-                width="180"
-                src="https://res.cloudinary.com/karolis/image/upload/c_scale,q_auto,w_180/v1/karolis.sh/profile"
+                src={getUrl('profile.jpg', 'c_scale,f_auto,q_auto,w_180')}
                 style={{ width: 80, height: 80 }}
               />
               <div>
@@ -80,9 +76,9 @@ export default function BlogLayout({ children, pageContext: { frontmatter } }) {
         </article>
         <footer className="bg-gray-100 pt-6 pb-12 md:pt-10 md:pb-16 lg:pb-20">
           <Container className="flex justify-center">
-            <Github className="mr-8" />
+            <GitHub className="mr-8" />
             <Twitter className="mr-8" />
-            <Linkedin className="mr-8" />
+            <LinkedIn className="mr-8" />
             <Email />
           </Container>
         </footer>
