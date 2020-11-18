@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import { GitHub, Twitter, LinkedIn, Email } from '~/social';
 import { SVG, getUrl } from '~/assets';
@@ -46,8 +47,11 @@ export default function Index() {
         </div>
       }
       second={
-        <div className="flex flex-col justify-center text-sm font-semibold my-5 md:mx-8 lg:mx-12">
-          <div className="flex mx-auto sm:flex-col sm:mx-0">
+        <div className="flex flex-col justify-center text-sm font-semibold my-5 align-center w-full md:mx-8 lg:mx-12">
+          <div className="font-bold text-center mb-8 sm:mb-10 md:flex">
+            <Link to="/blog/">/BLOG/</Link>
+          </div>
+          <div className="flex mx-auto items-center sm:flex-col sm:mx-0 md:items-start">
             <GitHub className="mr-6 sm:mr-0 sm:mb-6" />
             <Twitter className="mr-6 sm:mr-0 sm:mb-6" />
             <LinkedIn className="mr-6 sm:mr-0 sm:mb-6" />

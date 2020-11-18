@@ -33,9 +33,12 @@ export default function BlogLayout({ children, pageContext: { frontmatter } }) {
       />
       <div className="BlogLayout flex flex-col overflow-hidden">
         <header className="py-5 md:py-8 bg-white border-b">
-          <Container>
+          <Container className="flex items-center justify-between">
             <Link to="/" className="inline-block" aria-label="To homepage">
               <SVG.Logo />
+            </Link>
+            <Link to="/blog/" className="font-bold">
+              /BLOG/
             </Link>
           </Container>
         </header>

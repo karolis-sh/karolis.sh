@@ -17,5 +17,12 @@ export const SVG = {
   Linkedin: (props) => <img {...props} src={linkedin} style={iconStyle} alt="LinkedIn" />,
   Twitter: (props) => <img {...props} src={twitter} style={iconStyle} alt="Twitter" />,
   Logo: (props) => <img {...props} style={{ width: 60, height: 30 }} src={logo} alt="logo" />,
-  Pronunciation: (props) => <img {...props} src={pronunciation} alt="/’karolɪs ʃarapnətskɪs/" />,
+  Pronunciation: (props) => (
+    <img
+      {...props}
+      style={{ width: 116, height: 15 }}
+      src={pronunciation}
+      alt="/’karolɪs ʃarapnətskɪs/"
+    />
+  ),
 };

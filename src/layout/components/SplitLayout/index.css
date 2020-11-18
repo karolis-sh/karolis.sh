@@ -7,6 +7,11 @@
 
   @screen sm {
     min-height: auto;
+    width: 70%;
+  }
+
+  @screen md {
+    min-height: auto;
     width: 60%;
   }
 }
