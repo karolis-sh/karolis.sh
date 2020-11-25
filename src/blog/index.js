@@ -4,6 +4,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React from 'react';
 import cx from 'classnames';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import theme from 'prism-react-renderer/themes/vsDark';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 
@@ -85,7 +86,7 @@ export const components = {
     <h5 className="table mb-5 text-lg font-medium tracking-tight leading-snug" {...props} />
   ),
   h6: (props) => <h6 className="table mb-5 font-medium leading-snug" {...props} />,
-  a: (props) => <a className="text-teal-700 underline" {...props} />,
+  a: (props) => <OutboundLink className="text-teal-700 underline" {...props} />,
   p: (props) => <p className="mb-5 leading-relaxed" {...props} />,
   ul: (props) => <ul className="list-disc list-inside" {...props} />,
   ol: (props) => <ul className="list-decimal list-inside" {...props} />,
