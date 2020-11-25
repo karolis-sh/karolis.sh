@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { SVG } from '~/assets';
 
 export default function GitHub({ className }) {
   return (
-    <a
+    <OutboundLink
       className={className}
       href="https://github.com/karolis-sh"
       rel="noopener noreferrer"
@@ -13,7 +14,7 @@ export default function GitHub({ className }) {
       title="GitHub profile"
     >
       <SVG.Github />
-    </a>
+    </OutboundLink>
   );
 }
 

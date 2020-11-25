@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { SVG } from '~/assets';
 
 export default function LinkedIn({ className }) {
   return (
-    <a
+    <OutboundLink
       className={className}
       href="https://www.linkedin.com/in/karolis-šarapnickis/"
       rel="noopener noreferrer"
@@ -13,7 +14,7 @@ export default function LinkedIn({ className }) {
       title="LinkedIn profile"
     >
       <SVG.Linkedin />
-    </a>
+    </OutboundLink>
   );
 }
 
