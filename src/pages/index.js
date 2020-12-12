@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { GitHub, Twitter, LinkedIn, Email } from '~/social';
 import { SVG, getUrl } from '~/assets';
@@ -23,13 +24,33 @@ export default function Index() {
                   <strong>karolis</strong>
                   <span>.šarapnickis</span>
                 </div>
-                <SVG.Pronunciation />
+                <div className="flex items-center">
+                  <SVG.Pronunciation className="mt-1" />
+                  <OutboundLink
+                    href="http://ipa-reader.xyz/?text=%CB%88karol%C9%AAs%20%CA%83arapn%C9%99tsk%C9%AAs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Listen"
+                  >
+                    <span role="img" aria-label="ear">
+                      👂
+                    </span>
+                  </OutboundLink>
+                </div>
               </div>
               <div className="text-center leading-tight text-sm  md:text-right">
                 <h1>
-                  <strong>Senior Software Developer</strong>
+                  <strong>Front-end Tech Lead</strong>
                 </h1>
-                <h2 className="text-xs">Front-end Tech Lead @ Tesonet</h2>
+                <h2 className="text-xs">
+                  <OutboundLink
+                    href="https://nordsecurity.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    @ Nord Security
+                  </OutboundLink>
+                </h2>
               </div>
             </div>
           </div>

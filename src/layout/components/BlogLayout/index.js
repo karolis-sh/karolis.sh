@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { GatsbySeo } from 'gatsby-plugin-next-seo';
-import { Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
+import { Link } from 'gatsby';
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { GitHub, Twitter, LinkedIn, Email } from '~/social';
 import { SVG, getUrl } from '~/assets';
@@ -65,7 +66,16 @@ export default function BlogLayout({ children, pageContext: { frontmatter } }) {
                     🇱🇹
                   </span>
                 </strong>
-                <h2 className="text-xs mb-2">Front-end Tech Lead @ Tesonet</h2>
+                <h2 className="text-xs mb-2">
+                  Front-end Tech Lead @{' '}
+                  <OutboundLink
+                    href="https://nordsecurity.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Nord Security
+                  </OutboundLink>
+                </h2>
                 <p>
                   I build stuff using JavaScript and share my findings from time to time. I hope you
                   will find something useful here.
