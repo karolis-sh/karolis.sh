@@ -24,19 +24,18 @@ export default function Index() {
                   <strong>karolis</strong>
                   <span>.šarapnickis</span>
                 </div>
-                <div className="flex items-center">
-                  <SVG.Pronunciation className="mt-1" />
-                  <OutboundLink
-                    href="http://ipa-reader.xyz/?text=%CB%88karol%C9%AAs%20%CA%83arapn%C9%99tsk%C9%AAs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Listen"
-                  >
-                    <span role="img" aria-label="ear">
-                      👂
-                    </span>
-                  </OutboundLink>
-                </div>
+                <OutboundLink
+                  href="http://ipa-reader.xyz/?text=%CB%88karol%C9%AAs%20%CA%83arapn%C9%99tsk%C9%AAs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Listen"
+                  className="flex items-center"
+                >
+                  <span role="img" aria-label="speaker">
+                    🔈
+                  </span>
+                  <SVG.Pronunciation className="ml-1 mt-1" />
+                </OutboundLink>
               </div>
               <div className="text-center leading-tight text-sm  md:text-right">
                 <h1>
