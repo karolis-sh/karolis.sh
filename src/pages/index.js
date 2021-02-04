@@ -39,7 +39,7 @@ export default function Index() {
               </div>
               <div className="text-center leading-tight text-sm  md:text-right">
                 <h1>
-                  <strong>Front-end Tech Lead</strong>
+                  <strong>Engineering Manager</strong>
                 </h1>
                 <h2 className="text-xs">
                   <OutboundLink
