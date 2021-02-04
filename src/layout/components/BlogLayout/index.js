@@ -67,7 +67,7 @@ export default function BlogLayout({ children, pageContext: { frontmatter } }) {
                   </span>
                 </strong>
                 <h2 className="text-xs mb-2">
-                  Front-end Tech Lead @{' '}
+                  Engineering Manager @{' '}
                   <OutboundLink
                     href="https://nordsecurity.com/"
                     target="_blank"
