@@ -12,7 +12,7 @@ import { components } from '~/blog';
 import Container from '../Container';
 import './index.css';
 
-export default function BlogLayout({ children, pageContext: { frontmatter } }) {
+export default function BlogLayout({ children, pageContext: { frontmatter }, path }) {
   const image = getUrl(`blog/${frontmatter.banner}`, 'c_fill,f_auto,h_630,q_auto,w_1200');
   return (
     <App>
@@ -31,6 +31,7 @@ export default function BlogLayout({ children, pageContext: { frontmatter } }) {
             },
           ],
         }}
+        canonical={`https://karolis.sh${path}`}
       />
       <div className="BlogLayout flex flex-col overflow-hidden">
         <header className="py-5 md:py-8 bg-white border-b">
@@ -107,4 +108,5 @@ BlogLayout.propTypes = {
       banner: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
+  path: PropTypes.string.isRequired,
 };
