@@ -73,7 +73,7 @@ export default function BlogLayout({ children, pageContext: { frontmatter } }) {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Nord Security
+                    <strong>Nord Security</strong>
                   </OutboundLink>
                 </h2>
                 <p>

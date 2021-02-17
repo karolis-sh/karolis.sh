@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { Link } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
@@ -38,31 +39,31 @@ export default function Index() {
                 </OutboundLink>
               </div>
               <div className="text-center leading-tight text-sm  md:text-right">
-                <h1>
-                  <strong>Engineering Manager</strong>
-                </h1>
+                <h1>Engineering Manager</h1>
                 <h2 className="text-xs">
+                  @{' '}
                   <OutboundLink
                     href="https://nordsecurity.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    @ Nord Security
+                    <strong>Nord Security</strong>
                   </OutboundLink>
                 </h2>
               </div>
             </div>
           </div>
-          <div className="text-sm leading-snug text-justify mt-6 mb-3">
+          <div className="text-sm !leading-snug text-justify mt-6 mb-3">
             <p className="pb-2">
-              I build web related solutions using JavaScript. I care deeply about the work I put
-              out, so exceptional performance, user and developer experience are my primary
-              development principles.
+              I'm a software engineer with 7+ years of experience creating well-crafted UI solutions
+              using JavaScript. Currently, I'm an engineering manager at Nord Security, where I help
+              to build web projects with security, performance, and good UX in mind.
             </p>
-            <p>
-              I try to keep my eyes on the latest technologies, but currently I am fully focused on
-              the React ecosystem.
+            <p className="pb-2">
+              I like the open-source idealogy, so occasionally I make some contributions on GitHub
+              or write a blog post with my findings.
             </p>
+            <p>When I'm not coding, I 👨‍👩‍👦🍔🏋️🏐</p>
           </div>
         </div>
       }
