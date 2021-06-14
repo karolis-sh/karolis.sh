@@ -21,24 +21,12 @@
     "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!**/node_modules'",
     "qa": "yarn lint",
     "release": "yarn && run-s clean build deploy",
-    "try": "run-s clean build && gatsby serve -p 8000"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn lint"
-    }
+    "try": "run-s clean build && gatsby serve -p 8000",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "**/package.json": [
-      "sort-package-json"
-    ],
-    "*.js": [
-      "eslint --fix"
-    ],
-    "*.{json,md,mdx,css,yml}": [
-      "pretty-quick --staged"
-    ]
+    "**/package.json": "sort-package-json",
+    "*.js": "eslint --fix"
   },
   "config": {
     "commitizen": {
@@ -83,9 +71,9 @@
     "gatsby-remark-autolink-headers": "^4.4.1",
     "gatsby-remark-images": "^5.4.1",
     "gatsby-source-filesystem": "^3.7.1",
-    "husky": "^4.3.8",
+    "husky": "^6.0.0",
     "levenary": "^1.1.1",
-    "lint-staged": "^10.5.3",
+    "lint-staged": ">=10",
     "markdownlint-cli2": "^0.1.3",
     "npm-run-all": "^4.1.3",
     "pretty-quick": "^3.1.0",
