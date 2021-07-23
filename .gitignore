@@ -1,8 +1,9 @@
 # npm files
-/node_modules
+node_modules
 package-lock.json
 *.log*
 
 # project
-/.cache
+.eslintcache
+.cache
 /public
