@@ -18,7 +18,12 @@ module.exports = {
     },
   },
   plugins: [
-    'gatsby-plugin-favicon',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/favicon.png',
+      },
+    },
     'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-mdx',
@@ -55,7 +60,6 @@ module.exports = {
       },
     },
     'gatsby-remark-images',
-
     {
       resolve: 'gatsby-plugin-next-seo',
       options: {
@@ -80,6 +84,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
+        sitemap: `${config.siteUrl}/sitemap.xml`,
         policy: [{ userAgent: '*', allow: '/', disallow: ['/*.pdf'] }],
       },
     },

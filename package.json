@@ -8,37 +8,26 @@
   },
   "license": "MIT",
   "author": "Karolis Šarapnickis",
+  "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "clean": "rimraf public .cache",
+    "clean": "gatsby clean",
     "deploy": "gatsby-plugin-s3 deploy -y",
     "dev": "gatsby develop",
     "format": "run-p format:*",
     "format:js": "prettier --write '**/*.*'",
     "format:package-json": "sort-package-json",
     "lint": "run-p lint:*",
-    "lint:js": "eslint .",
+    "lint:js": "eslint . --cache --ignore-path .gitignore",
     "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!**/node_modules'",
     "qa": "yarn lint",
     "release": "yarn && run-s clean build deploy",
-    "try": "run-s clean build && gatsby serve -p 8000"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn lint"
-    }
+    "try": "run-s clean build && gatsby serve -p 8000",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "**/package.json": [
-      "sort-package-json"
-    ],
-    "*.js": [
-      "eslint --fix"
-    ],
-    "*.{json,md,mdx,css,yml}": [
-      "pretty-quick --staged"
-    ]
+    "**/package.json": "sort-package-json",
+    "*.js": "eslint --fix"
   },
   "config": {
     "commitizen": {
@@ -46,52 +35,57 @@
     }
   },
   "dependencies": {
-    "@mdx-js/react": "^1.6.21",
-    "classnames": "^2.2.6",
-    "gatsby": "^2.27.3",
-    "gatsby-plugin-google-analytics": "^2.6.0",
-    "gatsby-plugin-next-seo": "^1.6.1",
-    "prism-react-renderer": "^1.1.1",
+    "@mdx-js/react": "^1.6.22",
+    "classnames": "^2.3.1",
+    "gatsby": "^3.10.1",
+    "gatsby-plugin-google-analytics": "^3.10.0",
+    "gatsby-plugin-next-seo": "^1.7.0",
+    "prism-react-renderer": "^1.2.1",
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet-async": "^1.0.7"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet-async": "^1.0.9"
   },
   "devDependencies": {
-    "@k.sh/eslint-config": "^1.21.0",
-    "@mdx-js/mdx": "^1.6.21",
-    "autoprefixer": "^9.7.6",
+    "@k.sh/eslint-config": "^1.21.2",
+    "@mdx-js/mdx": "^1.6.22",
+    "autoprefixer": "^10.3.1",
     "babel-eslint": "^10.1.0",
-    "babel-plugin-module-resolver": "^4.0.0",
-    "cssnano": "^4.1.10",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "cssnano": "^5.0.7",
     "cz-conventional-changelog": "^3.3.0",
-    "dotenv": "^8.2.0",
-    "eslint-import-resolver-babel-module": "^5.2.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "gatsby-plugin-advanced-sitemap": "^1.5.6",
-    "gatsby-plugin-catch-links": "^2.5.0",
-    "gatsby-plugin-favicon": "^3.1.6",
-    "gatsby-plugin-force-trailing-slashes": "^1.0.4",
-    "gatsby-plugin-mdx": "^1.5.0",
-    "gatsby-plugin-no-sourcemaps": "^2.4.0",
-    "gatsby-plugin-postcss": "^2.2.4",
+    "dotenv": "^10.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-babel-module": "^5.3.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "gatsby-plugin-advanced-sitemap": "^2.0.0",
+    "gatsby-plugin-catch-links": "^3.10.0",
+    "gatsby-plugin-force-trailing-slashes": "^1.0.5",
+    "gatsby-plugin-manifest": "^3.10.0",
+    "gatsby-plugin-mdx": "^2.10.0",
+    "gatsby-plugin-no-sourcemaps": "^3.10.0",
+    "gatsby-plugin-postcss": "^4.10.0",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
-    "gatsby-plugin-robots-txt": "^1.5.3",
+    "gatsby-plugin-robots-txt": "^1.6.8",
     "gatsby-plugin-s3": "^0.3.8",
-    "gatsby-plugin-sharp": "^2.9.0",
-    "gatsby-remark-autolink-headers": "^2.6.0",
-    "gatsby-remark-images": "^3.6.0",
-    "gatsby-source-filesystem": "^2.6.1",
-    "husky": "^4.3.8",
+    "gatsby-plugin-sharp": "^3.10.2",
+    "gatsby-remark-autolink-headers": "^4.7.0",
+    "gatsby-remark-images": "^5.7.0",
+    "gatsby-source-filesystem": "^3.10.0",
+    "husky": "^7.0.1",
     "levenary": "^1.1.1",
-    "lint-staged": "^10.5.3",
-    "markdownlint-cli2": "^0.0.13",
+    "lint-staged": ">=11.1.0",
+    "markdownlint-cli2": "^0.1.3",
     "npm-run-all": "^4.1.3",
-    "prettier": "^2.2.1",
-    "pretty-quick": "^3.1.0",
+    "postcss": "^8.3.6",
+    "pretty-quick": "^3.1.1",
     "remark-external-links": "^8.0.0",
     "rimraf": "^3.0.2",
-    "sort-package-json": "^1.48.1",
-    "tailwindcss": "^1.9.6"
+    "sort-package-json": "^1.50.0",
+    "tailwindcss": "^2.1.4"
+  },
+  "volta": {
+    "node": "16.5.0",
+    "yarn": "1.22.10"
   }
 }

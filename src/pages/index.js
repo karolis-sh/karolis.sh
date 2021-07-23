@@ -68,7 +68,7 @@ export default function Index() {
         </div>
       }
       second={
-        <div className="flex flex-col justify-center text-sm font-semibold my-5 align-center w-full md:mx-8 lg:mx-12">
+        <div className="flex flex-col justify-center text-sm font-semibold my-5 align-center w-full md:mx-8">
           <div className="font-bold text-center mb-8 sm:mb-10 md:flex">
             <Link to="/blog/">/BLOG/</Link>
           </div>
