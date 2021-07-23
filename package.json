@@ -81,5 +81,8 @@
     "rimraf": "^3.0.2",
     "sort-package-json": "^1.50.0",
     "tailwindcss": "^2.1.4"
+  },
+  "volta": {
+    "node": "16.5.0"
   }
 }
