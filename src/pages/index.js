@@ -55,28 +55,29 @@ export default function Index() {
           </div>
           <div className="text-sm !leading-snug text-justify mt-6 mb-3">
             <p className="pb-2">
-              I'm a software engineer with 7+ years of experience creating well-crafted UI solutions
-              using JavaScript. Currently, I'm an engineering manager at Nord Security, where I help
-              to build web projects with security, performance, and good UX in mind.
+              I'm a purpose driven software engineer with 7+ years of professional experience
+              building web projects. Currently, I'm an engineering manager at Nord Security, where
+              I'm helping my team and the business produce great outcome.
             </p>
             <p className="pb-2">
               I like the open-source idealogy, so occasionally I make some contributions on GitHub
               or write a blog post with my findings.
             </p>
-            <p>When I'm not coding, I 👨‍👩‍👦🍔🏋️🏐</p>
+            <p>When I'm not coding, I 👨‍👩‍👦🍔🏋️</p>
           </div>
         </div>
       }
       second={
-        <div className="flex flex-col justify-center text-sm font-semibold my-5 align-center w-full md:mx-8">
-          <div className="font-bold text-center mb-8 sm:mb-10 md:flex">
+        <div className="flex flex-col justify-center text-sm font-semibold my-5 align-center w-full md:mx-8 font-bold">
+          <div className="text-center mb-8 sm:mb-10 md:flex">
             <Link to="/blog/">/BLOG/</Link>
           </div>
           <div className="flex mx-auto items-center sm:flex-col sm:mx-0 md:items-start">
             <GitHub className="mr-6 sm:mr-0 sm:mb-6" />
             <Twitter className="mr-6 sm:mr-0 sm:mb-6" />
             <LinkedIn className="mr-6 sm:mr-0 sm:mb-6" />
-            <Email />
+            <Email className="mr-6 sm:mr-0 sm:mb-6" />
+            <Link href="https://karolis.sh/cv">/CV/</Link>
           </div>
         </div>
       }
