@@ -77,7 +77,9 @@ export default function Index() {
             <Twitter className="mr-6 sm:mr-0 sm:mb-6" />
             <LinkedIn className="mr-6 sm:mr-0 sm:mb-6" />
             <Email className="mr-6 sm:mr-0 sm:mb-6" />
-            <a href="https://karolis.sh/cv">/CV/</a>
+            <Link href="https://k-sh.notion.site/k-sh/Karolis-arapnickis-4044444277b9477c838924f5a0e7c686">
+              /CV/
+            </Link>
           </div>
         </div>
       }
