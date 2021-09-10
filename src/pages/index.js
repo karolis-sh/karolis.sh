@@ -77,7 +77,7 @@ export default function Index() {
             <Twitter className="mr-6 sm:mr-0 sm:mb-6" />
             <LinkedIn className="mr-6 sm:mr-0 sm:mb-6" />
             <Email className="mr-6 sm:mr-0 sm:mb-6" />
-            <Link href="https://karolis.sh/cv">/CV/</Link>
+            <a href="https://karolis.sh/cv">/CV/</a>
           </div>
         </div>
       }
