@@ -1,17 +1,17 @@
 ---
-title: How to Manage Multiple SSH Keys for GitHub
+title: How to Manage Multiple SSH Keys for GitHub, GitLab, etc.
 date: '2020-10-31'
 description: Short tutorial on how to structure projects and setup multi-user Git SSH workflow.
 banner: multi-user-git-ssh-setup/banner.jpg
 ---
 
-# How to Manage Multiple SSH Keys for GitHub
+# How to Manage Multiple SSH Keys for GitHub, GitLab, etc.
 
 > Short tutorial on how to structure projects and setup multi-user Git SSH workflow.
 
 ![banner1](./images/banner.jpg 'Michel Didier Joomun@https://unsplash.com/photos/zPo9pPnUNdA')
 
-When using a single machine with multiple git accounts you might encounter some obstacles with SSH setup. The easiest way to achieve a multi-user setup is to structure git repositories by respective directories, e.g.:
+When using a single machine with multiple git accounts, you might encounter some obstacles with SSH setup. The easiest way to achieve a multi-user setup is to structure git repositories by respective directories, e.g.:
 
 ```
 projects
@@ -23,11 +23,11 @@ projects
     └── ...
 ```
 
-This short tutorial will help you setup SHH for such workflow.
+This short tutorial will help you set up SHH for such workflow.
 
 ## Generating a new SSH key
 
-To generate a new SSH key use the provided template script (or check the [docs](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)):
+To generate a new SSH key, use the provided template script (or check the [docs](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)):
 
 ```shell
 export EMAIL=karolis.sarapnickis@work.com
