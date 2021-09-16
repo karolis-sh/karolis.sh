@@ -13,7 +13,7 @@ banner: optimistic-ui-in-practice/banner.jpg
 
 I think we can all agree that web performance is important. In most cases, you will just measure the load times ([First Contentful Paint (FCP)](https://web.dev/first-contentful-paint/), [Time to Interactive (TTI)](https://web.dev/interactive/), etc.) and get your conclusions from there, but that's not the full user experience. Responsiveness of the app, after it has loaded, is also as important.
 
-After you've taken all the well defined measures (small bundle size, modern file formats, cache headers etc.) to make things fast what else can be done? As we aren't machines (yet), it is actually how we [perceive the performance](https://en.wikipedia.org/wiki/Perceived_performance) that matters. Thus we can trick our brains into thinking things are faster than they actually are.
+After you've taken all the well-defined measures (small bundle size, modern file formats, cache headers etc.) to make things fast, what else can be done? As we aren't machines (yet), it is actually how we [perceive the performance](https://en.wikipedia.org/wiki/Perceived_performance) that matters. Thus, we can trick our brains into thinking things are faster than they actually are.
 
 **Optimistic UI** pattern is one of the tools to improve perceived performance. It helps you bridge the gap between predictable state changes that take time to execute (for e.g. slow API requests). It's a powerful technique that has an immediate effect on the user's experience.
 
@@ -21,7 +21,7 @@ After you've taken all the well defined measures (small bundle size, modern file
 
 Recently we were building an app with, as usual, a pretty strict time-frame. We got it working fairly reliably and even load fast, but UI interactions after initial load were sluggish. It was because most of the state updates had to be saved via API calls immediately, this resulted in a lot of spinners. Majority of the API actions very rather simple and the outcome was predictable, thus Optimistic UI pattern was a good fit to practice perceived performance improvements.
 
-For demo purpose imagine a `LanguageSelect` component that performs an async action when the language is changed. We're pretty confident that, upon clicking, the language will be changed. Though we have to wait for our API request to resolve and update the [Redux](https://redux.js.org/) state `language` field so that our component would re-render.
+For demo purpose, imagine a `LanguageSelect` component that performs an async action when the language is changed. We're pretty confident that, upon clicking, the language will be changed. Though, we have to wait for our API request to resolve and update the [Redux](https://redux.js.org/) state `language` field so that our component would re-render.
 
 ```js
 import React from 'react';
@@ -94,7 +94,7 @@ function LanguageSelect() {
 }
 ```
 
-This approach seems pretty simple and most of the time it gets the job done. But what if we use the `language` field elsewhere? How we would share the temporary optimistic state outside of `LanguageSelect`? Like, for example, showing a user's language flag.
+This approach seems pretty simple, and most of the time it gets the job done. But what if we use the `language` field elsewhere? How we would share the temporary optimistic state outside `LanguageSelect`? Like, for example, showing a user's language flag.
 
 ```js
 import React from 'react';
@@ -111,9 +111,9 @@ function Header() {
 }
 ```
 
-To solve this issue we could [lift the state up](https://reactjs.org/docs/lifting-state-up.html) to context or maybe make a separate Redux reducer to store optimistic values. Both approaches might work, but what if you'd want to modify optimistic values directly in async calls or don't even want to use a specific state manager? Everything can be developed, but all this sounds like a major feature... and the deadline is nearing. We need something simple 🤔... and there is!
+To solve this issue, we could [lift the state up](https://reactjs.org/docs/lifting-state-up.html) to context or maybe make a separate Redux reducer to store optimistic values. Both approaches might work, but what if you'd want to modify optimistic values directly in async calls or don't even want to use a specific state manager? Everything can be developed, but all this sounds like a major feature... and the deadline is nearing. We need something simple 🤔... and there is!
 
-I wrote a small utility library - [`use-optimistic-update`](https://www.npmjs.com/package/use-optimistic-update). It is **lightweight**, built on top of an **event emitter** and doesn't need Redux or even React Context integrations. Lets see how we could make the `LanguageSelect` optimistic with minimal effort.
+I wrote a small utility library - [`use-optimistic-update`](https://www.npmjs.com/package/use-optimistic-update). It is **lightweight**, built on top of an **event emitter** and doesn't need Redux or even React Context integrations. Let's see how we could make the `LanguageSelect` optimistic with minimal effort.
 
 ```js {3,15,21}
 import React from 'react';
