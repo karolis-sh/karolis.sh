@@ -1,7 +1,12 @@
-#!/bin/bash
+#!/bin/sh
 
-if [[ ! $(git status --porcelain) ]]; then
-    git checkout master
+if [ -z "$(which aws)" ]; then
+    echo "🚨 aws CLI not installed"
+    exit 1
+fi
+
+if [ -z "$(git status --porcelain)" ]; then
+    git checkout main
     git pull
     yarn release
 else
