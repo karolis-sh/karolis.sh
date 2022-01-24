@@ -5,6 +5,11 @@ if [ -z "$(which aws)" ]; then
     exit 1
 fi
 
+if [ -z "$(aws configure list)" ]; then
+    echo "🚨 aws not configured"
+    exit 1
+fi
+
 if [ -z "$(git status --porcelain)" ]; then
     git checkout main
     git pull
