@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ ! $(git status --porcelain) ]]; then
-    git checkout master
+    git checkout main
     git pull
     yarn release
 else
