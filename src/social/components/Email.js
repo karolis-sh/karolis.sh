@@ -5,7 +5,7 @@ import { SVG } from '~/assets';
 
 export default function Email({ className }) {
   return (
-    <a className={className} href="mailto:pastas.k@gmail.com" title="Personal email">
+    <a className={className} href="mailto:hi@karolis.sh" title="Personal email">
       <SVG.Email />
     </a>
   );

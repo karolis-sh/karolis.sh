@@ -2,12 +2,9 @@
   "name": "karolis.sh",
   "private": true,
   "description": "Source code of karolis.sh",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:karolis-sh/karolis.sh.git"
-  },
+  "repository": "karolis-sh/karolis.sh",
   "license": "MIT",
-  "author": "Karolis Šarapnickis",
+  "author": "Karolis Šarapnickis <hi@karolis.sh>",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
@@ -26,13 +23,8 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "**/package.json": "sort-package-json",
+    "package.json": "sort-package-json",
     "*.js": "eslint --fix"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
   },
   "dependencies": {
     "@mdx-js/react": "^1.6.22",
