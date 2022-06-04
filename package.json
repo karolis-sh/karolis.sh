@@ -54,7 +54,7 @@
     "gatsby-plugin-catch-links": "^3.10.0",
     "gatsby-plugin-force-trailing-slashes": "^1.0.5",
     "gatsby-plugin-manifest": "^3.10.0",
-    "gatsby-plugin-mdx": "^2.10.0",
+    "gatsby-plugin-mdx": "^2.14.1",
     "gatsby-plugin-no-sourcemaps": "^3.10.0",
     "gatsby-plugin-postcss": "^4.10.0",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
