@@ -68,13 +68,13 @@ export default function BlogLayout({ children, pageContext: { frontmatter }, pat
                   </span>
                 </strong>
                 <h2 className="text-xs mb-2">
-                  Engineering Manager @{' '}
+                  Sr Software Engineer @{' '}
                   <OutboundLink
-                    href="https://nordsecurity.com/"
+                    href="https://www.uber.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <strong>Nord Security</strong>
+                    <strong>Security</strong>
                   </OutboundLink>
                 </h2>
                 <p>
