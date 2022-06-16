@@ -39,15 +39,15 @@ export default function Index() {
                 </OutboundLink>
               </div>
               <div className="text-center leading-tight text-sm  md:text-right">
-                <h1>Engineering Manager</h1>
+                <h1>Sr Software Engineer</h1>
                 <h2 className="text-xs">
                   @{' '}
                   <OutboundLink
-                    href="https://nordsecurity.com/"
+                    href="https://www.uber.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <strong>Nord Security</strong>
+                    <strong>Uber</strong>
                   </OutboundLink>
                 </h2>
               </div>
@@ -55,15 +55,15 @@ export default function Index() {
           </div>
           <div className="text-sm !leading-snug text-justify mt-6 mb-3">
             <p className="pb-2">
-              I'm a purpose driven software engineer with 7+ years of professional experience
-              building web projects. Currently, I'm an engineering manager at Nord Security, where
-              I'm helping my team and the business produce great outcome.
+              I'm a purpose-driven software engineer with professional hands-on experience building
+              web projects and leading teams. I'm a persistent person who values honesty, structure,
+              and knowledge.
             </p>
             <p className="pb-2">
               I like the open-source idealogy, so occasionally I make some contributions on GitHub
               or write a blog post with my findings.
             </p>
-            <p>When I'm not coding, I 👨‍👩‍👦🍔🏋️</p>
+            <p>Beyond software domain, I 👨‍👩‍👦🍔🏋️🚴</p>
           </div>
         </div>
       }
