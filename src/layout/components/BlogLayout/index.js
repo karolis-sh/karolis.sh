@@ -74,7 +74,7 @@ export default function BlogLayout({ children, pageContext: { frontmatter }, pat
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <strong>Security</strong>
+                    <strong>Uber</strong>
                   </OutboundLink>
                 </h2>
                 <p>
