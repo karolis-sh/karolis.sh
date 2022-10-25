@@ -7,7 +7,7 @@ if [ -z "$(which aws)" ]; then
   exit 1
 fi
 
-if [ -z "$(aws configure list)" ]; then
+if [ -z "$(aws configservice describe-delivery-channels)" ]; then
   echo "🚨 aws not configured"
   exit 1
 fi
