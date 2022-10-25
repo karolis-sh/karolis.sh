@@ -8,7 +8,7 @@ export default function LinkedIn({ className }) {
   return (
     <OutboundLink
       className={className}
-      href="https://www.linkedin.com/in/karolis-šarapnickis/"
+      href="https://www.linkedin.com/in/karolis-sh/"
       rel="noopener noreferrer"
       target="_blank"
       title="LinkedIn profile"
