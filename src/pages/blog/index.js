@@ -52,14 +52,21 @@ export default function Blog() {
                     frontmatter: { title, description, date, banner },
                   },
                 }) => {
-                  const image = getUrl(`blog/${banner}`, 'c_fill,f_auto,h_300,q_auto,w_500');
+                  const image = getUrl(
+                    `blog/${banner}`,
+                    'c_fill,f_auto,h_300,q_auto,w_500',
+                  );
                   return (
                     <Link
                       to={path}
                       key={path}
                       className="border my-2 bg-white flex flex-col sm:flex-row"
                     >
-                      <img src={image} className="sm:hidden object-cover" alt="banner" />
+                      <img
+                        src={image}
+                        className="sm:hidden object-cover"
+                        alt="banner"
+                      />
                       <img
                         src={image}
                         className="hidden sm:inline-block object-cover"
@@ -73,7 +80,7 @@ export default function Blog() {
                       </div>
                     </Link>
                   );
-                }
+                },
               )}
             </div>
           </Container>

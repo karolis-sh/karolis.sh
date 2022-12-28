@@ -6,6 +6,10 @@
 !*.mdx
 !*.css
 !*.yml
+!*.sh
+!*.gitignore
+!*.env
+!*.env.*
 
 # npm files
 node_modules
@@ -14,3 +18,4 @@ package.json
 # project
 /public
 /.cache
+.husky/_/
