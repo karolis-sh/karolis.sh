@@ -18,7 +18,7 @@ function calculateLinesToHighlight(meta) {
     return (index) => {
       const lineNumber = index + 1;
       const inRange = lineNumbers.some(([start, end]) =>
-        end ? lineNumber >= start && lineNumber <= end : lineNumber === start
+        end ? lineNumber >= start && lineNumber <= end : lineNumber === start,
       );
       return inRange;
     };
@@ -41,7 +41,7 @@ function Code({ children: codeString, className: language, metastring }) {
             <pre
               className={cx(
                 className,
-                'p-3 rounded overflow-initial min-w-full float-left text-sm'
+                'p-3 rounded overflow-initial min-w-full float-left text-sm',
               )}
               style={style}
             >
@@ -55,7 +55,9 @@ function Code({ children: codeString, className: language, metastring }) {
                       : undefined,
                   })}
                 >
-                  <span className="inline-block opacity-50 w-8 select-none">{i + 1}</span>
+                  <span className="inline-block opacity-50 w-8 select-none">
+                    {i + 1}
+                  </span>
                   {line.map((token, key) => (
                     <span {...getTokenProps({ token, key })} />
                   ))}
@@ -71,21 +73,38 @@ function Code({ children: codeString, className: language, metastring }) {
 
 export const components = {
   h1: (props) => (
-    <h1 className="table mb-5 text-4xl font-medium tracking-tight leading-snug" {...props} />
+    <h1
+      className="table mb-5 text-4xl font-medium tracking-tight leading-snug"
+      {...props}
+    />
   ),
   h2: (props) => (
-    <h2 className="table mb-5 text-3xl font-medium tracking-tight leading-snug" {...props} />
+    <h2
+      className="table mb-5 text-3xl font-medium tracking-tight leading-snug"
+      {...props}
+    />
   ),
   h3: (props) => (
-    <h3 className="table mb-5 text-2xl font-medium tracking-tight leading-snug" {...props} />
+    <h3
+      className="table mb-5 text-2xl font-medium tracking-tight leading-snug"
+      {...props}
+    />
   ),
   h4: (props) => (
-    <h4 className="table mb-5 text-xl font-medium tracking-tight leading-snug" {...props} />
+    <h4
+      className="table mb-5 text-xl font-medium tracking-tight leading-snug"
+      {...props}
+    />
   ),
   h5: (props) => (
-    <h5 className="table mb-5 text-lg font-medium tracking-tight leading-snug" {...props} />
+    <h5
+      className="table mb-5 text-lg font-medium tracking-tight leading-snug"
+      {...props}
+    />
   ),
-  h6: (props) => <h6 className="table mb-5 font-medium leading-snug" {...props} />,
+  h6: (props) => (
+    <h6 className="table mb-5 font-medium leading-snug" {...props} />
+  ),
   a: (props) => <OutboundLink className="text-teal-700 underline" {...props} />,
   p: (props) => <p className="mb-5 leading-relaxed" {...props} />,
   ul: (props) => <ul className="list-disc list-inside" {...props} />,
@@ -117,5 +136,7 @@ export const components = {
   hr: (props) => <hr className="my-12" {...props} />,
   pre: (props) => <pre className="my-8 lg:my-10" {...props} />,
   code: Code,
-  inlineCode: (props) => <code className="bg-teal-100 px-1 py-px rounded" {...props} />,
+  inlineCode: (props) => (
+    <code className="bg-teal-100 px-1 py-px rounded" {...props} />
+  ),
 };

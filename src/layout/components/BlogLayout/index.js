@@ -12,8 +12,15 @@ import { components } from '~/blog';
 import Container from '../Container';
 import './index.css';
 
-export default function BlogLayout({ children, pageContext: { frontmatter }, path }) {
-  const image = getUrl(`blog/${frontmatter.banner}`, 'c_fill,f_auto,h_630,q_auto,w_1200');
+export default function BlogLayout({
+  children,
+  pageContext: { frontmatter },
+  path,
+}) {
+  const image = getUrl(
+    `blog/${frontmatter.banner}`,
+    'c_fill,f_auto,h_630,q_auto,w_1200',
+  );
   return (
     <App>
       <GatsbySeo
@@ -63,7 +70,11 @@ export default function BlogLayout({ children, pageContext: { frontmatter }, pat
               <div>
                 <strong>
                   Karolis Šarapnickis{' '}
-                  <span role="img" aria-label="Lithuania" title="Hello from Lithuania!">
+                  <span
+                    role="img"
+                    aria-label="Lithuania"
+                    title="Hello from Lithuania!"
+                  >
                     🇱🇹
                   </span>
                 </strong>
@@ -78,8 +89,8 @@ export default function BlogLayout({ children, pageContext: { frontmatter }, pat
                   </OutboundLink>
                 </h2>
                 <p>
-                  I build stuff using JavaScript and share my findings from time to time. I hope you
-                  will find something useful here.
+                  I build stuff using JavaScript and share my findings from time
+                  to time. I hope you will find something useful here.
                 </p>
               </div>
             </div>

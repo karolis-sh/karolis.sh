@@ -63,9 +63,9 @@ Just like JavaScript, shell scripts can have `if` statements. They can be writte
 #!/bin/bash
 
 if [[ $CI ]]; then
-	yarn --cache-folder $PWD/.yarn --prefer-offline --frozen-lockfile
+  yarn --cache-folder $PWD/.yarn --prefer-offline --frozen-lockfile
 else
-	yarn
+  yarn
 fi
 ```
 
@@ -91,21 +91,23 @@ Environment variables are a common way of passing dynamically configurable value
 ```bash
 #!/bin/bash
 
-set -a; source .env; set +a
+set -a
+source .env
+set +a
 
 if [[ ! $GH_TOKEN ]]; then
-    echo "🚨 Missing GH_TOKEN env variable" && exit 1
+  echo "🚨 Missing GH_TOKEN env variable" && exit 1
 fi
 
 if [[ ! $(npm whoami) ]]; then
-    echo "🚨 Not logged in to npm" && exit 1
+  echo "🚨 Not logged in to npm" && exit 1
 fi
 
 if [[ ! $(git status --porcelain) ]]; then
-    git checkout main && git pull && yarn release
+  git checkout main && git pull && yarn release
 else
-    git status --porcelain
-    echo "🧹 Working directory not clean" && exit 1
+  git status --porcelain
+  echo "🧹 Working directory not clean" && exit 1
 fi
 ```
 

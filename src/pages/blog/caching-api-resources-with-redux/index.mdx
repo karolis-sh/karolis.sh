@@ -39,14 +39,14 @@ Install some core dependencies:
 
 ```bash
 yarn add babel-polyfill \
-         whatwg-fetch \
-         redux \
-         react-redux \
-         redux-thunk \
-         redux-api-middleware \
-         redux-cached-api-middleware \
-         redux-devtools-extension \
-         babel-polyfill
+  whatwg-fetch \
+  redux \
+  react-redux \
+  redux-thunk \
+  redux-api-middleware \
+  redux-cached-api-middleware \
+  redux-devtools-extension \
+  babel-polyfill
 ```
 
 We added some polyfills and some Redux related dependencies, let’s identify what are they used for:
@@ -69,7 +69,7 @@ export const store = createStore(
   combineReducers({
     [api.constants.NAME]: api.reducer,
   }),
-  composeWithDevTools(applyMiddleware(thunk, apiMiddleware))
+  composeWithDevTools(applyMiddleware(thunk, apiMiddleware)),
 );
 ```
 
@@ -90,7 +90,7 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 ```
 
@@ -153,10 +153,10 @@ const enhance = connect(
               .get(api.constants.CACHE_TYPES.TTL_SUCCESS)
               .buildStrategy({ ttl: 600000 }), // 10 minutes
           },
-        })
+        }),
       );
     },
-  })
+  }),
 );
 
 App.propTypes = {
@@ -180,7 +180,11 @@ This may not look that useful for one component, but when you have multiple comp
 
 ```jsx
 function Header() {
-  return <WithUserInfo render={({ username }) => <header>Hello, {username}!</header>} />;
+  return (
+    <WithUserInfo
+      render={({ username }) => <header>Hello, {username}!</header>}
+    />
+  );
 }
 ```
 
@@ -237,7 +241,7 @@ export const store = createStore(
   persistCombineReducers(persistConfig, {
     [api.constants.NAME]: api.reducer,
   }),
-  composeWithDevTools(applyMiddleware(thunk, apiMiddleware, apiNormalizer))
+  composeWithDevTools(applyMiddleware(thunk, apiMiddleware, apiNormalizer)),
 );
 
 export const persistor = persistStore(store);
@@ -265,7 +269,7 @@ ReactDOM.render(
       <App />
     </PersistGate>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 ```
 

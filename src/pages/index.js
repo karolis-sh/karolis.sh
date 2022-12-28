@@ -11,7 +11,10 @@ export default function Index() {
   return (
     <SplitLayout
       first={
-        <div className="flex flex-col justify-center md:mx-8 lg:mx-12" style={{ maxWidth: '25em' }}>
+        <div
+          className="flex flex-col justify-center md:mx-8 lg:mx-12"
+          style={{ maxWidth: '25em' }}
+        >
           <div className="flex flex-col items-center mt-5 md:mt-0 md:flex-row justify-end sm:mb-4">
             <img
               alt="profile"
@@ -55,13 +58,13 @@ export default function Index() {
           </div>
           <div className="text-sm !leading-snug text-justify mt-6 mb-3">
             <p className="pb-2">
-              I'm a purpose-driven software engineer with professional hands-on experience building
-              web projects and leading teams. I'm a persistent person who values honesty, structure,
-              and knowledge.
+              I'm a purpose-driven software engineer with professional hands-on
+              experience building web projects and leading teams. I'm a
+              persistent person who values honesty, structure, and knowledge.
             </p>
             <p className="pb-2">
-              I like the open-source idealogy, so occasionally I make some contributions on GitHub
-              or write a blog post with my findings.
+              I like the open-source idealogy, so occasionally I make some
+              contributions on GitHub or write a blog post with my findings.
             </p>
             <p>Beyond software domain, I 👨‍👩‍👦🍔🏋️🚴</p>
           </div>
