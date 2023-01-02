@@ -9,5 +9,5 @@ module.exports = {
   twitterHandle: 'karolis_sh', // https://twitter.com/karolis_sh/
   linkedinHandle: 'karolis-šarapnickis', // https://www.linkedin.com/in/karolis-šarapnickis/
 
-  googleAnalyticsID: 'UA-120203619-1',
+  googleAnalyticsID: 'G-0FT36DB7FT',
 };

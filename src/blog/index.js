@@ -4,7 +4,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React from 'react';
 import cx from 'classnames';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import theme from 'prism-react-renderer/themes/vsDark';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 
