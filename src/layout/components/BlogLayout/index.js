@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { MDXProvider } from '@mdx-js/react';
 import { Link } from 'gatsby';
 import { GatsbySeo } from 'gatsby-plugin-next-seo';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 
 import { GitHub, Twitter, LinkedIn, Email } from '~/social';
 import { SVG, getUrl } from '~/assets';
