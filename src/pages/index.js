@@ -41,18 +41,8 @@ export default function Index() {
                   <SVG.Pronunciation className="ml-1 mt-1" />
                 </OutboundLink>
               </div>
-              <div className="text-center leading-tight text-sm  md:text-right">
-                <h1>Sr Software Engineer</h1>
-                <h2 className="text-xs">
-                  @{' '}
-                  <OutboundLink
-                    href="https://www.uber.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <strong>Uber</strong>
-                  </OutboundLink>
-                </h2>
+              <div className="text-center leading-tight text-sm md:text-right">
+                <h1>Software Engineer</h1>
               </div>
             </div>
           </div>
