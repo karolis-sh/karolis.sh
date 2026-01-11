@@ -1,21 +1,3 @@
-*
-!*/
-!*.js
-!*.json
-!*.md
-!*.mdx
-!*.css
-!*.yml
-!*.sh
-!*.gitignore
-!*.env
-!*.env.*
-
-# npm files
+dist
+.astro
 node_modules
-package.json
-
-# project
-/public
-/.cache
-.husky/_/

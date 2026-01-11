@@ -1,7 +1,19 @@
-# 👉 [karolis.sh](https://karolis.sh/)
+# karolis.sh
 
-> A static personal website built with React and hosted on AWS (S3 + Cloudflare).
+Personal website built with [Astro](https://astro.build/) and hosted on Cloudflare Pages.
 
-## Release
+## Development
 
-`sh release.sh`
+```bash
+npm run dev      # Start dev server
+npm run build    # Production build
+npm run preview  # Preview production build
+```
+
+## Structure
+
+- `src/pages/` - Routes
+- `src/content/notes/` - Notes (MDX)
+- `src/content/blog/` - Legacy blog posts (MDX)
+- `src/layouts/` - Page layouts
+- `public/` - Static assets

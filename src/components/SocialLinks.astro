@@ -1,0 +1,97 @@
+---
+import IconGitHub from './icons/IconGitHub.astro';
+import IconLinkedIn from './icons/IconLinkedIn.astro';
+import IconEmail from './icons/IconEmail.astro';
+import IconBlog from './icons/IconBlog.astro';
+
+interface Props {
+  variant?: 'mobile' | 'desktop';
+}
+
+const { variant = 'desktop' } = Astro.props;
+---
+
+{
+  variant === 'mobile' ? (
+    <nav class="mt-8 flex flex-wrap gap-4 lg:hidden">
+      <a
+        href="/blog/"
+        class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white hover:bg-white/20 focus:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+      >
+        <IconBlog class="w-4 h-4" />
+        <span class="text-sm font-medium">Blog</span>
+      </a>
+      <a
+        href="https://github.com/karolis-sh"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full text-white hover:bg-white/20 focus:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+        aria-label="GitHub"
+      >
+        <IconGitHub />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/karolis-sh/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full text-white hover:bg-white/20 focus:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+        aria-label="LinkedIn"
+      >
+        <IconLinkedIn />
+      </a>
+      <a
+        href="mailto:hi@karolis.sh"
+        class="flex items-center justify-center w-10 h-10 bg-white/10 rounded-full text-white hover:bg-white/20 focus:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+        aria-label="Email"
+      >
+        <IconEmail />
+      </a>
+    </nav>
+  ) : (
+    <nav class="hidden lg:flex flex-col gap-4">
+      <a
+        href="/blog/"
+        class="group flex items-center gap-3 text-gray-700 hover:text-teal-600 focus:text-teal-600 transition-colors focus:outline-none"
+      >
+        <span class="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center group-hover:bg-teal-500 group-hover:text-white group-focus:bg-teal-500 group-focus:text-white transition-colors">
+          <IconBlog class="w-4 h-4" />
+        </span>
+        <span class="font-medium">Blog</span>
+      </a>
+
+      <div class="h-px bg-gray-200 my-2" />
+
+      <a
+        href="https://github.com/karolis-sh"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex items-center gap-3 text-gray-600 hover:text-gray-900 focus:text-gray-900 transition-colors focus:outline-none"
+      >
+        <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
+          <IconGitHub class="w-4 h-4" />
+        </span>
+        <span class="text-sm">GitHub</span>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/karolis-sh/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex items-center gap-3 text-gray-600 hover:text-gray-900 focus:text-gray-900 transition-colors focus:outline-none"
+      >
+        <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
+          <IconLinkedIn class="w-4 h-4" />
+        </span>
+        <span class="text-sm">LinkedIn</span>
+      </a>
+      <a
+        href="mailto:hi@karolis.sh"
+        class="group flex items-center gap-3 text-gray-600 hover:text-gray-900 focus:text-gray-900 transition-colors focus:outline-none"
+      >
+        <span class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
+          <IconEmail class="w-4 h-4" />
+        </span>
+        <span class="text-sm">hi@karolis.sh</span>
+      </a>
+    </nav>
+  )
+}
