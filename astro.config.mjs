@@ -7,7 +7,12 @@ import { transformerMetaHighlight } from '@shikijs/transformers';
 export default defineConfig({
   site: 'https://karolis.sh',
   integrations: [sitemap()],
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: 'compile',
+    platformProxy: {
+      enabled: true,
+    },
+  }),
   vite: {
     plugins: [tailwindcss()],
   },
