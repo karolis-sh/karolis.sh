@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+---
+
+<BaseLayout>
+  <main class="min-h-screen bg-gradient-to-br from-teal-400 to-teal-600">
+    <div class="min-h-screen flex flex-col lg:flex-row">
+      <!-- Profile section -->
+      <div class="flex-1 flex items-center justify-center p-8 lg:p-16">
+        <div class="max-w-lg text-white">
+          <div class="mb-8">
+            <img
+              src="/profile.jpg"
+              alt="Karolis Šarapnickis"
+              class="w-28 h-28 rounded-full border-4 border-white/20 shadow-lg"
+            />
+          </div>
+          <div class="mb-6">
+            <h1 class="text-3xl font-bold mb-1">
+              karolis<span class="font-light opacity-90">.šarapnickis</span>
+            </h1>
+            <p class="text-sm text-white/60 mb-1">
+              <a
+                href="https://ipa-reader.com/?text=%CB%88karol%C9%AAs%20%CA%83arapn%C9%99tsk%C9%AAs"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-white focus:text-white transition-colors focus:outline-none"
+                >🔊 /ˈkarolɪs ʃarapnətskɪs/</a
+              >
+            </p>
+            <p class="text-teal-100">Software Engineer</p>
+          </div>
+          <div class="text-base leading-relaxed text-white/90 space-y-4">
+            <p>
+              I'm a purpose-driven software engineer with professional hands-on
+              experience building web projects and leading teams. I'm a
+              persistent person who values honesty, structure, and knowledge.
+            </p>
+            <p>
+              I like the open-source idealogy, so occasionally I make some
+              contributions on GitHub or write a blog post with my findings.
+            </p>
+            <p>Beyond software domain, I 👨‍👩‍👦🍔🏋️🚴</p>
+          </div>
+
+          <SocialLinks variant="mobile" />
+        </div>
+      </div>
+
+      <!-- Right section - Links (desktop only) -->
+      <div
+        class="hidden lg:flex bg-gray-50 items-center justify-center p-16 lg:w-2/5"
+      >
+        <SocialLinks variant="desktop" />
+      </div>
+    </div>
+  </main>
+</BaseLayout>

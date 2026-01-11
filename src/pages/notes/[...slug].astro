@@ -1,0 +1,42 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes');
+  return notes.map((note) => ({
+    params: { slug: note.slug },
+    props: { note },
+  }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+---
+
+<BaseLayout title={note.data.title} description={note.data.description}>
+  <div class="min-h-screen bg-gray-100">
+    <header class="bg-white border-b py-5">
+      <div class="max-w-3xl mx-auto px-4">
+        <a
+          href="/notes/"
+          class="text-teal-600 hover:text-teal-700 focus:text-teal-700 focus:outline-none"
+          >&larr; Notes</a
+        >
+      </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 py-8">
+      <article class="bg-white p-6 md:p-10">
+        <header class="mb-8">
+          <h1 class="text-3xl font-bold">{note.data.title}</h1>
+          <p class="text-gray-600 mt-2">{note.data.description}</p>
+        </header>
+
+        <div class="prose prose-gray max-w-none">
+          <Content />
+        </div>
+      </article>
+    </main>
+  </div>
+</BaseLayout>

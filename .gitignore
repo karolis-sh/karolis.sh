@@ -1,9 +1,18 @@
-# npm files
+# Dependencies
 node_modules
-package-lock.json
-*.log*
 
-# project
-.eslintcache
-.cache
-/public
+# Build output
+dist
+
+# Astro
+.astro
+
+# Cloudflare
+.wrangler
+
+# Logs
+*.log
+
+# Editor
+.DS_Store
+.vscode
