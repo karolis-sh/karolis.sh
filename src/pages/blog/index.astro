@@ -9,38 +9,38 @@ const sortedPosts = posts.sort(
 ---
 
 <BaseLayout title="Blog" description="Blog posts">
-  <div class="min-h-screen bg-gray-100">
-    <header class="bg-white border-b py-5">
-      <div class="max-w-3xl mx-auto px-4">
+  <main class="min-h-screen px-6 py-16 md:px-12">
+    <div class="max-w-2xl mx-auto">
+      <header class="mb-12">
         <a
           href="/"
-          class="text-teal-600 hover:text-teal-700 focus:text-teal-700 focus:outline-none"
-          >&larr; Home</a
+          class="text-sm text-gray-500 hover:text-gray-300 focus:text-gray-300 transition-colors focus:outline-none"
         >
-      </div>
-    </header>
+          &larr; Home
+        </a>
+        <h1 class="text-3xl font-light text-gray-100 mt-6">Blog</h1>
+      </header>
 
-    <main class="max-w-3xl mx-auto px-4 py-8">
-      <h1 class="text-3xl font-bold mb-8">Blog</h1>
-
-      <ul class="space-y-4">
+      <ul class="space-y-6">
         {
           sortedPosts.map((post) => (
             <li>
               <a
                 href={`/blog/${post.slug}/`}
-                class="block bg-white p-5 border hover:border-teal-500 focus:border-teal-500 transition-colors focus:outline-none"
+                class="block p-5 -mx-5 rounded-lg hover:bg-white/[0.03] focus:bg-white/[0.03] transition-colors focus:outline-none group"
               >
-                <h2 class="font-semibold text-lg">{post.data.title}</h2>
-                <p class="text-sm text-gray-600 mt-1">
+                <h2 class="font-medium text-gray-200 group-hover:text-gray-100">
+                  {post.data.title}
+                </h2>
+                <p class="text-sm text-gray-400 mt-1">
                   {post.data.description}
                 </p>
-                <p class="text-xs text-gray-400 mt-2">{post.data.date}</p>
+                <p class="text-xs text-gray-500 mt-2">{post.data.date}</p>
               </a>
             </li>
           ))
         }
       </ul>
-    </main>
-  </div>
+    </div>
+  </main>
 </BaseLayout>

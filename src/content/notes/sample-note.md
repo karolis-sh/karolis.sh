@@ -81,7 +81,7 @@ You can use `const` and `let` for variable declarations. The `Array.map()` metho
 
 Here's a test image (using the profile photo from public folder):
 
-![Profile photo](/profile.jpg)
+![Profile photo](/profile.png)
 
 ## Table
 

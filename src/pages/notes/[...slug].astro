@@ -15,28 +15,29 @@ const { Content } = await render(note);
 ---
 
 <BaseLayout title={note.data.title} description={note.data.description}>
-  <div class="min-h-screen bg-gray-100">
-    <header class="bg-white border-b py-5">
-      <div class="max-w-3xl mx-auto px-4">
+  <main class="min-h-screen px-6 py-16 md:px-12">
+    <div class="max-w-2xl mx-auto">
+      <header class="mb-12">
         <a
           href="/notes/"
-          class="text-teal-600 hover:text-teal-700 focus:text-teal-700 focus:outline-none"
-          >&larr; Notes</a
+          class="text-sm text-gray-500 hover:text-gray-300 focus:text-gray-300 transition-colors focus:outline-none"
         >
-      </div>
-    </header>
+          &larr; Notes
+        </a>
+      </header>
 
-    <main class="max-w-3xl mx-auto px-4 py-8">
-      <article class="bg-white p-6 md:p-10">
-        <header class="mb-8">
-          <h1 class="text-3xl font-bold">{note.data.title}</h1>
-          <p class="text-gray-600 mt-2">{note.data.description}</p>
+      <article>
+        <header class="mb-10">
+          <h1 class="text-3xl font-light text-gray-100">{note.data.title}</h1>
+          <p class="text-gray-400 mt-3">{note.data.description}</p>
         </header>
 
-        <div class="prose prose-gray max-w-none">
+        <div
+          class="prose prose-invert prose-gray max-w-none prose-headings:font-light prose-headings:text-gray-200 prose-p:text-gray-300 prose-strong:text-gray-200 prose-li:text-gray-300"
+        >
           <Content />
         </div>
       </article>
-    </main>
-  </div>
+    </div>
+  </main>
 </BaseLayout>
