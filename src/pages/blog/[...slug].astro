@@ -22,23 +22,22 @@ const { Content } = await render(post);
   type="article"
   publishedTime={post.data.date}
 >
-  <div class="min-h-screen bg-gray-100">
-    <header class="bg-white border-b py-5">
-      <div class="max-w-3xl mx-auto px-4">
+  <main class="min-h-screen px-6 py-16 md:px-12">
+    <div class="max-w-2xl mx-auto">
+      <header class="mb-12">
         <a
-          href="/"
-          class="text-teal-600 hover:text-teal-700 focus:text-teal-700 focus:outline-none"
-          >&larr; Home</a
+          href="/blog/"
+          class="text-sm text-gray-500 hover:text-gray-300 focus:text-gray-300 transition-colors focus:outline-none"
         >
-      </div>
-    </header>
+          &larr; Blog
+        </a>
+      </header>
 
-    <main class="max-w-3xl mx-auto px-4 py-8">
-      <article class="bg-white p-6 md:p-10">
-        <header class="mb-8">
-          <h1 class="text-3xl font-bold">{post.data.title}</h1>
-          <p class="text-gray-600 mt-2">{post.data.description}</p>
-          <p class="text-sm text-gray-500 mt-1">{post.data.date}</p>
+      <article>
+        <header class="mb-10">
+          <h1 class="text-3xl font-light text-gray-100">{post.data.title}</h1>
+          <p class="text-gray-400 mt-3">{post.data.description}</p>
+          <p class="text-sm text-gray-500 mt-2">{post.data.date}</p>
           {
             post.data.banner && (
               <Image
@@ -46,45 +45,48 @@ const { Content } = await render(post);
                 alt={post.data.title}
                 widths={[400, 800, 1200]}
                 sizes="(max-width: 768px) 100vw, 800px"
-                class="w-full h-48 md:h-64 object-cover rounded-lg mt-6"
+                class="w-full h-48 md:h-64 object-cover rounded-lg mt-8 opacity-90 ring-1 ring-white/10"
                 loading="eager"
               />
             )
           }
         </header>
 
-        <div class="prose prose-gray max-w-none">
+        <div
+          class="prose prose-invert prose-gray max-w-none prose-headings:font-light prose-headings:text-gray-200 prose-p:text-gray-300 prose-strong:text-gray-200 prose-li:text-gray-300"
+        >
           <Content />
         </div>
       </article>
-    </main>
 
-    <footer class="bg-gray-100 py-8">
-      <div class="max-w-3xl mx-auto px-4 text-center text-sm text-gray-600">
-        <a
-          href="https://github.com/karolis-sh"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-teal-600 focus:text-teal-600 focus:outline-none"
-        >
-          GitHub
-        </a>
-        <span class="mx-2">·</span>
-        <a
-          href="https://www.linkedin.com/in/karolis-sh/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-teal-600 focus:text-teal-600 focus:outline-none"
-        >
-          LinkedIn
-        </a>
-        <span class="mx-2">·</span>
-        <a
-          href="mailto:hi@karolis.sh"
-          class="hover:text-teal-600 focus:text-teal-600 focus:outline-none"
-          >Email</a
-        >
-      </div>
-    </footer>
-  </div>
+      <footer class="mt-16 pt-8 border-t border-white/[0.05]">
+        <nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-500">
+          <a
+            href="https://github.com/karolis-sh"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-gray-300 focus:text-gray-300 transition-colors focus:outline-none"
+          >
+            GitHub
+          </a>
+          <span class="text-gray-700">·</span>
+          <a
+            href="https://www.linkedin.com/in/karolis-sh/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-gray-300 focus:text-gray-300 transition-colors focus:outline-none"
+          >
+            LinkedIn
+          </a>
+          <span class="text-gray-700">·</span>
+          <a
+            href="mailto:hi@karolis.sh"
+            class="hover:text-gray-300 focus:text-gray-300 transition-colors focus:outline-none"
+          >
+            Email
+          </a>
+        </nav>
+      </footer>
+    </div>
+  </main>
 </BaseLayout>

@@ -1,59 +1,90 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SocialLinks from '../components/SocialLinks.astro';
+import ParticleBackground from '../components/ParticleBackground.astro';
 ---
 
 <BaseLayout>
-  <main class="min-h-screen bg-gradient-to-br from-teal-400 to-teal-600">
-    <div class="min-h-screen flex flex-col lg:flex-row">
-      <!-- Profile section -->
-      <div class="flex-1 flex items-center justify-center p-8 lg:p-16">
-        <div class="max-w-lg text-white">
-          <div class="mb-8">
-            <img
-              src="/profile.jpg"
-              alt="Karolis Šarapnickis"
-              class="w-28 h-28 rounded-full border-4 border-white/20 shadow-lg"
-            />
-          </div>
-          <div class="mb-6">
-            <h1 class="text-3xl font-bold mb-1">
-              karolis<span class="font-light opacity-90">.šarapnickis</span>
-            </h1>
-            <p class="text-sm text-white/60 mb-1">
-              <a
-                href="https://ipa-reader.com/?text=%CB%88karol%C9%AAs%20%CA%83arapn%C9%99tsk%C9%AAs"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:text-white focus:text-white transition-colors focus:outline-none"
-                >🔊 /ˈkarolɪs ʃarapnətskɪs/</a
-              >
-            </p>
-            <p class="text-teal-100">Software Engineer</p>
-          </div>
-          <div class="text-base leading-relaxed text-white/90 space-y-4">
-            <p>
-              I'm a purpose-driven software engineer with professional hands-on
-              experience building web projects and leading teams. I'm a
-              persistent person who values honesty, structure, and knowledge.
-            </p>
-            <p>
-              I like the open-source idealogy, so occasionally I make some
-              contributions on GitHub or write a blog post with my findings.
-            </p>
-            <p>Beyond software domain, I 👨‍👩‍👦🍔🏋️🚴</p>
-          </div>
+  <ParticleBackground />
 
-          <SocialLinks variant="mobile" />
-        </div>
-      </div>
+  <main
+    class="min-h-screen flex items-center justify-center px-6 py-12 md:px-12 md:py-16"
+  >
+    <div class="max-w-lg w-full">
+      <!-- Photo -->
+      <img
+        src="/profile.png"
+        alt="Karolis Šarapnickis"
+        class="w-36 md:w-44 rounded-lg mb-8 grayscale-[50%] brightness-[0.9] saturate-[0.4] contrast-[1.05] ring-1 ring-white/10"
+      />
 
-      <!-- Right section - Links (desktop only) -->
-      <div
-        class="hidden lg:flex bg-gray-50 items-center justify-center p-16 lg:w-2/5"
+      <!-- Name -->
+      <h1
+        class="text-4xl md:text-5xl font-light text-gray-100 tracking-tight mb-2"
       >
-        <SocialLinks variant="desktop" />
+        Karolis Šarapnickis
+      </h1>
+
+      <!-- Pronunciation -->
+      <p class="text-sm text-gray-500 mb-8">
+        <a
+          href="https://ipa-reader.com/?text=%CB%88karol%C9%AAs%20%CA%83arapn%C9%99tsk%C9%AAs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-gray-400 focus:text-gray-400 transition-colors focus:outline-none"
+        >
+          /ˈkarolɪs ʃarapnətskɪs/
+        </a>
+      </p>
+
+      <!-- Bio -->
+      <div class="space-y-5 text-lg leading-relaxed text-gray-300/90 mb-10">
+        <p>
+          I've been building software for over a decade, across frontend,
+          backend, and team leadership. Following the problems that felt hardest
+          to solve.
+        </p>
+        <p>
+          These days, that means backend systems and AI infrastructure: RAG
+          pipelines, memory architectures, agent orchestration. Making AI
+          systems that hold up in production.
+        </p>
+        <p>I keep notes on things I'm figuring out.</p>
       </div>
+
+      <!-- Links -->
+      <nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-500">
+        <a
+          href="https://github.com/karolis-sh"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-gray-200 focus:text-gray-200 transition-all focus:outline-none hover:underline hover:underline-offset-4 hover:decoration-gray-500"
+        >
+          GitHub
+        </a>
+        <span class="text-gray-700" aria-hidden="true">·</span>
+        <a
+          href="https://www.linkedin.com/in/karolis-sh/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-gray-200 focus:text-gray-200 transition-all focus:outline-none hover:underline hover:underline-offset-4 hover:decoration-gray-500"
+        >
+          LinkedIn
+        </a>
+        <span class="text-gray-700" aria-hidden="true">·</span>
+        <a
+          href="mailto:hi@karolis.sh"
+          class="hover:text-gray-200 focus:text-gray-200 transition-all focus:outline-none hover:underline hover:underline-offset-4 hover:decoration-gray-500"
+        >
+          Email
+        </a>
+        <span class="text-gray-700" aria-hidden="true">·</span>
+        <a
+          href="/blog/"
+          class="hover:text-gray-200 focus:text-gray-200 transition-all focus:outline-none hover:underline hover:underline-offset-4 hover:decoration-gray-500"
+        >
+          Blog
+        </a>
+      </nav>
     </div>
   </main>
 </BaseLayout>

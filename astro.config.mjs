@@ -18,7 +18,7 @@ export default defineConfig({
   },
   markdown: {
     shikiConfig: {
-      theme: 'github-light',
+      theme: 'github-dark-dimmed',
       transformers: [transformerMetaHighlight()],
     },
   },

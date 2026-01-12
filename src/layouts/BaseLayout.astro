@@ -17,7 +17,9 @@ const {
 const siteTitle = 'Karolis Šarapnickis';
 const siteUrl = 'https://karolis.sh';
 const pageTitle = title ? `${title} | k.sh` : siteTitle;
-const pageDescription = description || 'I build neat things using JavaScript.';
+const pageDescription =
+  description ||
+  'Software engineer building backend systems and AI infrastructure.';
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const ogImage = image
   ? new URL(image, siteUrl).toString()
@@ -32,6 +34,7 @@ const ogImage = image
     <meta name="description" content={pageDescription} />
     <title>{pageTitle}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0a0a0f" />
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph -->
@@ -52,8 +55,45 @@ const ogImage = image
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={ogImage} />
+
+    <!-- Google Analytics -->
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-0FT36DB7FT"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-0FT36DB7FT');
+    </script>
   </head>
-  <body class="antialiased text-gray-900">
+  <body class="antialiased bg-[#0a0a0f] text-gray-300">
+    <!-- Nebula accent - faint cosmic glow -->
+    <div
+      class="pointer-events-none fixed inset-0 -z-5"
+      aria-hidden="true"
+      style="background: radial-gradient(ellipse at 85% 80%, rgba(60, 40, 90, 0.15) 0%, transparent 50%);"
+    >
+    </div>
+    <!-- Noise overlay -->
+    <div
+      class="pointer-events-none fixed inset-0 z-50 opacity-[0.04]"
+      aria-hidden="true"
+    >
+      <svg class="h-full w-full">
+        <filter id="noise">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.8"
+            numOctaves="4"
+            stitchTiles="stitch"></feTurbulence>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noise)"></rect>
+      </svg>
+    </div>
     <slot />
   </body>
 </html>
@@ -62,10 +102,10 @@ const ogImage = image
   @import 'tailwindcss';
   @plugin '@tailwindcss/typography';
 
-  /* Inline code - Notion style */
+  /* Inline code */
   .prose :where(code):not(:where(pre *)) {
-    background-color: rgba(135, 131, 120, 0.15);
-    color: #eb5757;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #e5b567;
     padding: 0.2em 0.4em;
     border-radius: 3px;
     font-size: 0.85em;
@@ -78,13 +118,14 @@ const ogImage = image
     content: none;
   }
 
-  /* Code blocks - light, minimal */
+  /* Code blocks - dark theme */
   pre.astro-code {
     counter-reset: line;
     padding: 1rem 0;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 0.85rem;
-    border: 1px solid #e5e7eb;
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   pre.astro-code > code {
@@ -104,12 +145,34 @@ const ogImage = image
     width: 2rem;
     margin-right: 1rem;
     text-align: right;
-    color: #9ca3af;
+    color: rgba(255, 255, 255, 0.25);
     user-select: none;
   }
 
   /* Highlighted lines */
   pre.astro-code .line.highlighted {
-    background-color: rgba(255, 212, 0, 0.14);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Prose links */
+  .prose a {
+    color: #d1d5db;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: #4b5563;
+    transition:
+      color 0.15s,
+      text-decoration-color 0.15s;
+  }
+
+  .prose a:hover {
+    color: #f3f4f6;
+    text-decoration-color: #6b7280;
+  }
+
+  /* Prose images */
+  .prose img {
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
   }
 </style>
