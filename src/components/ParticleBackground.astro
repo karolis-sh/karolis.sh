@@ -13,9 +13,13 @@ const { particleCount = 18 } = Astro.props;
   const ctx = canvas.getContext('2d');
 
   let particles = [];
+  let anchorStars = [];
   let animationId;
   let mouseX = 0;
   let mouseY = 0;
+  let targetMouseX = 0;
+  let targetMouseY = 0;
+  let parallaxStrength = 0; // Fade in parallax effect gradually
   let time = 0;
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
   const count = isMobile ? Math.floor(particleCount * 0.5) : particleCount;
@@ -25,15 +29,16 @@ const { particleCount = 18 } = Astro.props;
     canvas.height = window.innerHeight;
   }
 
-  function createParticle() {
+  function createParticle(zoneX, zoneY, zoneW, zoneH) {
     // Depth creates sense of distance - some stars are far, some closer
     const depth = Math.random();
     // Slight bias toward smaller/dimmer for more "distant" feel
     const adjustedDepth = depth * depth;
 
     return {
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
+      // Position randomly within assigned zone
+      x: zoneX + Math.random() * zoneW,
+      y: zoneY + Math.random() * zoneH,
       // Larger base size, more variation - 1.5px to 4px
       size: adjustedDepth * 2.5 + 1.5,
       // Much slower drift - barely perceptible movement
@@ -51,24 +56,73 @@ const { particleCount = 18 } = Astro.props;
   function init() {
     resize();
     particles = [];
-    for (let i = 0; i < count; i++) {
-      particles.push(createParticle());
+
+    // Divide screen into grid zones for even distribution
+    const cols = Math.ceil(Math.sqrt(count * (canvas.width / canvas.height)));
+    const rows = Math.ceil(count / cols);
+    const zoneW = canvas.width / cols;
+    const zoneH = canvas.height / rows;
+
+    let i = 0;
+    for (let row = 0; row < rows && i < count; row++) {
+      for (let col = 0; col < cols && i < count; col++) {
+        particles.push(createParticle(col * zoneW, row * zoneH, zoneW, zoneH));
+        i++;
+      }
     }
+
+    // Add a few brighter anchor stars in corners/edges
+    anchorStars = [
+      {
+        x: canvas.width * 0.12,
+        y: canvas.height * 0.18,
+        size: 5,
+        baseOpacity: 0.4,
+        pulseOffset: 0,
+        pulseSpeed: 0.0002,
+        speedX: 0.006,
+        speedY: -0.004,
+      },
+      {
+        x: canvas.width * 0.88,
+        y: canvas.height * 0.32,
+        size: 4.5,
+        baseOpacity: 0.35,
+        pulseOffset: Math.PI,
+        pulseSpeed: 0.00025,
+        speedX: -0.005,
+        speedY: -0.006,
+      },
+      {
+        x: canvas.width * 0.75,
+        y: canvas.height * 0.82,
+        size: 4,
+        baseOpacity: 0.3,
+        pulseOffset: Math.PI / 2,
+        pulseSpeed: 0.00018,
+        speedX: -0.004,
+        speedY: 0.003,
+      },
+    ];
   }
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     time++;
 
+    // Smooth mouse position with lerp to avoid jitter
+    mouseX += (targetMouseX - mouseX) * 0.08;
+    mouseY += (targetMouseY - mouseY) * 0.08;
+
     particles.forEach((p) => {
-      // Subtle parallax on desktop - closer particles move more
+      // Subtle parallax on desktop - fades in gradually
       let offsetX = 0;
       let offsetY = 0;
-      if (!isMobile) {
+      if (!isMobile && parallaxStrength > 0) {
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
-        offsetX = (mouseX - centerX) * 0.02 * p.depth;
-        offsetY = (mouseY - centerY) * 0.02 * p.depth;
+        offsetX = (mouseX - centerX) * 0.02 * p.depth * parallaxStrength;
+        offsetY = (mouseY - centerY) * 0.02 * p.depth * parallaxStrength;
       }
 
       // Slow drift
@@ -114,12 +168,73 @@ const { particleCount = 18 } = Astro.props;
       ctx.fill();
     });
 
+    // Draw anchor stars - brighter, with drift and parallax
+    anchorStars.forEach((star) => {
+      // Slow drift
+      star.x += star.speedX;
+      star.y += star.speedY;
+
+      // Wrap around edges
+      if (star.x < -20) star.x = canvas.width + 20;
+      if (star.x > canvas.width + 20) star.x = -20;
+      if (star.y < -20) star.y = canvas.height + 20;
+      if (star.y > canvas.height + 20) star.y = -20;
+
+      const pulse =
+        Math.sin(time * star.pulseSpeed + star.pulseOffset) * 0.1 + 1;
+      const opacity = star.baseOpacity * pulse;
+
+      // Parallax - anchor stars feel "closer"
+      let offsetX = 0;
+      let offsetY = 0;
+      if (!isMobile && parallaxStrength > 0) {
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        offsetX = (mouseX - centerX) * 0.025 * parallaxStrength;
+        offsetY = (mouseY - centerY) * 0.025 * parallaxStrength;
+      }
+
+      const drawX = star.x + offsetX;
+      const drawY = star.y + offsetY;
+
+      // Soft glow
+      const gradient = ctx.createRadialGradient(
+        drawX,
+        drawY,
+        0,
+        drawX,
+        drawY,
+        star.size * 2.5
+      );
+      gradient.addColorStop(0, `rgba(210, 215, 255, ${opacity * 0.35})`);
+      gradient.addColorStop(1, 'rgba(210, 215, 255, 0)');
+      ctx.beginPath();
+      ctx.arc(drawX, drawY, star.size * 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = gradient;
+      ctx.fill();
+
+      // Core
+      ctx.beginPath();
+      ctx.arc(drawX, drawY, star.size * 0.5, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(230, 235, 255, ${opacity})`;
+      ctx.fill();
+    });
+
     animationId = requestAnimationFrame(animate);
   }
 
   function handleMouseMove(e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    // On first move, initialize position to mouse location
+    if (parallaxStrength === 0) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    }
+    // Gradually fade in parallax effect
+    if (parallaxStrength < 1) {
+      parallaxStrength = Math.min(1, parallaxStrength + 0.02);
+    }
+    targetMouseX = e.clientX;
+    targetMouseY = e.clientY;
   }
 
   // Initialize
