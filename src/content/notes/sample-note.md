@@ -79,9 +79,9 @@ You can use `const` and `let` for variable declarations. The `Array.map()` metho
 
 ## Image
 
-Here's a test image (using the profile photo from public folder):
+Here's a test image (co-located with the markdown file):
 
-![Profile photo](/profile.png)
+![Profile photo](./sample-image.png)
 
 ## Table
 

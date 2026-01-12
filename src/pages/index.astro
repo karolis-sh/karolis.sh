@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ParticleBackground from '../components/ParticleBackground.astro';
+import profileImage from '../assets/profile.png';
 ---
 
 <BaseLayout>
@@ -11,11 +13,19 @@ import ParticleBackground from '../components/ParticleBackground.astro';
   >
     <div class="max-w-lg w-full">
       <!-- Photo -->
-      <img
-        src="/profile.png"
-        alt="Karolis Šarapnickis"
-        class="w-36 md:w-44 rounded-lg mb-8 grayscale-[50%] brightness-[0.9] saturate-[0.4] contrast-[1.05] ring-1 ring-white/10"
-      />
+      <div
+        class="w-36 md:w-44 aspect-square rounded-lg mb-8 bg-[#2a2a2f] ring-1 ring-white/10"
+      >
+        <Image
+          src={profileImage}
+          alt="Karolis Šarapnickis"
+          width={176}
+          height={176}
+          quality={80}
+          class="w-full h-full rounded-lg opacity-0 transition-opacity duration-200 grayscale-[50%] brightness-[0.9] saturate-[0.4] contrast-[1.05]"
+          onload="this.classList.remove('opacity-0')"
+        />
+      </div>
 
       <!-- Name -->
       <h1
