@@ -2,18 +2,14 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const notes = await getCollection('notes');
+const notes = await getCollection('notes', ({ data }) => {
+  if (import.meta.env.PROD) {
+    return !data.draft;
+  }
+  return true;
+});
 const sortedNotes = notes.sort((a, b) =>
   a.data.title.localeCompare(b.data.title)
-);
-const notesByTopic = sortedNotes.reduce(
-  (acc, note) => {
-    const topic = note.data.topic || 'General';
-    if (!acc[topic]) acc[topic] = [];
-    acc[topic].push(note);
-    return acc;
-  },
-  {} as Record<string, typeof sortedNotes>
 );
 ---
 
@@ -31,33 +27,26 @@ const notesByTopic = sortedNotes.reduce(
       </header>
 
       {
-        notes.length === 0 ? (
+        sortedNotes.length === 0 ? (
           <p class="text-gray-400">No notes yet.</p>
         ) : (
-          Object.entries(notesByTopic).map(([topic, topicNotes]) => (
-            <section class="mb-10">
-              <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">
-                {topic}
-              </h2>
-              <ul class="space-y-4">
-                {topicNotes.map((note) => (
-                  <li>
-                    <a
-                      href={`/notes/${note.slug}/`}
-                      class="block p-4 -mx-4 rounded-lg hover:bg-white/[0.03] focus:bg-white/[0.03] transition-colors focus:outline-none group"
-                    >
-                      <h3 class="font-medium text-gray-200 group-hover:text-gray-100">
-                        {note.data.title}
-                      </h3>
-                      <p class="text-sm text-gray-400 mt-1">
-                        {note.data.description}
-                      </p>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))
+          <ul class="space-y-4">
+            {sortedNotes.map((note) => (
+              <li>
+                <a
+                  href={`/notes/${note.slug}/`}
+                  class="block p-4 -mx-4 rounded-lg hover:bg-white/[0.03] focus:bg-white/[0.03] transition-colors focus:outline-none group"
+                >
+                  <h3 class="font-medium text-gray-200 group-hover:text-gray-100">
+                    {note.data.title}
+                  </h3>
+                  <p class="text-sm text-gray-400 mt-1">
+                    {note.data.description}
+                  </p>
+                </a>
+              </li>
+            ))}
+          </ul>
         )
       }
     </div>

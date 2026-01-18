@@ -1,7 +1,7 @@
 ---
 title: Sample Note - Testing All Features
 description: A test note to verify code highlighting, images, and other markdown features work correctly.
-topic: Testing
+draft: true
 ---
 
 This is a sample note to test all the features. Let's start with some **bold text**, _italic text_, and `inline code` to make sure basic formatting works.

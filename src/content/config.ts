@@ -5,7 +5,7 @@ const notes = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    topic: z.string().optional(),
+    draft: z.boolean().optional(),
   }),
 });
 
