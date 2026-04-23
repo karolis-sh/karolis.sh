@@ -21,7 +21,7 @@
     "*.{js,ts,astro,md,json,css}": "prettier --write"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.13",
+    "@astrojs/cloudflare": "^13.1.10",
     "@astrojs/sitemap": "^3.6.1",
     "@shikijs/transformers": "^3.21.0",
     "@tailwindcss/typography": "^0.5.19",
