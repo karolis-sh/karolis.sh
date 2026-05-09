@@ -14,7 +14,6 @@ npm run preview  # Preview production build
 
 - `src/pages/` - Routes
 - `src/content/blog/` - Blog posts (MD)
-- `src/content/notes/` - Notes (MD)
 - `src/layouts/` - Page layouts
 - `src/components/` - Components
 - `public/` - Static assets
